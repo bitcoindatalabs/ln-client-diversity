@@ -325,7 +325,7 @@ def main():
         d.mkdir(parents=True, exist_ok=True)
 
     labels = im.node_labels(refresh=args.refresh_labels)
-    dates = im.gossip_dates()
+    dates = [d for d in im.gossip_dates() if d >= "20260501"]   # outage analysis window; census uses 2023+
     log.info("Client rules %s; %d gossip days %s–%s", RULES_VERSION, len(dates), dates[0], dates[-1])
 
     daily = im.outage_daily(labels, dates)

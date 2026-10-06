@@ -1,18 +1,19 @@
-\begin{table}[htbp]
-\caption{Empirical Distribution of Client Implementations Across the Public Lightning Network}
-\label{tab:client_census}
+\begin{table}[t]
 \centering
-\begin{tabular}{lrrrr}
+\caption{Client implementations of public Lightning nodes with at least one channel, gossip snapshot 2026-10-04 (rules v3-2026-10-06). Shares in \%; in parentheses, the share
+counting only high-confidence labels (lower bound). Node capacity counts each channel for both endpoints
+(total 7,390 BTC). Gini: inequality of node capacity within the cohort.}
+\label{tab:client-census}
+\small
+\begin{tabular}{lrrrrrrr}
 \toprule
-\textbf{Implementation} & \textbf{Nodes (\%)} & \textbf{Channels (\%)} & \textbf{Capacity (BTC)} & \textbf{Cap. Share (\%)} \\
+Client & Nodes & Node share & Endpoints & Capacity (BTC) & Cap.\ share & Mean (BTC) & Gini \\
 \midrule
-LND & -- & -- & -- & -- \\
-Core Lightning (CLN) & -- & -- & -- & -- \\
-Eclair & -- & -- & -- & -- \\
-LDK & -- & -- & -- & -- \\
-Unknown / Unclassified & -- & -- & -- & -- \\
-\midrule
-\textbf{Total Network} & 100.0\% & 100.0\% & -- & 100.0\% \\
+LND & 8,290 & 84.0 (77.5) & 85.6 & 6,237 & 84.4 (84.3) & 0.75 & 0.97 \\
+CLN & 834 & 8.5 (7.2) & 7.8 & 276 & 3.7 (3.7) & 0.33 & 0.92 \\
+Eclair & 43 & 0.4 (0.1) & 3.6 & 452 & 6.1 (5.6) & 10.52 & 0.95 \\
+LDK & 148 & 1.5 (1.1) & 2.0 & 422 & 5.7 (5.7) & 2.85 & 0.97 \\
+Unknown & 553 & 5.6 (0.0) & 1.0 & 3 & 0.0 (0.0) & 0.01 & 0.68 \\
 \bottomrule
 \end{tabular}
 \end{table}
