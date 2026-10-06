@@ -1,0 +1,27 @@
+\begin{table}[t]
+\centering
+\caption{Failure scenarios on the 20260825 public graph (channels enabled in both
+directions), payment size 100,000 sats, optimistic liquidity. $R_{\mathrm{all}}$: \% of pre-failure node pairs still connected (pairs with a failed
+node count as lost); $R$: \% of online node pairs connected by a path of
+channels that can carry the payment; $R_c$: same for pairs of client $c$; LCC cap.: \% of usable capacity in the largest
+component. Random scenarios: mean of the Monte Carlo runs.}
+\label{tab:scenarios}
+\small
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Scenario & Failed & Cap.\ (\%) & $R_{\mathrm{all}}$ & $R$ & $R_{\mathrm{CLN}}$ & $R_{\mathrm{Eclair}}$ & $R_{\mathrm{LDK}}$ & LCC cap. \\
+\midrule
+Intact & 0 & 0.0 & 79.8 & 79.8 & 79.2 & 83.3 & 80.0 & 100.0 \\
+Observed: lost all usable channels, Aug 27 & 383 & 0.5 & 72.0 & 86.3 & 79.4 & 83.3 & 81.5 & 99.0 \\
+  of which CLN nodes only & 105 & 0.2 & 76.0 & 79.8 & 79.4 & 83.3 & 80.0 & 99.6 \\
+Calibrated CLN ($\hat p$ = 0.22) & 136 & 0.9 & 74.1 & 78.8 & 76.3 & 83.3 & 79.1 & 98.2 \\
+Same count, random nodes & 136 & 3.1 & 73.2 & 77.9 & 76.8 & 82.5 & 77.6 & 93.9 \\
+Same count, top degree & 136 & 70.5 & 25.9 & 27.6 & 24.8 & 33.3 & 14.7 & 8.9 \\
+Same count, top capacity & 136 & 80.2 & 31.7 & 33.7 & 30.1 & 21.4 & 10.4 & 6.6 \\
+All LND nodes fail & 3,704 & 85.4 & 0.8 & 28.3 & 31.8 & 42.4 & 11.1 & 2.3 \\
+All CLN nodes fail & 619 & 3.9 & 56.4 & 76.2 & -- & 83.3 & 76.2 & 92.8 \\
+All Eclair nodes fail & 12 & 5.8 & 63.5 & 63.9 & 59.1 & -- & 69.0 & 88.4 \\
+All LDK nodes fail & 95 & 4.8 & 76.2 & 79.6 & 78.9 & 83.3 & -- & 91.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
