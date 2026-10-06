@@ -287,7 +287,8 @@ def table_eval(p: pd.DataFrame, tb: dict, tiers: pd.DataFrame, n_anchor: int):
     r1 = "\n".join(f"{r.client} & {r.n} & {('--' if np.isnan(r.precision) else f'{100 * r.precision:.0f}')} & "
                    f"{('--' if np.isnan(r.recall) else f'{100 * r.recall:.0f}')} & {r.unknown} \\\\" for r in p.itertuples())
     t = tiers[(tiers["client"] != "Unknown") & (tiers["n"] >= 10)]
-    r2 = "\n".join(f"{r.client} & {r.tier} & {r.n:,} & {100 * r.agree:.1f} \\\\" for r in t.itertuples())
+    r2 = "\n".join(f"{r.client} & {r.tier.replace('→', '$\\rightarrow$')} & {r.n:,} & {100 * r.agree:.1f} \\\\"
+                   for r in t.itertuples())
     tex = r"""\begin{table}[t]
 \centering
 \caption{Validation of client inference (rules """ + RULES_VERSION.replace("_", r"\_") + r"""). (a) """ + str(n_anchor) + r""" nodes whose

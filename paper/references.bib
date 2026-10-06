@@ -1,7 +1,13 @@
+% ------------------------------------------------------------------------------------------
+% VERIFY EVERY ENTRY BEFORE SUBMISSION (SPECIFICATION.md §7): authors, venue, year, pages.
+% Entries were written from memory without access to the publisher pages. weintraub2024payout
+% from v1 was removed (could not be verified). Advisory/release-note URLs marked TODO.
+% ------------------------------------------------------------------------------------------
+
 @article{poon2016bitcoin,
   title={The Bitcoin Lightning Network: Scalable off-chain instant payments},
   author={Poon, Joseph and Dryja, Thaddeus},
-  journal={Draft version 0.5},
+  journal={Draft version 0.5.9.2},
   year={2016}
 }
 
@@ -12,6 +18,35 @@
   pages={347--356},
   year={2019},
   organization={IEEE}
+}
+
+@inproceedings{seres2020topological,
+  title={Topological Analysis of {B}itcoin's {L}ightning Network},
+  author={Seres, Istv{\'a}n Andr{\'a}s and Guly{\'a}s, L{\'a}szl{\'o} and Nagy, D{\'a}niel A. and Burcsi, P{\'e}ter},
+  booktitle={Mathematical Research for Blockchain Economy (MARBLE 2019)},
+  pages={1--12},
+  year={2020},
+  publisher={Springer}
+}
+
+@article{lin2020lightning,
+  title={Lightning network: a second path towards centralisation of the {B}itcoin economy},
+  author={Lin, Jian-Hong and Primicerio, Kevin and Squartini, Tiziano and Decker, Christian and Tessone, Claudio J.},
+  journal={New Journal of Physics},
+  volume={22},
+  number={8},
+  pages={083022},
+  year={2020}
+}
+
+@article{martinazzi2020evolving,
+  title={The evolving topology of the {L}ightning {N}etwork: Centralization, efficiency, robustness, synchronization, and anonymity},
+  author={Martinazzi, Stefano and Flori, Andrea},
+  journal={PLoS ONE},
+  volume={15},
+  number={1},
+  pages={e0225966},
+  year={2020}
 }
 
 @inproceedings{zabka2021node,
@@ -38,20 +73,12 @@
   year={2021}
 }
 
-@inproceedings{weintraub2024payout,
-  title={Payout Races and Congested Channels: A Formal Analysis of Security in the Lightning Network},
-  author={Weintraub, Roy and Avarikioti, Zeta and Nygren, Erik},
-  booktitle={Proceedings of the 2024 ACM SIGSAC Conference on Computer and Communications Security (CCS '24)},
-  year={2024}
-}
-
-@inproceedings{perez2020lockdown,
-  title={LockDown: Balance availability in the Lightning Network},
-  author={P{\'e}rez-Sol{\`a}, Cristina and Delgado-Segura, Sergi and Navarro-Arribas, Guillermo and Herrera-Joancomart{\'\i}, Jordi},
-  booktitle={Financial Cryptography and Data Security (FC 2020)},
-  pages={526--544},
-  year={2020},
-  organization={Springer}
+@inproceedings{harris2020flood,
+  title={Flood \& Loot: A Systemic Attack on the {L}ightning {N}etwork},
+  author={Harris, Jona and Zohar, Aviv},
+  booktitle={Proceedings of the 2nd ACM Conference on Advances in Financial Technologies (AFT '20)},
+  pages={202--213},
+  year={2020}
 }
 
 @inproceedings{mizrahi2021congestion,
@@ -63,23 +90,84 @@
   organization={Springer}
 }
 
-@misc{bolt1,
-  title={{BOLT \#1: Base Protocol Specification}},
-  author={Lightning Network Developers},
-  year={2023},
-  howpublished={\url{https://github.com/lightning/bolts/blob/master/01-messaging.md}}
+@inproceedings{perez2020lockdown,
+  title={LockDown: Balance availability in the Lightning Network},
+  author={P{\'e}rez-Sol{\`a}, Cristina and Delgado-Segura, Sergi and Navarro-Arribas, Guillermo and Herrera-Joancomart{\'\i}, Jordi},
+  booktitle={Financial Cryptography and Data Security (FC 2020)},
+  pages={526--544},
+  year={2020},
+  organization={Springer}
+}
+
+@techreport{geer2003cyberinsecurity,
+  title={{CyberInsecurity}: The Cost of Monopoly. How the Dominance of {M}icrosoft's Products Poses a Risk to Security},
+  author={Geer, Dan and Bace, Rebecca and Gutmann, Peter and Metzger, Perry and Pfleeger, Charles P. and Quarterman, John S. and Schneier, Bruce},
+  institution={Computer \& Communications Industry Association},
+  year={2003}
+}
+
+@article{birman2009monoculture,
+  title={The Monoculture Risk Put into Context},
+  author={Birman, Kenneth P. and Schneider, Fred B.},
+  journal={IEEE Security \& Privacy},
+  volume={7},
+  number={1},
+  pages={14--17},
+  year={2009}
+}
+
+@misc{bolt2,
+  title={{BOLT \#2: Peer Protocol for Channel Management}},
+  author={{Lightning Network Developers}},
+  year={2025},
+  howpublished={\url{https://github.com/lightning/bolts/blob/master/02-peer-protocol.md}}
+}
+
+@misc{bolt3,
+  title={{BOLT \#3: Bitcoin Transaction and Script Formats}},
+  author={{Lightning Network Developers}},
+  year={2025},
+  howpublished={\url{https://github.com/lightning/bolts/blob/master/03-transactions.md}}
 }
 
 @misc{bolt7,
   title={{BOLT \#7: P2P Node and Channel Discovery}},
-  author={Lightning Network Developers},
-  year={2023},
+  author={{Lightning Network Developers}},
+  year={2025},
   howpublished={\url{https://github.com/lightning/bolts/blob/master/07-routing-gossip.md}}
 }
 
 @misc{bolt9,
   title={{BOLT \#9: Assigned Feature Flags}},
-  author={Lightning Network Developers},
-  year={2023},
+  author={{Lightning Network Developers}},
+  year={2025},
   howpublished={\url{https://github.com/lightning/bolts/blob/master/09-features.md}}
+}
+
+@misc{lndadvisories2026,
+  title={{LND} Security Advisories, {A}ugust and {S}eptember 2026},
+  author={{Lightning Labs}},
+  year={2026},
+  howpublished={\url{https://security.lightning.engineering} (TODO: exact advisory URLs)}
+}
+
+@misc{clnadvisories2026,
+  title={{Core Lightning} security notices and releases 25.09, 26.06.7, 26.06.8},
+  author={{Core Lightning developers}},
+  year={2026},
+  howpublished={TODO: release notes / mailing-list URLs}
+}
+
+@misc{eclairldk2026,
+  title={{Eclair} 0.14.3 and {LDK} 0.2.6 release notes},
+  author={{ACINQ} and {LDK developers}},
+  year={2026},
+  howpublished={TODO: release-note URLs}
+}
+
+@misc{btcpay2026,
+  title={{BTCPay Server} $<$ 2.4.2 macaroon disclosure incident write-up},
+  author={Rubboli},
+  year={2026},
+  howpublished={TODO: URL; author name to confirm}
 }
