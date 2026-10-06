@@ -1,0 +1,31 @@
+\begin{table}[t]
+\centering
+\caption{(a) CLN nodes that went dark after the shutdown call (not dark on 2026-08-25, dark on 2026-08-28), by
+pre-incident node capacity quintile. (b) Organic force closes per 1{,}000 open public channels per day involving
+each cohort, 2026-07-01--08-25 (baseline) vs.\ 2026-08-26--09-08 (window); mass-close events (one node in
+$\geq 20$ force closes in a UTC day) excluded.}
+\label{tab:outage-compliance}
+\small
+\begin{tabular}{lrrr}
+\toprule
+\multicolumn{4}{l}{(a) Compliance by size} \\
+Quintile & Capacity (BTC) & Nodes & Went dark (\%) \\
+\midrule
+Q1 & 0.000--0.004 & 125 & 25.6 \\
+Q2 & 0.004--0.010 & 125 & 10.4 \\
+Q3 & 0.010--0.042 & 125 & 25.6 \\
+Q4 & 0.043--0.208 & 125 & 31.2 \\
+Q5 & 0.210--44.488 & 125 & 35.2 \\
+\midrule
+\multicolumn{4}{l}{(b) Organic force-close rate} \\
+\end{tabular}
+\begin{tabular}{lrrrr}
+Cohort & Baseline & Window & Ratio & vs.\ LND$\leftrightarrow$LND \\
+\midrule
+CLN & 1.38 & 3.02 & 2.18 & 2.64 \\
+Eclair & 0.80 & 0.83 & 1.04 & 1.26 \\
+LDK & 14.17 & 8.45 & 0.60 & 0.72 \\
+LND$\leftrightarrow$LND & 1.02 & 0.84 & 0.83 & 1.00 \\
+\bottomrule
+\end{tabular}
+\end{table}

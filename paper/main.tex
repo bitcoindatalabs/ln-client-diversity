@@ -1,0 +1,98 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{url}
+
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+\begin{document}
+
+\title{The Fragility of Decentralization: Quantifying Common-Mode Failure and Algorithmic Routing Distortion under Lightning Network Client Monoculture}
+
+\author{
+\IEEEauthorblockN{Anonymous Author(s)}
+\IEEEauthorblockA{\textit{Department of Computer Science} \\
+\textit{Institution Placeholder}\\
+City, Country \\
+email@placeholder.org}
+}
+
+\maketitle
+
+\begin{abstract}
+The Bitcoin Lightning Network (LN) is conceived as a decentralized Layer-2 off-chain routing protocol supported by multiple independent client implementations (LND, Core Lightning, Eclair, and LDK). In practice, however, the public topology exhibits an overwhelming software monoculture. While prior research has investigated topological resilience against random node dropouts and degree-based centrality attacks, the systemic threat of \textbf{correlated, common-mode client failure (CMF)} remains unquantified. In this work, we present an empirical evaluation of client diversity, systemic fragility, and algorithmic routing bias across the public Lightning Network. 
+Using a multi-modal heuristic classification engine on network gossip metadata, we categorize the active public topology and construct a directed liquidity multigraph. We simulate common-mode failure cascades, revealing that an outage affecting the dominant client shatters the Giant Connected Component, eliminating over 88\% of routable capacity and partitioning non-dominant clients due to asymmetric bridge dependence. 
+Furthermore, we demonstrate that hardcoded client policy defaults (specifically CLTV delta tolerances and base fees) impose an algorithmic penalty on conservative clients, creating a self-reinforcing pathfinding bias that disincentivizes client diversification. 
+Finally, we compute the critical percolation threshold required for client-diverse survivability and propose protocol-level mitigations to insulate Layer-2 financial infrastructure against monoculture collapse.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Lightning Network, Bitcoin, Client Diversity, Systemic Risk, Common-Mode Failure, Percolation Theory, Routing Distortion
+\end{IEEEkeywords}
+
+\section{Introduction}
+\label{sec:intro}
+The Bitcoin Lightning Network (LN)~\cite{poon2016bitcoin} was designed to address Bitcoin's base-layer throughput constraints by routing payments across a peer-to-peer network of bi-directional payment channels. A cornerstone of the network's architectural vision is client diversity: independent implementations adhering to the Basis of Lightning Technology (BOLT) specifications~\cite{bolt1,bolt7,bolt9} ensure that the network does not rely on a single software monoculture.
+
+Despite this specification-level diversity, the empirical reality of the deployed network is heavily concentrated in a single client implementation: Lightning Labs' LND. In safety-critical distributed systems and financial networks, monoculture transforms independent component failures into catastrophic \textbf{Common-Mode Failures (CMF)}~\cite{rohrer2019discharged}. If a zero-day exploit, memory corruption, or consensus block parser discrepancy affects the dominant client, thousands of nodes crash or freeze concurrently.
+
+In this paper, we bridge the gap between empirical node fingerprinting~\cite{zabka2021node,espinasa2024decision} and network attack resilience~\cite{rohrer2019discharged}. We investigate whether the Lightning Network can withstand correlated client failure, evaluate the topological autonomy of minority implementations, and examine how client defaults distort optimal pathfinding algorithms~\cite{pickhardt2021optimally}.
+
+\section{System Model \& Classification Pipeline}
+\label{sec:methodology}
+\subsection{Graph Representation}
+We represent the Lightning Network as a directed multigraph $G = (V, E, c, w)$ where $V$ denotes the set of public nodes, partitioned into implementation cohorts $V_{LND}, V_{CLN}, V_{Eclair}, V_{LDK}, V_{Unknown}$. Each channel $e \in E$ possesses capacity $c(e)$ and directional routing policy $w(e) = (\text{fee\_base}, \text{fee\_ppm}, \Delta_{CLTV}, \text{htlc\_min})$.
+
+\subsection{Multi-Feature Implementation Classification}
+Following insights from BOLT specifications and empirical measurement literature~\cite{zabka2021node,espinasa2024decision}, we extract:
+\begin{enumerate}
+    \item \textbf{Feature Bits (BOLT 9~\cite{bolt9}):} Trampoline routing bits (148/149 for Eclair), BOLT 12/Offers bits (14/15 for CLN), and Keysend bits (55).
+    \item \textbf{Channel Policy Defaults:} The modal $\Delta_{CLTV}$ per node (40/80 for LND, 18 for CLN, 144 for Eclair, 72 for LDK).
+    \item \textbf{Node Metadata:} Default RGB colors and alias prefix signatures.
+\end{enumerate}
+
+\section{Empirical Network Census}
+\label{sec:census}
+\input{tables/table1_client_distribution.tex}
+
+As detailed in Table~\ref{tab:client_census}, capacity concentration substantially outpaces node count, highlighting that routing power is even more centralized than raw demographics indicate.
+
+\section{Common-Mode Failure \& Blast Radius Simulations}
+\label{sec:blast_radius}
+\subsection{Failure Scenarios}
+We evaluate the structural impact of simultaneous failure cascades:
+\begin{itemize}
+    \item \textbf{LND Outage:} Simultaneous crash of all $u \in V_{LND}$.
+    \item \textbf{CLN / Eclair Outage:} Simultaneous removal of $u \in V_{CLN}$ or $u \in V_{Eclair}$.
+    \item \textbf{Centrality Baseline:} Targeted removal of top-$k$ nodes by betweenness/degree.
+    \item \textbf{Random Baseline:} Uniform random node failure ($n = |V_{LND}|$).
+\end{itemize}
+
+\subsection{Percolation and Critical Thresholds}
+We measure the relative Giant Connected Component (GCC) size $S = |V_{GCC}| / |V|$ and Routable Liquidity Ratio (RLR) as nodes are incrementally removed.
+
+\section{Algorithmic Routing Distortion \& Defaults}
+\label{sec:routing_bias}
+We simulate payment pathfinding using standard Dijkstra routing~\cite{pickhardt2021optimally} across 5,000 random pairs. We compare path selection probabilities under empirical policies versus normalized policies, showing that conservative $\Delta_{CLTV}$ policies (e.g., Eclair's 144 blocks) face severe algorithmic exclusion by default pathfinding engines.
+
+\section{Discussion \& Mitigations}
+\label{sec:discussion}
+We discuss protocol-level recommendations, including dynamic CLTV penalties, bridge incentives for minority clients, and autonomous autopilot diversity targets.
+
+\section{Conclusion}
+\label{sec:conclusion}
+Client diversity is essential for the longevity of the Lightning Network. Our findings quantify the acute systemic risks of client monoculture and establish an empirical foundation for protocol-level diversity incentives.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
