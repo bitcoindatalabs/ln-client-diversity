@@ -1,5 +1,11 @@
 # Engineering & Research Specification (v2)
 
+> **Status 2026-10-07 (full draft).** Published title: *Does Client Diversity Protect the Lightning Network? Evidence
+> from the 2026 Core Lightning Shutdown.* C1-C3 are in the paper; C4/RQ5 (routing defaults) was dropped as out of
+> scope, and probing-based validation was not pursued. Added beyond this plan: churn baselines for nodes going dark,
+> a placebo distribution over 94 ordinary two-day windows, a capacity-stratified null model for client mixing, hub
+> criticality and the August-October contraction (`src/05_supporting_analyses.py`). Data cutoff: 2026-10-04.
+
 ## Working title
 **One Bug Away? Measuring Lightning Network Client Concentration and Common-Mode Failure — Calibrated by the 2026 Security Wave**
 

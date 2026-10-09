@@ -35,7 +35,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from config import CLIENT_PALETTE, DATA_DIR, FIGURES_DIR, RANDOM_SEED, REPO_ROOT, TABLES_DIR  # noqa: E402
+from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, REPO_ROOT, TABLES_DIR  # noqa: E402
 
 sys.path.insert(0, str(REPO_ROOT.parent.parent / "python" / "automation"))
 from shared.lightning import incident_metrics as im  # noqa: E402
@@ -88,6 +88,8 @@ def alias_anchors() -> pd.DataFrame:
     """One row per self-identifying node: truth, rule prediction at its latest snapshot with channels, features."""
     first = {}
     for d in im.gossip_dates():
+        if d > DATA_CUTOFF:
+            break
         first.setdefault(d[:6], d)
     rows = {}
     for d in [first[k] for k in sorted(first)]:
@@ -284,10 +286,11 @@ def fig_validation(anchors: pd.DataFrame, tiers: pd.DataFrame):
 
 
 def table_eval(p: pd.DataFrame, tb: dict, tiers: pd.DataFrame, n_anchor: int):
-    r1 = "\n".join(f"{r.client} & {r.n} & {('--' if np.isnan(r.precision) else f'{100 * r.precision:.0f}')} & "
-                   f"{('--' if np.isnan(r.recall) else f'{100 * r.recall:.0f}')} & {r.unknown} \\\\" for r in p.itertuples())
+    r1 = "\n".join(f"{r.client} & {r.n} & {('--' if np.isnan(r.precision) else f'{100 * r.precision:.1f}')} & "
+                   f"{('--' if np.isnan(r.recall) else f'{100 * r.recall:.1f}')} & {r.unknown} \\\\" for r in p.itertuples())
     t = tiers[(tiers["client"] != "Unknown") & (tiers["n"] >= 10)]
-    r2 = "\n".join(f"{r.client} & {r.tier.replace('→', '$\\rightarrow$')} & {r.n:,} & {100 * r.agree:.1f} \\\\"
+    arrow = r"$\rightarrow$"  # backslash inside an f-string expression needs Python 3.12+
+    r2 = "\n".join(f"{r.client} & {r.tier.replace('→', arrow)} & {r.n:,} & {100 * r.agree:.1f} \\\\"
                    for r in t.itertuples())
     tex = r"""\begin{table}[t]
 \centering
@@ -328,7 +331,7 @@ Label & Rule tier & $n$ & Agree (\%) \\
 def main():
     for d in (FIGURES_DIR, TABLES_DIR, DATA_DIR):
         d.mkdir(parents=True, exist_ok=True)
-    latest = im.gossip_dates()[-1]
+    latest = max(d for d in im.gossip_dates() if d <= DATA_CUTOFF)
     anchors = alias_anchors()
     p = prf(anchors)
     log.info("GT1 precision/recall:\n%s", p.round(3).to_string(index=False))

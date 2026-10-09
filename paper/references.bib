@@ -1,32 +1,65 @@
 % ------------------------------------------------------------------------------------------
-% VERIFY EVERY ENTRY BEFORE SUBMISSION (SPECIFICATION.md section 7): authors, venue, year, pages.
-% Entries were written from memory without access to the publisher pages. weintraub2024payout
-% from v1 was removed (could not be verified). Advisory/release-note URLs marked TODO.
+% Verified 2026-10-07 against Crossref/DOI records, arXiv, publisher or repository copies (academic
+% entries) and primary sources (2026 advisories, release notes, posts). Accessed dates are 2026-10-07.
 % ------------------------------------------------------------------------------------------
 
-@article{poon2016bitcoin,
-  title={The Bitcoin Lightning Network: Scalable off-chain instant payments},
+% ---------------------------------------------------------------- Lightning: protocol
+@misc{poon2016bitcoin,
+  title={The {B}itcoin {L}ightning {N}etwork: Scalable Off-Chain Instant Payments},
   author={Poon, Joseph and Dryja, Thaddeus},
-  journal={Draft version 0.5.9.2},
-  year={2016}
+  year={2016},
+  note={Draft version 0.5.9.2, January 14, 2016},
+  howpublished={\url{https://lightning.network/lightning-network-paper.pdf}}
 }
 
+@misc{bolt2,
+  title={{BOLT \#2: Peer Protocol for Channel Management}},
+  author={{Lightning Network Developers}},
+  howpublished={\url{https://github.com/lightning/bolts/blob/master/02-peer-protocol.md}},
+  note={Accessed 2026-10-07}
+}
+
+@misc{bolt3,
+  title={{BOLT \#3: Bitcoin Transaction and Script Formats}},
+  author={{Lightning Network Developers}},
+  howpublished={\url{https://github.com/lightning/bolts/blob/master/03-transactions.md}},
+  note={Accessed 2026-10-07}
+}
+
+@misc{bolt7,
+  title={{BOLT \#7: P2P Node and Channel Discovery}},
+  author={{Lightning Network Developers}},
+  howpublished={\url{https://github.com/lightning/bolts/blob/master/07-routing-gossip.md}},
+  note={Accessed 2026-10-07}
+}
+
+@misc{bolt9,
+  title={{BOLT \#9: Assigned Feature Flags}},
+  author={{Lightning Network Developers}},
+  howpublished={\url{https://github.com/lightning/bolts/blob/master/09-features.md}},
+  note={Accessed 2026-10-07}
+}
+
+% ---------------------------------------------------------------- Lightning: topology and resilience
 @inproceedings{rohrer2019discharged,
-  title={Discharged Payment Channels: Quantifying the Lightning Network's Resilience to Topology-Based Attacks},
+  title={Discharged Payment Channels: Quantifying the {L}ightning {N}etwork's Resilience to Topology-Based Attacks},
   author={Rohrer, Elias and Malliaris, Julian and Tschorsch, Florian},
   booktitle={2019 IEEE European Symposium on Security and Privacy Workshops (EuroS\&PW)},
   pages={347--356},
   year={2019},
-  organization={IEEE}
+  publisher={IEEE},
+  doi={10.1109/EuroSPW.2019.00045}
 }
 
 @inproceedings{seres2020topological,
-  title={Topological Analysis of {B}itcoin's {L}ightning Network},
+  title={Topological Analysis of {B}itcoin's {L}ightning {N}etwork},
   author={Seres, Istv{\'a}n Andr{\'a}s and Guly{\'a}s, L{\'a}szl{\'o} and Nagy, D{\'a}niel A. and Burcsi, P{\'e}ter},
   booktitle={Mathematical Research for Blockchain Economy (MARBLE 2019)},
+  series={Springer Proceedings in Business and Economics},
   pages={1--12},
   year={2020},
-  publisher={Springer}
+  publisher={Springer, Cham},
+  doi={10.1007/978-3-030-37110-4_1}
 }
 
 @article{lin2020lightning,
@@ -36,74 +69,191 @@
   volume={22},
   number={8},
   pages={083022},
-  year={2020}
+  year={2020},
+  doi={10.1088/1367-2630/aba062}
 }
 
 @article{martinazzi2020evolving,
   title={The evolving topology of the {L}ightning {N}etwork: Centralization, efficiency, robustness, synchronization, and anonymity},
   author={Martinazzi, Stefano and Flori, Andrea},
-  journal={PLoS ONE},
+  journal={PLOS ONE},
   volume={15},
   number={1},
   pages={e0225966},
-  year={2020}
+  year={2020},
+  doi={10.1371/journal.pone.0225966}
 }
 
+@article{lee2020robustness,
+  title={On the robustness of {L}ightning {N}etwork in {B}itcoin},
+  author={Lee, Seungjin and Kim, Hyoungshick},
+  journal={Pervasive and Mobile Computing},
+  volume={61},
+  pages={101108},
+  year={2020},
+  doi={10.1016/j.pmcj.2019.101108}
+}
+
+@misc{waugh2020availability,
+  title={An empirical study of availability and reliability properties of the {B}itcoin {L}ightning {N}etwork},
+  author={Waugh, Finnegan and Holz, Ralph},
+  year={2020},
+  eprint={2006.14358},
+  archivePrefix={arXiv},
+  howpublished={arXiv:2006.14358}
+}
+
+@inproceedings{gogge2023convergence,
+  title={On the Routing Convergence Delay in the {L}ightning {N}etwork},
+  author={G{\"o}gge, Niklas and Rohrer, Elias and Tschorsch, Florian},
+  booktitle={Data Privacy Management, Cryptocurrencies and Blockchain Technology (DPM 2022, CBT 2022)},
+  series={Lecture Notes in Computer Science},
+  volume={13619},
+  pages={203--218},
+  year={2023},
+  publisher={Springer},
+  doi={10.1007/978-3-031-25734-6_13}
+}
+
+% ---------------------------------------------------------------- Lightning: client inference, on-chain
 @inproceedings{zabka2021node,
-  title={Node Classification and Geographical Analysis of the Lightning Cryptocurrency Network},
+  title={Node Classification and Geographical Analysis of the {L}ightning Cryptocurrency Network},
   author={Zabka, Philipp and F{\"o}rster, Klaus-Tycho and Schmid, Stefan and Decker, Christian},
-  booktitle={Proceedings of the 22nd International Conference on Distributed Computing and Networking (ICDCN)},
-  pages={106--115},
-  year={2021}
+  booktitle={Proceedings of the 22nd International Conference on Distributed Computing and Networking (ICDCN '21)},
+  pages={126--135},
+  year={2021},
+  publisher={ACM},
+  doi={10.1145/3427796.3427837}
+}
+
+@article{zabka2022empirical,
+  title={Empirical evaluation of nodes and channels of the {L}ightning {N}etwork},
+  author={Zabka, Philipp and F{\"o}rster, Klaus-Tycho and Schmid, Stefan and Decker, Christian},
+  journal={Pervasive and Mobile Computing},
+  volume={83},
+  pages={101584},
+  year={2022},
+  doi={10.1016/j.pmcj.2022.101584}
 }
 
 @inproceedings{espinasa2024decision,
-  title={Decision Tree Based Inference of Lightning Network Client Implementations},
+  title={Decision Tree Based Inference of {L}ightning {N}etwork Client Implementations},
   author={Espinasa-Vilarrasa, Pol and Sanvicente, S{\'\i}lvia and P{\'e}rez-Sol{\`a}, Cristina and Herrera-Joancomart{\'\i}, Jordi},
   booktitle={Modeling Decisions for Artificial Intelligence (MDAI 2024)},
-  pages={215--227},
+  series={Lecture Notes in Computer Science},
+  volume={14986},
+  pages={103--114},
   year={2024},
-  publisher={Springer}
+  publisher={Springer},
+  doi={10.1007/978-3-031-68208-7_9}
 }
 
-@article{pickhardt2021optimally,
-  title={Optimally Solving the Minimum Cost Flow Problem for Payment Channel Networks},
-  author={Pickhardt, Ren{\'e} and Richter, Stefan},
-  journal={arXiv preprint arXiv:2107.05322},
-  year={2021}
+@inproceedings{kappos2021empirical,
+  title={An Empirical Analysis of Privacy in the {L}ightning {N}etwork},
+  author={Kappos, George and Yousaf, Haaroon and Piotrowska, Ania and Kanjalkar, Sanket and Delgado-Segura, Sergi and Miller, Andrew and Meiklejohn, Sarah},
+  booktitle={Financial Cryptography and Data Security (FC 2021), Part I},
+  series={Lecture Notes in Computer Science},
+  volume={12674},
+  pages={167--186},
+  year={2021},
+  publisher={Springer},
+  doi={10.1007/978-3-662-64322-8_8}
 }
 
+@inproceedings{romiti2021crosslayer,
+  title={Cross-Layer Deanonymization Methods in the {L}ightning Protocol},
+  author={Romiti, Matteo and Victor, Friedhelm and Moreno-Sanchez, Pedro and Nordholt, Peter Sebastian and Haslhofer, Bernhard and Maffei, Matteo},
+  booktitle={Financial Cryptography and Data Security (FC 2021), Part I},
+  series={Lecture Notes in Computer Science},
+  volume={12674},
+  pages={187--204},
+  year={2021},
+  publisher={Springer},
+  doi={10.1007/978-3-662-64322-8_9}
+}
+
+@inproceedings{grotschla2025lifecycle,
+  title={On the Lifecycle of a {L}ightning {N}etwork Payment Channel},
+  author={Gr{\"o}tschla, Florian and Heimbach, Lioba and Richner, Severin and Wattenhofer, Roger},
+  booktitle={Financial Cryptography and Data Security. FC 2025 International Workshops, Part I},
+  series={Lecture Notes in Computer Science},
+  pages={1--16},
+  year={2025},
+  publisher={Springer},
+  doi={10.1007/978-3-032-00492-5_1}
+}
+
+% ---------------------------------------------------------------- Lightning: attacks
 @inproceedings{harris2020flood,
   title={Flood \& Loot: A Systemic Attack on the {L}ightning {N}etwork},
   author={Harris, Jona and Zohar, Aviv},
   booktitle={Proceedings of the 2nd ACM Conference on Advances in Financial Technologies (AFT '20)},
   pages={202--213},
-  year={2020}
+  year={2020},
+  publisher={ACM},
+  doi={10.1145/3419614.3423248}
 }
 
 @inproceedings{mizrahi2021congestion,
   title={Congestion Attacks in Payment Channel Networks},
   author={Mizrahi, Ayelet and Zohar, Aviv},
-  booktitle={Financial Cryptography and Data Security (FC 2021)},
-  pages={446--464},
+  booktitle={Financial Cryptography and Data Security (FC 2021), Part II},
+  series={Lecture Notes in Computer Science},
+  volume={12675},
+  pages={170--188},
   year={2021},
-  organization={Springer}
+  publisher={Springer},
+  doi={10.1007/978-3-662-64331-0_9}
 }
 
 @inproceedings{perez2020lockdown,
-  title={LockDown: Balance availability in the Lightning Network},
-  author={P{\'e}rez-Sol{\`a}, Cristina and Delgado-Segura, Sergi and Navarro-Arribas, Guillermo and Herrera-Joancomart{\'\i}, Jordi},
+  title={{LockDown}: Balance Availability Attack Against {L}ightning {N}etwork Channels},
+  author={P{\'e}rez-Sol{\`a}, Cristina and Ranchal-Pedrosa, Alejandro and Herrera-Joancomart{\'\i}, Jordi and Navarro-Arribas, Guillermo and Garcia-Alfaro, Joaquin},
   booktitle={Financial Cryptography and Data Security (FC 2020)},
-  pages={526--544},
+  series={Lecture Notes in Computer Science},
+  volume={12059},
+  pages={245--263},
   year={2020},
-  organization={Springer}
+  publisher={Springer},
+  doi={10.1007/978-3-030-51280-4_14}
 }
 
+@inproceedings{tikhomirov2020quantitative,
+  title={A Quantitative Analysis of Security, Anonymity and Scalability for the {L}ightning {N}etwork},
+  author={Tikhomirov, Sergei and Moreno-Sanchez, Pedro and Maffei, Matteo},
+  booktitle={2020 IEEE European Symposium on Security and Privacy Workshops (EuroS\&PW)},
+  pages={387--396},
+  year={2020},
+  publisher={IEEE},
+  doi={10.1109/EuroSPW51379.2020.00059}
+}
+
+@inproceedings{sguanci2023massexit,
+  title={Mass Exit Attacks on the {L}ightning {N}etwork},
+  author={Sguanci, Cosimo and Sidiropoulos, Anastasios},
+  booktitle={2023 IEEE International Conference on Blockchain and Cryptocurrency (ICBC)},
+  pages={1--3},
+  year={2023},
+  publisher={IEEE},
+  doi={10.1109/ICBC56567.2023.10174926}
+}
+
+@misc{pickhardt2021optimally,
+  title={Optimally Reliable \& Cheap Payment Flows on the {L}ightning {N}etwork},
+  author={Pickhardt, Ren{\'e} and Richter, Stefan},
+  year={2021},
+  eprint={2107.05322},
+  archivePrefix={arXiv},
+  howpublished={arXiv:2107.05322}
+}
+
+% ---------------------------------------------------------------- Monoculture and client diversity
 @techreport{geer2003cyberinsecurity,
   title={{CyberInsecurity}: The Cost of Monopoly. How the Dominance of {M}icrosoft's Products Poses a Risk to Security},
-  author={Geer, Dan and Bace, Rebecca and Gutmann, Peter and Metzger, Perry and Pfleeger, Charles P. and Quarterman, John S. and Schneier, Bruce},
-  institution={Computer \& Communications Industry Association},
-  year={2003}
+  author={Geer, Daniel and Bace, Rebecca and Gutmann, Peter and Metzger, Perry and Pfleeger, Charles P. and Quarterman, John S. and Schneier, Bruce},
+  institution={Computer \& Communications Industry Association (CCIA)},
+  year={2003},
+  month=sep
 }
 
 @article{birman2009monoculture,
@@ -113,61 +263,194 @@
   volume={7},
   number={1},
   pages={14--17},
-  year={2009}
+  year={2009},
+  doi={10.1109/MSP.2009.24}
 }
 
-@misc{bolt2,
-  title={{BOLT \#2: Peer Protocol for Channel Management}},
-  author={{Lightning Network Developers}},
-  year={2025},
-  howpublished={\url{https://github.com/lightning/bolts/blob/master/02-peer-protocol.md}}
+@article{ron2026clientdiversity,
+  title={Proving and Rewarding Client Diversity to Strengthen Resilience of Blockchain Networks},
+  author={Ron, Javier and He, Zheyuan and Monperrus, Martin},
+  journal={Distributed Ledger Technologies: Research and Practice},
+  volume={5},
+  number={4},
+  pages={1--22},
+  year={2026},
+  doi={10.1145/3773288}
 }
 
-@misc{bolt3,
-  title={{BOLT \#3: Bitcoin Transaction and Script Formats}},
-  author={{Lightning Network Developers}},
-  year={2025},
-  howpublished={\url{https://github.com/lightning/bolts/blob/master/03-transactions.md}}
+@inproceedings{yang2021fluffy,
+  title={Finding Consensus Bugs in {E}thereum via Multi-transaction Differential Fuzzing},
+  author={Yang, Youngseok and Kim, Taesoo and Chun, Byung-Gon},
+  booktitle={15th USENIX Symposium on Operating Systems Design and Implementation (OSDI 21)},
+  pages={349--365},
+  year={2021},
+  publisher={USENIX Association}
 }
 
-@misc{bolt7,
-  title={{BOLT \#7: P2P Node and Channel Discovery}},
-  author={{Lightning Network Developers}},
-  year={2025},
-  howpublished={\url{https://github.com/lightning/bolts/blob/master/07-routing-gossip.md}}
+@misc{bip50,
+  title={{BIP} 50: March 2013 Chain Fork Post-Mortem},
+  author={Andresen, Gavin},
+  year={2013},
+  howpublished={\url{https://github.com/bitcoin/bips/blob/master/bip-0050.mediawiki}}
 }
 
-@misc{bolt9,
-  title={{BOLT \#9: Assigned Feature Flags}},
-  author={{Lightning Network Developers}},
-  year={2025},
-  howpublished={\url{https://github.com/lightning/bolts/blob/master/09-features.md}}
+@misc{prysm2023finality,
+  title={Prysm mainnet postmortems: {E}thereum mainnet finality incident ({May} 11--12, 2023)},
+  author={{Prysm team}},
+  year={2023},
+  howpublished={\url{https://prysm.offchainlabs.com/docs/misc/mainnet-postmortems/}},
+  note={Accessed 2026-10-07}
 }
 
-@misc{lndadvisories2026,
-  title={{LND} Security Advisories, {A}ugust and {S}eptember 2026},
+% ---------------------------------------------------------------- 2026 events (primary sources)
+@misc{pratap2026clndos,
+  author={Pratap, Chandra},
+  title={Vulnerability Disclosure: Twin Memory Exhaustion {DoS} Vulnerabilities in {Core Lightning}},
+  year={2026},
+  month=jul,
+  howpublished={Delving Bitcoin, \url{https://delvingbitcoin.org/t/vulnerability-disclosure-twin-memory-exhaustion-dos-vulnerabilities-in-core-lightning/2731}},
+  note={Posted 2026-07-19. Accessed 2026-10-07}
+}
+
+@misc{btcpay2026advisory,
+  author={{BTCPay Server}},
+  title={Security Advisory: Update {BTCPay Server} to 2.4.2 Immediately},
+  year={2026},
+  month=aug,
+  howpublished={\url{https://blog.btcpayserver.org/security-advisory-btcpay-server-2-4-2/}},
+  note={Published 2026-08-07. Accessed 2026-10-07}
+}
+
+@misc{rubboli2026btcpay,
+  author={Rubboli, Enrico},
+  title={Hackers Drained {BTCPay}'s Hot Node},
+  year={2026},
+  month=aug,
+  howpublished={\url{https://enrico.rubbo.li/en/2026-08-the_merchant_node_was_the_wallet/}},
+  note={Essay, 2026-08-18. Accessed 2026-10-07}
+}
+
+@misc{lightninglabs2026aug,
   author={{Lightning Labs}},
+  title={Security advisories for {LND} disclosed 2026-08-11 (ten advisories: three high, seven low severity)},
   year={2026},
-  howpublished={\url{https://security.lightning.engineering} (TODO: exact advisory URLs)}
+  month=aug,
+  howpublished={\url{https://security.lightning.engineering/}},
+  note={Accessed 2026-10-07}
 }
 
-@misc{clnadvisories2026,
-  title={{Core Lightning} security notices and releases 25.09, 26.06.7, 26.06.8},
+@misc{lightninglabs2026sep,
+  author={{Lightning Labs}},
+  title={Security advisories disclosed 2026-09-21 (four for lnd, four for btcd)},
+  year={2026},
+  month=sep,
+  howpublished={\url{https://security.lightning.engineering/}},
+  note={Accessed 2026-10-07}
+}
+
+@misc{coreln2026offline,
+  author={{Core Lightning}},
+  title={Core Lightning has been triaging a high volume of {AI}-generated {CVE} reports \ldots{} Restart it with --offline},
+  year={2026},
+  month=aug,
+  howpublished={Post on X (@Core\_LN), \url{https://x.com/Core_LN/status/2092755509510283423}},
+  note={Posted 2026-08-26 23:26 UTC. Accessed 2026-10-07}
+}
+
+@misc{cln26067,
   author={{Core Lightning developers}},
+  title={Core Lightning v26.06.7 Release Notes},
   year={2026},
-  howpublished={TODO: release notes / mailing-list URLs}
+  month=aug,
+  howpublished={\url{https://github.com/ElementsProject/lightning/releases/tag/v26.06.7}},
+  note={Binaries 2026-08-28; source published 2026-09-11. Accessed 2026-10-07}
 }
 
-@misc{eclairldk2026,
-  title={{Eclair} 0.14.3 and {LDK} 0.2.6 release notes},
-  author={{ACINQ} and {LDK developers}},
+@misc{cln26068,
+  author={{Core Lightning developers}},
+  title={Core Lightning v26.06.8 Release Notes},
   year={2026},
-  howpublished={TODO: release-note URLs}
+  month=sep,
+  howpublished={\url{https://github.com/ElementsProject/lightning/releases/tag/v26.06.8}},
+  note={Released 2026-09-22. Accessed 2026-10-07}
 }
 
-@misc{btcpay2026,
-  title={{BTCPay Server} $<$ 2.4.2 macaroon disclosure incident write-up},
-  author={Rubboli},
+@misc{ldk026,
+  author={{Lightning Dev Kit developers}},
+  title={{LDK} v0.2.6 Release Notes},
   year={2026},
-  howpublished={TODO: URL; author name to confirm}
+  month=sep,
+  howpublished={\url{https://github.com/lightningdevkit/rust-lightning/releases/tag/v0.2.6}},
+  note={Released 2026-09-09. Accessed 2026-10-07}
+}
+
+@misc{eclair0143,
+  author={{ACINQ}},
+  title={Eclair v0.14.3 Release Notes},
+  year={2026},
+  month=sep,
+  howpublished={\url{https://github.com/ACINQ/eclair/releases/tag/v0.14.3}},
+  note={Released 2026-09-14. Accessed 2026-10-07}
+}
+
+@misc{coreln2026attack,
+  author={{Core Lightning}},
+  title={Urgent security update: If you're running version 26.06.7 or earlier, please upgrade \ldots},
+  year={2026},
+  month=oct,
+  howpublished={Post on X (@Core\_LN), \url{https://x.com/Core_LN/status/2105835841847242976}},
+  note={Posted 2026-10-02 01:42 UTC. Accessed 2026-10-07}
+}
+
+@misc{aeo2026doswave,
+  author={{1AEO}},
+  title={The {Tor} Network Is Under a Circuit-Building {DoS} Wave ({June--July} 2026)},
+  year={2026},
+  month=jul,
+  howpublished={\url{https://1aeo.com/blog/tor-network-dos-wave-june-2026.html}},
+  note={Published 2026-07-13. Accessed 2026-10-07}
+}
+
+@misc{aeo2026hsdir,
+  author={{1AEO}},
+  title={The Onion-Service Directory Lost Over a Third of Its Capacity --- and Has Only Partly Got It Back},
+  year={2026},
+  month=jul,
+  howpublished={\url{https://1aeo.com/blog/onion-service-directory-capacity-june-2026.html}},
+  note={Published 2026-07-29. Accessed 2026-10-07}
+}
+
+@misc{torcollector2026,
+  author={{The Tor Project}},
+  title={{CollecTor}: relay network-status consensuses, {July} 2026},
+  year={2026},
+  howpublished={\url{https://collector.torproject.org/archive/relay-descriptors/consensuses/}},
+  note={Accessed 2026-10-07}
+}
+
+@misc{kraken2026node,
+  author={{Kraken}},
+  title={Connecting to {Kraken}'s {Lightning} node},
+  year={2026},
+  month=aug,
+  howpublished={\url{https://support.kraken.com/articles/9829766858260-connecting-to-kraken-s-lightning-node}},
+  note={Reports a node migration on 2026-08-12. Accessed 2026-10-07}
+}
+
+@misc{bitcoinworld2026wos,
+  author={{Bitcoinworld}},
+  title={Wallet of Satoshi transitions to self-custody Bitcoin wallet, phasing out custodial service},
+  year={2026},
+  month=aug,
+  howpublished={\url{https://www.bitget.com/news/detail/12560605670248}},
+  note={Published 2026-08-13. Accessed 2026-10-07}
+}
+
+@misc{snoffline2026,
+  author={{Stacker News user}},
+  title={Take your {CLN} node offline},
+  year={2026},
+  month=aug,
+  howpublished={\url{https://stacker.news/items/1555439}},
+  note={Repost of a Core Lightning Discord announcement, 2026-08-26 15:19 UTC. Accessed 2026-10-07}
 }

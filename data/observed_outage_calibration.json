@@ -1,0 +1,20 @@
+{
+  "event": "2026-08-26",
+  "peak_day": "2026-08-27",
+  "client_rules": "v3-2026-10-06",
+  "label_ref_date": "20260801",
+  "dark_definition": "share of directions toward node disabled by peers >= 0.8, or node absent from gossip",
+  "cln_nodes_at_risk": 624,
+  "cln_nodes_went_dark": 137,
+  "p_hat_nodes": 0.2196,
+  "p_hat_capacity": 0.33,
+  "peak_excess_disabled_pct_points": 26.3,
+  "T_hat_median_days_dark_returners": 3.0,
+  "T_hat_p25_p75_days": [
+    3.0,
+    7.0
+  ],
+  "share_never_returned_by_last_snapshot": 0.219,
+  "share_dark_on_last_snapshot": 0.3212,
+  "last_snapshot": "2026-10-04"
+}

@@ -32,7 +32,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from config import CLIENT_PALETTE, DATA_DIR, FIGURES_DIR, REPO_ROOT, TABLES_DIR  # noqa: E402
+from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, REPO_ROOT, TABLES_DIR  # noqa: E402
 
 sys.path.insert(0, str(REPO_ROOT.parent.parent / "python" / "automation"))
 from shared.lightning import incident_metrics as im  # noqa: E402
@@ -55,6 +55,8 @@ def monthly_dates() -> list:
     """First available gossip date of each month."""
     first = {}
     for d in im.gossip_dates():
+        if d > DATA_CUTOFF:
+            break
         first.setdefault(d[:6], d)
     return [first[k] for k in sorted(first)]
 
@@ -152,7 +154,7 @@ def table_census(date: str, snap: pd.DataFrame, sh: dict):
             f"{v['cap_btc']:,.0f} & {v['cap_share']:.1f} ({v['cap_share_high']:.1f}) & "
             f"{(s['capacity'].mean() / 1e8 if len(s) else 0):.2f} & {gini(s['capacity'].to_numpy()):.2f} \\\\")
     tot = snap["capacity"].sum() / 1e8
-    tex = r"""\begin{table}[t]
+    tex = r"""\begin{table*}[t]
 \centering
 \caption{Client implementations of public Lightning nodes with at least one channel, gossip snapshot """ + \
         f"{date[:4]}-{date[4:6]}-{date[6:]}" + r""" (rules """ + RULES_VERSION.replace("_", r"\_") + r"""). Shares in \%; in parentheses, the share
@@ -167,7 +169,7 @@ Client & Nodes & Node share & Endpoints & Capacity (BTC) & Cap.\ share & Mean (B
 """ + "\n".join(rows) + r"""
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 """
     out = TABLES_DIR / "table1_client_distribution.tex"
     out.write_text(tex, encoding="utf-8")
@@ -189,7 +191,7 @@ def main():
                  d, len(snap), sh["LND"]["node_share"], sh["LND"]["cap_share"], sh["Unknown"]["node_share"])
     series = pd.DataFrame(recs)
     fig_share(series)
-    latest = im.gossip_dates()[-1]
+    latest = max(d for d in im.gossip_dates() if d <= DATA_CUTOFF)
     snap_l = snapshot(latest)
     table_census(latest, snap_l, shares(snap_l))
     out = DATA_DIR / "client_census_monthly.json"

@@ -23,6 +23,10 @@ NODE_PROFILE_PARQUET = EXTERNAL_DATA_DIR / "node_profile.parquet"
 NODE_TYPES_JSON = EXTERNAL_DATA_DIR / "ln_node_types.json"
 GRAPH_JSON = EXTERNAL_DATA_DIR / "graph" / "gall.json"
 
+# Data cutoff: the last gossip snapshot used in the paper. The data lake keeps growing; every stage truncates
+# its inputs here so that reruns reproduce the published numbers.
+DATA_CUTOFF = "20261004"
+
 # Simulation Hyperparameters
 RANDOM_SEED = 42
 MONTE_CARLO_ITERATIONS = 50

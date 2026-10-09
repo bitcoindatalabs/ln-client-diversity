@@ -1,0 +1,268 @@
+{
+ "rules": "v3-2026-10-06",
+ "latest": "20261004",
+ "anchors": {
+  "LND": 664,
+  "CLN": 116,
+  "Eclair": 9,
+  "LDK": 6
+ },
+ "gt1": [
+  {
+   "client": "LND",
+   "n": 664,
+   "precision": 0.9952153110047847,
+   "recall": 0.9397590361445783,
+   "unknown": 35
+  },
+  {
+   "client": "CLN",
+   "n": 116,
+   "precision": 0.9736842105263158,
+   "recall": 0.9568965517241379,
+   "unknown": 2
+  },
+  {
+   "client": "Eclair",
+   "n": 9,
+   "precision": 0.625,
+   "recall": 0.5555555555555556,
+   "unknown": 3
+  },
+  {
+   "client": "LDK",
+   "n": 6,
+   "precision": 1.0,
+   "recall": 1.0,
+   "unknown": 0
+  }
+ ],
+ "tree_baseline": {
+  "method": "kNN (Jaccard, k=3)",
+  "n": 761,
+  "folds": 5,
+  "repeats": 5,
+  "tree_macro_f1": 0.9215586336288162,
+  "rules_macro_f1": 0.9314861206718387,
+  "tree_acc": 0.9934296977660972,
+  "rules_acc": 0.9763469119579501
+ },
+ "gt2_tiers": [
+  {
+   "tier": "CLN set + keysend",
+   "client": "CLN",
+   "n": 471,
+   "lnd_wallet": 0.01910828025477707,
+   "agree": 0.9808917197452229
+  },
+  {
+   "tier": "CLTV default only",
+   "client": "CLN",
+   "n": 38,
+   "lnd_wallet": 0.05263157894736842,
+   "agree": 0.9473684210526316
+  },
+  {
+   "tier": "CLTV default only (no features)",
+   "client": "CLN",
+   "n": 18,
+   "lnd_wallet": 0.16666666666666666,
+   "agree": 0.8333333333333334
+  },
+  {
+   "tier": "Eclair bits (37, 29+61)",
+   "client": "Eclair",
+   "n": 10,
+   "lnd_wallet": 0.1,
+   "agree": 0.9
+  },
+  {
+   "tier": "CLN-like set, no keysend \u2192 Eclair",
+   "client": "Eclair",
+   "n": 2,
+   "lnd_wallet": 0.0,
+   "agree": 1.0
+  },
+  {
+   "tier": "CLTV default only",
+   "client": "Eclair",
+   "n": 2,
+   "lnd_wallet": 0.0,
+   "agree": 1.0
+  },
+  {
+   "tier": "operator",
+   "client": "Eclair",
+   "n": 1,
+   "lnd_wallet": 0.0,
+   "agree": 1.0
+  },
+  {
+   "tier": "CLTV default only (no features)",
+   "client": "LDK",
+   "n": 13,
+   "lnd_wallet": 0.0,
+   "agree": 1.0
+  },
+  {
+   "tier": "LDK-like set",
+   "client": "LDK",
+   "n": 1,
+   "lnd_wallet": 0.0,
+   "agree": 1.0
+  },
+  {
+   "tier": "LND-only bits (2023/31)",
+   "client": "LND",
+   "n": 3199,
+   "lnd_wallet": 0.9924976555173491,
+   "agree": 0.9924976555173491
+  },
+  {
+   "tier": "CLTV default only",
+   "client": "LND",
+   "n": 7,
+   "lnd_wallet": 1.0,
+   "agree": 1.0
+  },
+  {
+   "tier": "LND default colour/alias",
+   "client": "LND",
+   "n": 4,
+   "lnd_wallet": 0.75,
+   "agree": 0.75
+  },
+  {
+   "tier": "CLTV default only (no features)",
+   "client": "LND",
+   "n": 3,
+   "lnd_wallet": 0.6666666666666666,
+   "agree": 0.6666666666666666
+  },
+  {
+   "tier": "LND default colour/alias (no features)",
+   "client": "LND",
+   "n": 1,
+   "lnd_wallet": 1.0,
+   "agree": 1.0
+  },
+  {
+   "tier": "none",
+   "client": "Unknown",
+   "n": 266,
+   "lnd_wallet": 0.8458646616541353,
+   "agree": NaN
+  }
+ ],
+ "share_bounds": [
+  {
+   "client": "LND",
+   "node_share": 84.00891771382246,
+   "node_share_high": 77.48277259829753,
+   "cap_share": 84.39243374776309,
+   "cap_share_high": 84.30126503038616
+  },
+  {
+   "client": "CLN",
+   "node_share": 8.45156059991893,
+   "node_share_high": 7.184839886501824,
+   "cap_share": 3.733099271596611,
+   "cap_share_high": 3.653182310793993
+  },
+  {
+   "client": "Eclair",
+   "node_share": 0.4357519254154844,
+   "node_share_high": 0.12160518848804215,
+   "cap_share": 6.120295117499839,
+   "cap_share_high": 5.559623203627795
+  },
+  {
+   "client": "LDK",
+   "node_share": 1.4997973246858534,
+   "node_share_high": 1.064045399270369,
+   "cap_share": 5.714168567906197,
+   "cap_share_high": 5.701413832656265
+  },
+  {
+   "client": "Unknown",
+   "node_share": 5.603972436157276,
+   "node_share_high": 0.0,
+   "cap_share": 0.04000329523426611,
+   "cap_share_high": 0.0
+  }
+ ],
+ "gt1_misclassified": [
+  {
+   "alias": "TallyPay-CLN",
+   "truth": "CLN",
+   "pred": "LND",
+   "confidence": "low",
+   "tier": "CLTV default only",
+   "date": "20230508"
+  },
+  {
+   "alias": "Forever Laura | CLN",
+   "truth": "CLN",
+   "pred": "LND",
+   "confidence": "low",
+   "tier": "CLTV default only",
+   "date": "20250207"
+  },
+  {
+   "alias": "DPSDC.cln",
+   "truth": "CLN",
+   "pred": "LND",
+   "confidence": "medium",
+   "tier": "LND default colour/alias",
+   "date": "20230508"
+  },
+  {
+   "alias": "eclair-low-fee",
+   "truth": "Eclair",
+   "pred": "CLN",
+   "confidence": "high",
+   "tier": "CLN set + keysend",
+   "date": "20240901"
+  },
+  {
+   "alias": "bitcoinboi nodl [LND]",
+   "truth": "LND",
+   "pred": "Eclair",
+   "confidence": "low",
+   "tier": "CLTV default only",
+   "date": "20240901"
+  },
+  {
+   "alias": "nodl [LND]",
+   "truth": "LND",
+   "pred": "Eclair",
+   "confidence": "low",
+   "tier": "CLTV default only",
+   "date": "20261001"
+  },
+  {
+   "alias": "Cypher Core [LND]",
+   "truth": "LND",
+   "pred": "Eclair",
+   "confidence": "low",
+   "tier": "CLTV default only (no features)",
+   "date": "20261001"
+  },
+  {
+   "alias": "Sally Acorn (Switching to LND)",
+   "truth": "LND",
+   "pred": "CLN",
+   "confidence": "high",
+   "tier": "CLN set + keysend",
+   "date": "20241001"
+  },
+  {
+   "alias": "btcpay-lnd",
+   "truth": "LND",
+   "pred": "CLN",
+   "confidence": "high",
+   "tier": "CLN set + keysend",
+   "date": "20261001"
+  }
+ ]
+}

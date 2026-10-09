@@ -47,7 +47,7 @@ import pandas as pd  # noqa: E402
 from scipy.sparse import coo_matrix  # noqa: E402
 from scipy.sparse.csgraph import connected_components  # noqa: E402
 
-from config import CLIENT_PALETTE, DATA_DIR, FIGURES_DIR, RANDOM_SEED, REPO_ROOT, TABLES_DIR  # noqa: E402
+from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, REPO_ROOT, TABLES_DIR  # noqa: E402
 
 sys.path.insert(0, str(REPO_ROOT.parent.parent / "python" / "automation"))
 from shared.lightning import incident_metrics as im  # noqa: E402
@@ -254,12 +254,13 @@ def table_scenarios(rows: list, a: int = 100_000):
                 [("--" if np.isnan(r.get(f"R_{c}@{a}", np.nan)) else f"{100 * r[f'R_{c}@{a}']:.1f}") for c in ["CLN", "Eclair", "LDK"]] + \
                 [f"{100 * r[f'lcc_cap@{a}']:.1f}"]
         lines.append(" & ".join(cells) + r" \\")
-    tex = r"""\begin{table}[t]
+    g = rows[0][1].get("graph_date", "")
+    tex = r"""\begin{table*}[t]
 \centering
-\caption{Failure scenarios on the """ + f"{rows[0][1].get('graph_date', '')}" + r""" public graph (channels enabled in both
+\caption{Failure scenarios on the """ + f"{g[:4]}-{g[4:6]}-{g[6:]}" + r""" public graph (channels enabled in both
 directions), payment size """ + f"{a:,}" + r""" sats, optimistic liquidity. $R_{\mathrm{all}}$: \% of pre-failure node pairs still connected (pairs with a failed
 node count as lost); $R$: \% of online node pairs connected by a path of
-channels that can carry the payment; $R_c$: same for pairs of client $c$; LCC cap.: \% of usable capacity in the largest
+channels that can carry the payment; $R_c$: same as $R$, for pairs of surviving nodes of client $c$; LCC cap.: \% of usable capacity in the largest
 component. Random scenarios: mean of the Monte Carlo runs.}
 \label{tab:scenarios}
 \small
@@ -270,7 +271,7 @@ Scenario & Failed & Cap.\ (\%) & $R_{\mathrm{all}}$ & $R$ & $R_{\mathrm{CLN}}$ &
 """ + "\n".join(lines) + r"""
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 """
     out = TABLES_DIR / "table6_scenarios.tex"
     out.write_text(tex, encoding="utf-8")

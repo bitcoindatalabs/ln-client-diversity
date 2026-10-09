@@ -31,7 +31,7 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from config import CLIENT_PALETTE, DATA_DIR, FIGURES_DIR, RANDOM_SEED, REPO_ROOT, TABLES_DIR  # noqa: E402
+from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, REPO_ROOT, TABLES_DIR  # noqa: E402
 
 sys.path.insert(0, str(REPO_ROOT.parent.parent / "python" / "automation"))
 from shared.lightning import incident_metrics as im  # noqa: E402
@@ -147,8 +147,8 @@ def fig_outage(daily: pd.DataFrame):
         ax.xaxis.set_major_locator(matplotlib.dates.MonthLocator())
         ax.xaxis.set_major_formatter(matplotlib.dates.DateFormatter("%b"))
     top = axes[0].get_ylim()[1]
-    axes[0].annotate('CLN: "take nodes offline"', (pd.Timestamp(EVENT), top * 0.97), xytext=(-4, 0),
-                     textcoords="offset points", ha="right", va="top", fontsize=7, color="#444444")
+    axes[0].annotate("CLN: upgrade\nor --offline", (pd.Timestamp(EVENT), top * 0.97), xytext=(6, 0),
+                     textcoords="offset points", ha="left", va="top", fontsize=7, color="#444444")
     handles = [matplotlib.lines.Line2D([], [], color=CLIENT_PALETTE[c], lw=1.4) for c in CLIENTS]
     fig.legend(handles, CLIENTS, loc="lower center", ncol=4, frameon=False, fontsize=7.5, bbox_to_anchor=(0.5, -0.02))
     fig.tight_layout(rect=(0, 0.06, 0.98, 1))
@@ -222,7 +222,7 @@ def table_compliance(comp: pd.DataFrame, rates: pd.DataFrame):
                      for r in rates.itertuples())
     tex = r"""\begin{table}[t]
 \centering
-\caption{(a) CLN nodes that went dark after the shutdown call (not dark on 2026-08-25, dark on 2026-08-28), by
+\caption{(a) CLN nodes that went dark after the shutdown call (not dark on 2026-08-25, dark on 2026-08-27), by
 pre-incident node capacity quintile. (b) Organic force closes per 1{,}000 open public channels per day involving
 each cohort, 2026-07-01--08-25 (baseline) vs.\ 2026-08-26--09-08 (window); mass-close events (one node in
 $\geq """ + str(im.MASS_CLOSE_MIN) + r"""$ force closes in a UTC day) excluded.}
@@ -267,21 +267,22 @@ def robustness(daily: pd.DataFrame, bynet: pd.DataFrame):
         pk = w.loc[PEAK, "CLN"]
         pt, lo, hi, _, _ = block_bootstrap_did(df, m)
         rows.append(f"{name} & {b.mean():.1f} & {pk:.1f} & {(pk - b.mean()) / b.std():.1f} & {pt:+.1f} [{lo:+.1f}, {hi:+.1f}] \\\\")
-    tex = r"""\begin{table}[t]
+    ref = im.REF_DATE
+    tex = r"""\begin{table*}[t]
 \centering
 \caption{Robustness of the CLN outage effect. Baseline and peak as in Table~\ref{tab:outage-effect};
 DiD vs.\ LND targets in the same subset, 95\% moving-block bootstrap CI. Target transport from node
-announcements on """ + im.REF_DATE + r""".}
+announcements on """ + f"{ref[:4]}-{ref[4:6]}-{ref[6:]}" + r""".}
 \label{tab:outage-robustness}
 \small
 \begin{tabular}{lrrrr}
 \toprule
-Variant & Baseline (\%) & Peak (\%) & $z$ & DiD (pp) \
+Variant & Baseline (\%) & Peak (\%) & $z$ & DiD (pp) \\
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
 """
     out = TABLES_DIR / "table5_outage_robustness.tex"
     out.write_text(tex, encoding="utf-8")
@@ -325,7 +326,7 @@ def main():
         d.mkdir(parents=True, exist_ok=True)
 
     labels = im.node_labels(refresh=args.refresh_labels)
-    dates = [d for d in im.gossip_dates() if d >= "20260501"]   # outage analysis window; census uses 2023+
+    dates = [d for d in im.gossip_dates() if "20260501" <= d <= DATA_CUTOFF]   # outage analysis window; census uses 2023+
     log.info("Client rules %s; %d gossip days %s–%s", RULES_VERSION, len(dates), dates[0], dates[-1])
 
     daily = im.outage_daily(labels, dates)
@@ -336,6 +337,7 @@ def main():
     rec = im.recovery_curve(panel, event=EVENT, horizon_days=60)
 
     closes = im.load_closes(labels)
+    closes = closes[closes["date"] <= pd.Timestamp(DATA_CUTOFF)]
     cd = im.closes_daily(closes)
     exposure = im.channels_by_cohort(labels, dates)
     rates = im.force_close_rates(cd, exposure, baseline=("2026-07-01", "2026-08-25"), window=("2026-08-26", "2026-09-08"))

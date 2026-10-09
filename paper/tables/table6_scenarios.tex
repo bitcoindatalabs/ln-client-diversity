@@ -1,9 +1,9 @@
-\begin{table}[t]
+\begin{table*}[t]
 \centering
-\caption{Failure scenarios on the 20260825 public graph (channels enabled in both
+\caption{Failure scenarios on the 2026-08-25 public graph (channels enabled in both
 directions), payment size 100,000 sats, optimistic liquidity. $R_{\mathrm{all}}$: \% of pre-failure node pairs still connected (pairs with a failed
 node count as lost); $R$: \% of online node pairs connected by a path of
-channels that can carry the payment; $R_c$: same for pairs of client $c$; LCC cap.: \% of usable capacity in the largest
+channels that can carry the payment; $R_c$: same as $R$, for pairs of surviving nodes of client $c$; LCC cap.: \% of usable capacity in the largest
 component. Random scenarios: mean of the Monte Carlo runs.}
 \label{tab:scenarios}
 \small
@@ -24,4 +24,4 @@ All Eclair nodes fail & 12 & 5.8 & 63.5 & 63.9 & 59.1 & -- & 69.0 & 88.4 \\
 All LDK nodes fail & 95 & 4.8 & 76.2 & 79.6 & 78.9 & 83.3 & -- & 91.1 \\
 \bottomrule
 \end{tabular}
-\end{table}
+\end{table*}
