@@ -126,7 +126,7 @@ Pathfinding: Pickhardt & Richter 2021; client documentation for LND / CLN / LDK 
 
 ## 8. Code layout
 ```
-papers/01-ln-client-monoculture-fragility/
+ln-client-diversity/
   src/01_client_census.py       C1: shares 2023–2026 (uses shared client_fingerprint)
   src/02_classifier_eval.py     RQ2: anchors, P/R, bounds, decision-tree baseline, on-chain cross-check
   src/03_observed_outage.py     C2: D_c(t), compliance, recovery, DiD

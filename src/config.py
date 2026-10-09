@@ -7,7 +7,7 @@ from pathlib import Path
 # Base Paths
 SRC_DIR = Path(__file__).resolve().parent
 PAPER_ROOT = SRC_DIR.parent
-REPO_ROOT = PAPER_ROOT.parent.parent
+REPO_ROOT = PAPER_ROOT  # this repo; it sits in dev/github/, next to lightning-data/
 
 # Output Paths (Saved directly into paper LaTeX directory)
 PAPER_DIR = PAPER_ROOT / "paper"
@@ -15,8 +15,8 @@ FIGURES_DIR = PAPER_DIR / "figures"
 TABLES_DIR = PAPER_DIR / "tables"
 DATA_DIR = PAPER_ROOT / "data"
 
-# Local Data Connectors (pointing to ../../lightning-data/data)
-EXTERNAL_DATA_DIR = REPO_ROOT / "lightning-data" / "data"
+# Local Data Connectors (pointing to ../lightning-data/data; used only by src/archive_v1/)
+EXTERNAL_DATA_DIR = REPO_ROOT.parent / "lightning-data" / "data"
 CHANNEL_PROFILE_PARQUET = EXTERNAL_DATA_DIR / "channel_profile.parquet"
 NODE_FEATURE_PARQUET = EXTERNAL_DATA_DIR / "node_feature.parquet"
 NODE_PROFILE_PARQUET = EXTERNAL_DATA_DIR / "node_profile.parquet"

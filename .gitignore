@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Raw and intermediate data stay in the local data lake; only the small aggregate JSONs behind the
+# figures, tables and in-text numbers are released
+data/*
+!data/.gitkeep
+!data/*.json
+notebooks/*
+!notebooks/.gitkeep
+*.parquet
+*.csv
+
+# arXiv bundle (rebuilt by scripts/package_arxiv.py)
+dist/
+
+# LaTeX build files (the final paper/main.pdf is kept)
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

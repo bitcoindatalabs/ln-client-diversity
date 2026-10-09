@@ -1,4 +1,6 @@
-# Paper 01: Lightning Network Client Diversity and the 2026 CLN Shutdown
+# Lightning Network Client Diversity and the 2026 CLN Shutdown
+
+Code, aggregate data and LaTeX source for the paper below, by Saurabh Kumar (Bitcoin Data Labs).
 
 ## Title
 **Does Client Diversity Protect the Lightning Network? Evidence from the 2026 Core Lightning Shutdown**
@@ -51,6 +53,11 @@ cd paper
 `build.ps1` finds MiKTeX even when it is not on PATH. For edit-and-preview, VS Code's LaTeX Workshop
 extension with `-synctex=1` gives click-to-jump between source and PDF.
 
+### 4. Package for arXiv
+```bash
+python scripts/package_arxiv.py   # -> dist/ln-client-diversity-arxiv.tar.gz (build the paper first)
+```
+
 ---
 
 ## 📂 Repository Structure
@@ -59,3 +66,4 @@ extension with `-synctex=1` gives click-to-jump between source and PDF.
 * `src/`: the five pipeline stages; `src/archive_v1/` holds the superseded v1 scripts.
 * `data/`: aggregate JSON outputs (committed); raw data stay in the data lake.
 * `notebooks/`: scratch EDA notebooks (ignored by git).
+* `scripts/package_arxiv.py`: builds the arXiv upload bundle.
