@@ -3,10 +3,9 @@ Stage 3 (C2 / RQ3): The observed common-mode outage — Core Lightning, 2026-08-
 
 On 2026-08-26 CLN maintainers asked operators to take nodes offline. A node that goes offline cannot
 announce anything, so the outage is measured on the *peer* side: the share of channel directions
-toward a cohort's nodes that peers mark `disabled` in gossip (D_c(t), SPECIFICATION.md §4.2).
+toward a cohort's nodes that peers mark `disabled` in gossip (D_c(t)).
 
-Metrics come from python/automation/shared/lightning/incident_metrics.py, the same module that powers
-the TABConf deep dive, so the paper and the public report cannot drift apart.
+Metrics come from src/lnmetrics/incident_metrics.py, so every stage uses one definition.
 
 Outputs
   paper/figures/fig3_observed_outage.pdf       D_c(t), count- and capacity-weighted, Jul–Oct 2026
@@ -23,7 +22,6 @@ Usage:  python src/03_observed_outage.py [--refresh-labels]
 import argparse
 import json
 import logging
-import sys
 
 import matplotlib
 matplotlib.use("Agg")
@@ -31,11 +29,10 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, REPO_ROOT, TABLES_DIR  # noqa: E402
+from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, TABLES_DIR  # noqa: E402
 
-sys.path.insert(0, str(REPO_ROOT.parent.parent / "python" / "automation"))
-from shared.lightning import incident_metrics as im  # noqa: E402
-from shared.lightning.client_fingerprint import RULES_VERSION  # noqa: E402
+from lnmetrics import incident_metrics as im  # noqa: E402
+from lnmetrics.client_fingerprint import RULES_VERSION  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 log = logging.getLogger(__name__)

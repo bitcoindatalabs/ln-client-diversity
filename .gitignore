@@ -3,13 +3,15 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 
-# Raw and intermediate data stay in the local data lake; only the small aggregate JSONs behind the
-# figures, tables and in-text numbers are released
+# Working notes and superseded code (local only)
+SPECIFICATION.md
+src/archive_v1/
+notebooks/
+
+# Raw and intermediate data stay local; only the small aggregate JSONs behind the figures, tables and
+# in-text numbers are released
 data/*
-!data/.gitkeep
 !data/*.json
-notebooks/*
-!notebooks/.gitkeep
 *.parquet
 *.csv
 

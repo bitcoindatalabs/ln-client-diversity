@@ -26,7 +26,6 @@ Usage:  python src/05_supporting_analyses.py
 import importlib.util
 import json
 import logging
-import sys
 
 import matplotlib
 matplotlib.use("Agg")
@@ -34,10 +33,9 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from config import DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, REPO_ROOT, SRC_DIR  # noqa: E402
+from config import DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, SRC_DIR  # noqa: E402
 
-sys.path.insert(0, str(REPO_ROOT.parent.parent / "python" / "automation"))
-from shared.lightning import incident_metrics as im  # noqa: E402
+from lnmetrics import incident_metrics as im  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location("resilience", SRC_DIR / "04_resilience.py")
 res = importlib.util.module_from_spec(_spec)

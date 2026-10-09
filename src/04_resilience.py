@@ -37,7 +37,6 @@ import argparse
 import json
 import warnings
 import logging
-import sys
 
 import matplotlib
 matplotlib.use("Agg")
@@ -47,11 +46,10 @@ import pandas as pd  # noqa: E402
 from scipy.sparse import coo_matrix  # noqa: E402
 from scipy.sparse.csgraph import connected_components  # noqa: E402
 
-from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, REPO_ROOT, TABLES_DIR  # noqa: E402
+from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, TABLES_DIR  # noqa: E402
 
-sys.path.insert(0, str(REPO_ROOT.parent.parent / "python" / "automation"))
-from shared.lightning import incident_metrics as im  # noqa: E402
-from shared.lightning.client_fingerprint import RULES_VERSION  # noqa: E402
+from lnmetrics import incident_metrics as im  # noqa: E402
+from lnmetrics.client_fingerprint import RULES_VERSION  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logging.getLogger("fontTools").setLevel(logging.WARNING)

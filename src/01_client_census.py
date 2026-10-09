@@ -2,7 +2,7 @@
 Stage 1 (C1 / RQ1): Client concentration of the public Lightning Network, May 2023 – Oct 2026.
 
 For the first gossip snapshot of every month, each public node with at least one channel is labeled with
-shared/lightning/client_fingerprint.py (feature bits + modal CLTV; rules version recorded) and we report
+src/lnmetrics/client_fingerprint.py (feature bits + modal CLTV; rules version recorded) and we report
 client shares by node count, by channel endpoints and by node capacity (each channel counts for both
 endpoints).
 
@@ -24,7 +24,6 @@ Usage:  python src/01_client_census.py
 
 import json
 import logging
-import sys
 
 import matplotlib
 matplotlib.use("Agg")
@@ -32,11 +31,10 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, REPO_ROOT, TABLES_DIR  # noqa: E402
+from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, TABLES_DIR  # noqa: E402
 
-sys.path.insert(0, str(REPO_ROOT.parent.parent / "python" / "automation"))
-from shared.lightning import incident_metrics as im  # noqa: E402
-from shared.lightning.client_fingerprint import RULES_VERSION, classify_node  # noqa: E402
+from lnmetrics import incident_metrics as im  # noqa: E402
+from lnmetrics.client_fingerprint import RULES_VERSION, classify_node  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logging.getLogger("fontTools").setLevel(logging.WARNING)

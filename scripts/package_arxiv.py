@@ -18,7 +18,7 @@ def main():
     repo_root = Path(__file__).resolve().parent.parent
     latex_dir = repo_root / "paper"
     if not (latex_dir / "main.bbl").exists():
-        print("Error: paper/main.bbl not found; build the paper first (paper\build).", file=sys.stderr)
+        print("Error: paper/main.bbl not found; build the paper first (paper/build).", file=sys.stderr)
         sys.exit(1)
 
     dist_dir = repo_root / "dist"

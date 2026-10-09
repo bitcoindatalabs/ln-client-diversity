@@ -1,19 +1,19 @@
 """
 Stage 2 (RQ2): How accurate is gossip-based client inference?
 
-Two independent ground truths, neither used by the rules (shared/lightning/client_fingerprint.py):
+Two independent ground truths, neither used by the rules (src/lnmetrics/client_fingerprint.py):
 
   GT1  self-identifying aliases ("…[LND]", "…-CLN", "c-lightning", "eclair", "ldk-node", …), pooled over all
        monthly gossip snapshots (quality "ok"); each node evaluated on the latest snapshot where it has a channel
        and its alias still self-identifies. LND's default alias (pubkey prefix) is excluded — the rules use it.
-  GT2  on-chain wallet family of the node's channel funding txs (shared/lightning/onchain_fingerprint.py):
+  GT2  on-chain wallet family of the node's channel funding txs (src/lnmetrics/onchain_fingerprint.py):
        LND btcwallet vs Core/BDK-style. Measures the wallet, not the daemon, so it grades LND vs non-LND only.
        High-confidence labels are graded with held-out (5-fold) evidence; lower tiers were never used for
        training, so their evidence is out-of-sample by construction.
 
 Also: a learned baseline on the raw feature-bit vector, trained on GT1 and compared to the rules on the same
 held-out folds — k-nearest neighbours (Jaccard, k = 3) instead of the decision tree of Espinasa-Vilarrasa et al.,
-to stay dependency-free (scikit-learn is not installed in this environment); and share bounds for the latest snapshot.
+to stay dependency-free (no scikit-learn); and share bounds for the latest snapshot.
 
 Outputs
   paper/tables/table2_classifier_eval.tex      GT1 precision/recall per client; GT2 agreement per rule tier
@@ -26,7 +26,6 @@ Usage:  python src/02_classifier_eval.py
 import json
 import logging
 import re
-import sys
 import warnings
 
 import matplotlib
@@ -35,12 +34,11 @@ import matplotlib.pyplot as plt  # noqa: E402
 import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
-from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, REPO_ROOT, TABLES_DIR  # noqa: E402
+from config import CLIENT_PALETTE, DATA_CUTOFF, DATA_DIR, FIGURES_DIR, RANDOM_SEED, TABLES_DIR  # noqa: E402
 
-sys.path.insert(0, str(REPO_ROOT.parent.parent / "python" / "automation"))
-from shared.lightning import incident_metrics as im  # noqa: E402
-from shared.lightning import onchain_fingerprint as of  # noqa: E402
-from shared.lightning.client_fingerprint import KNOWN_OPERATOR_CLIENTS, RULES_VERSION, classify_node  # noqa: E402
+from lnmetrics import incident_metrics as im  # noqa: E402
+from lnmetrics import onchain_fingerprint as of  # noqa: E402
+from lnmetrics.client_fingerprint import KNOWN_OPERATOR_CLIENTS, RULES_VERSION, classify_node  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
 logging.getLogger("fontTools").setLevel(logging.WARNING)
