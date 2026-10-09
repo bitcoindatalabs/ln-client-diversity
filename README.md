@@ -67,3 +67,8 @@ python scripts/package_arxiv.py   # -> dist/ln-client-diversity-arxiv.tar.gz (bu
 * `data/`: aggregate JSON outputs (committed); raw data stay in the data lake.
 * `notebooks/`: scratch EDA notebooks (ignored by git).
 * `scripts/package_arxiv.py`: builds the arXiv upload bundle.
+
+---
+
+## License
+Code and aggregate data are released under the MIT License (see [`LICENSE`](./LICENSE)).
