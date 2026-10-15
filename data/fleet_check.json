@@ -1,0 +1,1493 @@
+{
+ "data_cutoff": "20261004",
+ "alias_prefix": "LNT.",
+ "hub_min_channels": 50,
+ "latest": {
+  "date": "2026-10-04",
+  "nodes": 9868,
+  "fleet_nodes": 1972,
+  "fleet_node_share": 19.98,
+  "fleet_clients": {
+   "LND": 1969,
+   "CLN": 1,
+   "LDK": 1,
+   "Unknown": 1
+  },
+  "fleet_cap_btc": 1.358,
+  "fleet_cap_share": 0.018,
+  "node_share": {
+   "LND": 84.01,
+   "CLN": 8.45,
+   "Eclair": 0.44,
+   "LDK": 1.5,
+   "Unknown": 5.6
+  },
+  "node_share_exfleet": {
+   "LND": 80.05,
+   "CLN": 10.55,
+   "Eclair": 0.54,
+   "LDK": 1.86,
+   "Unknown": 6.99
+  },
+  "node_share_high_exfleet": {
+   "LND": 71.9,
+   "CLN": 8.97,
+   "Eclair": 0.15,
+   "LDK": 1.32,
+   "Unknown": 0.0
+  },
+  "cap_share_exfleet": {
+   "LND": 84.39,
+   "CLN": 3.73,
+   "Eclair": 6.12,
+   "LDK": 5.72,
+   "Unknown": 0.04
+  }
+ },
+ "monthly": [
+  {
+   "date": "2023-05-08",
+   "nodes": 8335,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 91.82,
+    "CLN": 7.29,
+    "Eclair": 0.3,
+    "LDK": 0.11,
+    "Unknown": 0.48
+   },
+   "node_share_exfleet": {
+    "LND": 91.82,
+    "CLN": 7.29,
+    "Eclair": 0.3,
+    "LDK": 0.11,
+    "Unknown": 0.48
+   },
+   "node_share_high_exfleet": {
+    "LND": 90.74,
+    "CLN": 3.7,
+    "Eclair": 0.01,
+    "LDK": 0.02,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 88.91,
+    "CLN": 4.74,
+    "Eclair": 5.72,
+    "LDK": 0.49,
+    "Unknown": 0.14
+   }
+  },
+  {
+   "date": "2023-08-08",
+   "nodes": 8702,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 91.89,
+    "CLN": 7.52,
+    "Eclair": 0.26,
+    "LDK": 0.09,
+    "Unknown": 0.24
+   },
+   "node_share_exfleet": {
+    "LND": 91.89,
+    "CLN": 7.52,
+    "Eclair": 0.26,
+    "LDK": 0.09,
+    "Unknown": 0.24
+   },
+   "node_share_high_exfleet": {
+    "LND": 91.38,
+    "CLN": 4.3,
+    "Eclair": 0.01,
+    "LDK": 0.03,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 88.52,
+    "CLN": 4.72,
+    "Eclair": 5.96,
+    "LDK": 0.63,
+    "Unknown": 0.17
+   }
+  },
+  {
+   "date": "2023-10-20",
+   "nodes": 8537,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 91.67,
+    "CLN": 7.7,
+    "Eclair": 0.28,
+    "LDK": 0.09,
+    "Unknown": 0.26
+   },
+   "node_share_exfleet": {
+    "LND": 91.67,
+    "CLN": 7.7,
+    "Eclair": 0.28,
+    "LDK": 0.09,
+    "Unknown": 0.26
+   },
+   "node_share_high_exfleet": {
+    "LND": 91.27,
+    "CLN": 4.01,
+    "Eclair": 0.01,
+    "LDK": 0.02,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 89.04,
+    "CLN": 3.64,
+    "Eclair": 6.42,
+    "LDK": 0.86,
+    "Unknown": 0.04
+   }
+  },
+  {
+   "date": "2023-11-01",
+   "nodes": 8393,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 91.56,
+    "CLN": 7.78,
+    "Eclair": 0.33,
+    "LDK": 0.08,
+    "Unknown": 0.24
+   },
+   "node_share_exfleet": {
+    "LND": 91.56,
+    "CLN": 7.78,
+    "Eclair": 0.33,
+    "LDK": 0.08,
+    "Unknown": 0.24
+   },
+   "node_share_high_exfleet": {
+    "LND": 91.21,
+    "CLN": 4.02,
+    "Eclair": 0.01,
+    "LDK": 0.02,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 89.04,
+    "CLN": 3.38,
+    "Eclair": 6.77,
+    "LDK": 0.7,
+    "Unknown": 0.12
+   }
+  },
+  {
+   "date": "2023-12-04",
+   "nodes": 8443,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 91.71,
+    "CLN": 7.66,
+    "Eclair": 0.33,
+    "LDK": 0.09,
+    "Unknown": 0.2
+   },
+   "node_share_exfleet": {
+    "LND": 91.71,
+    "CLN": 7.66,
+    "Eclair": 0.33,
+    "LDK": 0.09,
+    "Unknown": 0.2
+   },
+   "node_share_high_exfleet": {
+    "LND": 91.33,
+    "CLN": 3.83,
+    "Eclair": 0.01,
+    "LDK": 0.02,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 90.0,
+    "CLN": 3.36,
+    "Eclair": 5.67,
+    "LDK": 0.85,
+    "Unknown": 0.12
+   }
+  },
+  {
+   "date": "2024-01-02",
+   "nodes": 8530,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 91.59,
+    "CLN": 7.73,
+    "Eclair": 0.34,
+    "LDK": 0.09,
+    "Unknown": 0.25
+   },
+   "node_share_exfleet": {
+    "LND": 91.59,
+    "CLN": 7.73,
+    "Eclair": 0.34,
+    "LDK": 0.09,
+    "Unknown": 0.25
+   },
+   "node_share_high_exfleet": {
+    "LND": 91.2,
+    "CLN": 3.81,
+    "Eclair": 0.01,
+    "LDK": 0.02,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 90.26,
+    "CLN": 3.38,
+    "Eclair": 5.48,
+    "LDK": 0.76,
+    "Unknown": 0.11
+   }
+  },
+  {
+   "date": "2024-02-01",
+   "nodes": 8645,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 91.45,
+    "CLN": 7.83,
+    "Eclair": 0.38,
+    "LDK": 0.1,
+    "Unknown": 0.23
+   },
+   "node_share_exfleet": {
+    "LND": 91.45,
+    "CLN": 7.83,
+    "Eclair": 0.38,
+    "LDK": 0.1,
+    "Unknown": 0.23
+   },
+   "node_share_high_exfleet": {
+    "LND": 91.08,
+    "CLN": 3.89,
+    "Eclair": 0.01,
+    "LDK": 0.03,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 90.1,
+    "CLN": 3.45,
+    "Eclair": 5.61,
+    "LDK": 0.73,
+    "Unknown": 0.11
+   }
+  },
+  {
+   "date": "2024-03-04",
+   "nodes": 8243,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 91.02,
+    "CLN": 8.2,
+    "Eclair": 0.33,
+    "LDK": 0.15,
+    "Unknown": 0.3
+   },
+   "node_share_exfleet": {
+    "LND": 91.02,
+    "CLN": 8.2,
+    "Eclair": 0.33,
+    "LDK": 0.15,
+    "Unknown": 0.3
+   },
+   "node_share_high_exfleet": {
+    "LND": 90.66,
+    "CLN": 4.05,
+    "Eclair": 0.01,
+    "LDK": 0.02,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 89.44,
+    "CLN": 3.67,
+    "Eclair": 5.97,
+    "LDK": 0.81,
+    "Unknown": 0.12
+   }
+  },
+  {
+   "date": "2024-04-01",
+   "nodes": 8006,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 90.91,
+    "CLN": 8.29,
+    "Eclair": 0.32,
+    "LDK": 0.11,
+    "Unknown": 0.36
+   },
+   "node_share_exfleet": {
+    "LND": 90.91,
+    "CLN": 8.29,
+    "Eclair": 0.32,
+    "LDK": 0.11,
+    "Unknown": 0.36
+   },
+   "node_share_high_exfleet": {
+    "LND": 90.58,
+    "CLN": 4.05,
+    "Eclair": 0.01,
+    "LDK": 0.07,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 89.54,
+    "CLN": 3.54,
+    "Eclair": 6.14,
+    "LDK": 0.66,
+    "Unknown": 0.12
+   }
+  },
+  {
+   "date": "2024-07-01",
+   "nodes": 13106,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 85.11,
+    "CLN": 6.09,
+    "Eclair": 0.24,
+    "LDK": 0.18,
+    "Unknown": 8.38
+   },
+   "node_share_exfleet": {
+    "LND": 85.11,
+    "CLN": 6.09,
+    "Eclair": 0.24,
+    "LDK": 0.18,
+    "Unknown": 8.38
+   },
+   "node_share_high_exfleet": {
+    "LND": 79.89,
+    "CLN": 3.24,
+    "Eclair": 0.01,
+    "LDK": 0.1,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 88.0,
+    "CLN": 3.8,
+    "Eclair": 6.25,
+    "LDK": 1.71,
+    "Unknown": 0.24
+   }
+  },
+  {
+   "date": "2024-08-07",
+   "nodes": 9787,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 87.15,
+    "CLN": 5.0,
+    "Eclair": 1.22,
+    "LDK": 0.21,
+    "Unknown": 6.43
+   },
+   "node_share_exfleet": {
+    "LND": 87.15,
+    "CLN": 5.0,
+    "Eclair": 1.22,
+    "LDK": 0.21,
+    "Unknown": 6.43
+   },
+   "node_share_high_exfleet": {
+    "LND": 76.13,
+    "CLN": 2.44,
+    "Eclair": 0.01,
+    "LDK": 0.14,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 88.25,
+    "CLN": 2.79,
+    "Eclair": 5.83,
+    "LDK": 2.88,
+    "Unknown": 0.24
+   }
+  },
+  {
+   "date": "2024-09-01",
+   "nodes": 12712,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 87.1,
+    "CLN": 6.39,
+    "Eclair": 0.97,
+    "LDK": 0.42,
+    "Unknown": 5.13
+   },
+   "node_share_exfleet": {
+    "LND": 87.1,
+    "CLN": 6.39,
+    "Eclair": 0.97,
+    "LDK": 0.42,
+    "Unknown": 5.13
+   },
+   "node_share_high_exfleet": {
+    "LND": 78.6,
+    "CLN": 3.39,
+    "Eclair": 0.01,
+    "LDK": 0.23,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 86.45,
+    "CLN": 3.9,
+    "Eclair": 6.7,
+    "LDK": 2.82,
+    "Unknown": 0.13
+   }
+  },
+  {
+   "date": "2024-10-01",
+   "nodes": 12278,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 86.68,
+    "CLN": 6.63,
+    "Eclair": 0.9,
+    "LDK": 0.46,
+    "Unknown": 5.34
+   },
+   "node_share_exfleet": {
+    "LND": 86.68,
+    "CLN": 6.63,
+    "Eclair": 0.9,
+    "LDK": 0.46,
+    "Unknown": 5.34
+   },
+   "node_share_high_exfleet": {
+    "LND": 78.42,
+    "CLN": 3.86,
+    "Eclair": 0.01,
+    "LDK": 0.26,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 86.15,
+    "CLN": 3.87,
+    "Eclair": 6.89,
+    "LDK": 2.97,
+    "Unknown": 0.11
+   }
+  },
+  {
+   "date": "2024-11-01",
+   "nodes": 11938,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 85.89,
+    "CLN": 6.94,
+    "Eclair": 0.9,
+    "LDK": 0.7,
+    "Unknown": 5.56
+   },
+   "node_share_exfleet": {
+    "LND": 85.89,
+    "CLN": 6.94,
+    "Eclair": 0.9,
+    "LDK": 0.7,
+    "Unknown": 5.56
+   },
+   "node_share_high_exfleet": {
+    "LND": 77.44,
+    "CLN": 4.21,
+    "Eclair": 0.01,
+    "LDK": 0.27,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 86.2,
+    "CLN": 3.93,
+    "Eclair": 6.96,
+    "LDK": 2.78,
+    "Unknown": 0.12
+   }
+  },
+  {
+   "date": "2024-12-01",
+   "nodes": 11725,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 85.24,
+    "CLN": 7.2,
+    "Eclair": 0.93,
+    "LDK": 0.83,
+    "Unknown": 5.81
+   },
+   "node_share_exfleet": {
+    "LND": 85.24,
+    "CLN": 7.2,
+    "Eclair": 0.93,
+    "LDK": 0.83,
+    "Unknown": 5.81
+   },
+   "node_share_high_exfleet": {
+    "LND": 76.64,
+    "CLN": 4.49,
+    "Eclair": 0.01,
+    "LDK": 0.28,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 85.75,
+    "CLN": 3.98,
+    "Eclair": 7.24,
+    "LDK": 2.97,
+    "Unknown": 0.06
+   }
+  },
+  {
+   "date": "2025-01-01",
+   "nodes": 11421,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 85.04,
+    "CLN": 7.47,
+    "Eclair": 0.93,
+    "LDK": 0.98,
+    "Unknown": 5.59
+   },
+   "node_share_exfleet": {
+    "LND": 85.04,
+    "CLN": 7.47,
+    "Eclair": 0.93,
+    "LDK": 0.98,
+    "Unknown": 5.59
+   },
+   "node_share_high_exfleet": {
+    "LND": 76.53,
+    "CLN": 5.01,
+    "Eclair": 0.01,
+    "LDK": 0.28,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 84.96,
+    "CLN": 4.54,
+    "Eclair": 6.97,
+    "LDK": 3.48,
+    "Unknown": 0.05
+   }
+  },
+  {
+   "date": "2025-02-07",
+   "nodes": 11241,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 84.84,
+    "CLN": 7.77,
+    "Eclair": 0.95,
+    "LDK": 1.03,
+    "Unknown": 5.41
+   },
+   "node_share_exfleet": {
+    "LND": 84.84,
+    "CLN": 7.77,
+    "Eclair": 0.95,
+    "LDK": 1.03,
+    "Unknown": 5.41
+   },
+   "node_share_high_exfleet": {
+    "LND": 76.44,
+    "CLN": 5.47,
+    "Eclair": 0.01,
+    "LDK": 0.36,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 84.76,
+    "CLN": 4.34,
+    "Eclair": 6.56,
+    "LDK": 4.3,
+    "Unknown": 0.05
+   }
+  },
+  {
+   "date": "2025-03-01",
+   "nodes": 11211,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 84.42,
+    "CLN": 7.88,
+    "Eclair": 0.91,
+    "LDK": 1.21,
+    "Unknown": 5.58
+   },
+   "node_share_exfleet": {
+    "LND": 84.42,
+    "CLN": 7.88,
+    "Eclair": 0.91,
+    "LDK": 1.21,
+    "Unknown": 5.58
+   },
+   "node_share_high_exfleet": {
+    "LND": 75.99,
+    "CLN": 5.71,
+    "Eclair": 0.02,
+    "LDK": 0.42,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 84.65,
+    "CLN": 4.67,
+    "Eclair": 6.27,
+    "LDK": 4.36,
+    "Unknown": 0.05
+   }
+  },
+  {
+   "date": "2025-04-09",
+   "nodes": 11045,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 84.04,
+    "CLN": 7.99,
+    "Eclair": 1.08,
+    "LDK": 1.26,
+    "Unknown": 5.63
+   },
+   "node_share_exfleet": {
+    "LND": 84.04,
+    "CLN": 7.99,
+    "Eclair": 1.08,
+    "LDK": 1.26,
+    "Unknown": 5.63
+   },
+   "node_share_high_exfleet": {
+    "LND": 75.84,
+    "CLN": 6.04,
+    "Eclair": 0.06,
+    "LDK": 0.49,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 84.89,
+    "CLN": 4.94,
+    "Eclair": 7.16,
+    "LDK": 2.97,
+    "Unknown": 0.05
+   }
+  },
+  {
+   "date": "2025-05-24",
+   "nodes": 10683,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 83.37,
+    "CLN": 8.95,
+    "Eclair": 0.32,
+    "LDK": 1.38,
+    "Unknown": 5.99
+   },
+   "node_share_exfleet": {
+    "LND": 83.37,
+    "CLN": 8.95,
+    "Eclair": 0.32,
+    "LDK": 1.38,
+    "Unknown": 5.99
+   },
+   "node_share_high_exfleet": {
+    "LND": 76.28,
+    "CLN": 7.1,
+    "Eclair": 0.08,
+    "LDK": 0.88,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 85.0,
+    "CLN": 4.9,
+    "Eclair": 7.33,
+    "LDK": 2.71,
+    "Unknown": 0.06
+   }
+  },
+  {
+   "date": "2025-06-01",
+   "nodes": 10920,
+   "fleet_nodes": 0,
+   "fleet_node_share": 0.0,
+   "fleet_clients": {},
+   "fleet_cap_btc": 0.0,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 82.11,
+    "CLN": 8.99,
+    "Eclair": 0.31,
+    "LDK": 1.28,
+    "Unknown": 7.31
+   },
+   "node_share_exfleet": {
+    "LND": 82.11,
+    "CLN": 8.99,
+    "Eclair": 0.31,
+    "LDK": 1.28,
+    "Unknown": 7.31
+   },
+   "node_share_high_exfleet": {
+    "LND": 75.22,
+    "CLN": 7.16,
+    "Eclair": 0.08,
+    "LDK": 0.84,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 84.97,
+    "CLN": 4.84,
+    "Eclair": 7.25,
+    "LDK": 2.87,
+    "Unknown": 0.07
+   }
+  },
+  {
+   "date": "2025-07-01",
+   "nodes": 10769,
+   "fleet_nodes": 43,
+   "fleet_node_share": 0.4,
+   "fleet_clients": {
+    "LND": 43
+   },
+   "fleet_cap_btc": 0.018,
+   "fleet_cap_share": 0.0,
+   "node_share": {
+    "LND": 81.92,
+    "CLN": 8.86,
+    "Eclair": 0.32,
+    "LDK": 1.4,
+    "Unknown": 7.5
+   },
+   "node_share_exfleet": {
+    "LND": 81.85,
+    "CLN": 8.89,
+    "Eclair": 0.32,
+    "LDK": 1.41,
+    "Unknown": 7.53
+   },
+   "node_share_high_exfleet": {
+    "LND": 75.14,
+    "CLN": 7.24,
+    "Eclair": 0.11,
+    "LDK": 0.81,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 86.09,
+    "CLN": 4.86,
+    "Eclair": 6.11,
+    "LDK": 2.88,
+    "Unknown": 0.06
+   }
+  },
+  {
+   "date": "2025-08-01",
+   "nodes": 11368,
+   "fleet_nodes": 722,
+   "fleet_node_share": 6.35,
+   "fleet_clients": {
+    "LND": 721,
+    "CLN": 1
+   },
+   "fleet_cap_btc": 0.46,
+   "fleet_cap_share": 0.006,
+   "node_share": {
+    "LND": 82.32,
+    "CLN": 8.65,
+    "Eclair": 0.35,
+    "LDK": 1.4,
+    "Unknown": 7.28
+   },
+   "node_share_exfleet": {
+    "LND": 81.13,
+    "CLN": 9.22,
+    "Eclair": 0.38,
+    "LDK": 1.49,
+    "Unknown": 7.78
+   },
+   "node_share_high_exfleet": {
+    "LND": 74.24,
+    "CLN": 7.62,
+    "Eclair": 0.1,
+    "LDK": 0.87,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 84.65,
+    "CLN": 5.63,
+    "Eclair": 6.84,
+    "LDK": 2.8,
+    "Unknown": 0.07
+   }
+  },
+  {
+   "date": "2025-09-01",
+   "nodes": 11533,
+   "fleet_nodes": 1193,
+   "fleet_node_share": 10.34,
+   "fleet_clients": {
+    "LND": 1193
+   },
+   "fleet_cap_btc": 0.793,
+   "fleet_cap_share": 0.01,
+   "node_share": {
+    "LND": 84.14,
+    "CLN": 8.49,
+    "Eclair": 0.37,
+    "LDK": 1.47,
+    "Unknown": 5.52
+   },
+   "node_share_exfleet": {
+    "LND": 82.31,
+    "CLN": 9.47,
+    "Eclair": 0.42,
+    "LDK": 1.64,
+    "Unknown": 6.16
+   },
+   "node_share_high_exfleet": {
+    "LND": 75.08,
+    "CLN": 7.84,
+    "Eclair": 0.11,
+    "LDK": 0.94,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 84.34,
+    "CLN": 5.51,
+    "Eclair": 6.43,
+    "LDK": 3.66,
+    "Unknown": 0.06
+   }
+  },
+  {
+   "date": "2025-10-06",
+   "nodes": 11826,
+   "fleet_nodes": 1655,
+   "fleet_node_share": 13.99,
+   "fleet_clients": {
+    "LND": 1655
+   },
+   "fleet_cap_btc": 1.076,
+   "fleet_cap_share": 0.014,
+   "node_share": {
+    "LND": 84.32,
+    "CLN": 8.48,
+    "Eclair": 0.34,
+    "LDK": 1.4,
+    "Unknown": 5.45
+   },
+   "node_share_exfleet": {
+    "LND": 81.77,
+    "CLN": 9.86,
+    "Eclair": 0.39,
+    "LDK": 1.63,
+    "Unknown": 6.34
+   },
+   "node_share_high_exfleet": {
+    "LND": 74.62,
+    "CLN": 8.23,
+    "Eclair": 0.11,
+    "LDK": 0.97,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 85.76,
+    "CLN": 5.74,
+    "Eclair": 5.34,
+    "LDK": 3.11,
+    "Unknown": 0.05
+   }
+  },
+  {
+   "date": "2025-11-01",
+   "nodes": 11845,
+   "fleet_nodes": 1750,
+   "fleet_node_share": 14.77,
+   "fleet_clients": {
+    "LND": 1750
+   },
+   "fleet_cap_btc": 1.267,
+   "fleet_cap_share": 0.015,
+   "node_share": {
+    "LND": 84.47,
+    "CLN": 8.59,
+    "Eclair": 0.41,
+    "LDK": 1.39,
+    "Unknown": 5.12
+   },
+   "node_share_exfleet": {
+    "LND": 81.78,
+    "CLN": 10.08,
+    "Eclair": 0.49,
+    "LDK": 1.63,
+    "Unknown": 6.01
+   },
+   "node_share_high_exfleet": {
+    "LND": 74.65,
+    "CLN": 8.47,
+    "Eclair": 0.1,
+    "LDK": 1.0,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 86.27,
+    "CLN": 5.37,
+    "Eclair": 5.0,
+    "LDK": 3.32,
+    "Unknown": 0.04
+   }
+  },
+  {
+   "date": "2025-12-01",
+   "nodes": 11807,
+   "fleet_nodes": 1847,
+   "fleet_node_share": 15.64,
+   "fleet_clients": {
+    "LND": 1847
+   },
+   "fleet_cap_btc": 1.251,
+   "fleet_cap_share": 0.012,
+   "node_share": {
+    "LND": 84.35,
+    "CLN": 8.77,
+    "Eclair": 0.41,
+    "LDK": 1.49,
+    "Unknown": 4.99
+   },
+   "node_share_exfleet": {
+    "LND": 81.45,
+    "CLN": 10.39,
+    "Eclair": 0.48,
+    "LDK": 1.77,
+    "Unknown": 5.91
+   },
+   "node_share_high_exfleet": {
+    "LND": 74.41,
+    "CLN": 8.85,
+    "Eclair": 0.1,
+    "LDK": 1.07,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 89.06,
+    "CLN": 4.11,
+    "Eclair": 4.06,
+    "LDK": 2.72,
+    "Unknown": 0.03
+   }
+  },
+  {
+   "date": "2026-01-01",
+   "nodes": 11617,
+   "fleet_nodes": 1951,
+   "fleet_node_share": 16.79,
+   "fleet_clients": {
+    "LND": 1951
+   },
+   "fleet_cap_btc": 1.457,
+   "fleet_cap_share": 0.013,
+   "node_share": {
+    "LND": 84.15,
+    "CLN": 8.94,
+    "Eclair": 0.4,
+    "LDK": 1.45,
+    "Unknown": 5.05
+   },
+   "node_share_exfleet": {
+    "LND": 80.95,
+    "CLN": 10.74,
+    "Eclair": 0.49,
+    "LDK": 1.75,
+    "Unknown": 6.07
+   },
+   "node_share_high_exfleet": {
+    "LND": 73.79,
+    "CLN": 9.2,
+    "Eclair": 0.1,
+    "LDK": 1.06,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 89.61,
+    "CLN": 3.67,
+    "Eclair": 4.22,
+    "LDK": 2.47,
+    "Unknown": 0.03
+   }
+  },
+  {
+   "date": "2026-02-01",
+   "nodes": 11642,
+   "fleet_nodes": 1977,
+   "fleet_node_share": 16.98,
+   "fleet_clients": {
+    "LND": 1977
+   },
+   "fleet_cap_btc": 1.31,
+   "fleet_cap_share": 0.012,
+   "node_share": {
+    "LND": 83.86,
+    "CLN": 9.04,
+    "Eclair": 0.41,
+    "LDK": 1.48,
+    "Unknown": 5.21
+   },
+   "node_share_exfleet": {
+    "LND": 80.56,
+    "CLN": 10.89,
+    "Eclair": 0.5,
+    "LDK": 1.78,
+    "Unknown": 6.27
+   },
+   "node_share_high_exfleet": {
+    "LND": 73.45,
+    "CLN": 9.35,
+    "Eclair": 0.1,
+    "LDK": 1.07,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 87.7,
+    "CLN": 3.98,
+    "Eclair": 5.07,
+    "LDK": 3.22,
+    "Unknown": 0.03
+   }
+  },
+  {
+   "date": "2026-03-01",
+   "nodes": 11678,
+   "fleet_nodes": 1980,
+   "fleet_node_share": 16.95,
+   "fleet_clients": {
+    "LND": 1978,
+    "CLN": 2
+   },
+   "fleet_cap_btc": 1.405,
+   "fleet_cap_share": 0.015,
+   "node_share": {
+    "LND": 84.03,
+    "CLN": 9.07,
+    "Eclair": 0.39,
+    "LDK": 1.53,
+    "Unknown": 4.98
+   },
+   "node_share_exfleet": {
+    "LND": 80.79,
+    "CLN": 10.9,
+    "Eclair": 0.46,
+    "LDK": 1.85,
+    "Unknown": 6.0
+   },
+   "node_share_high_exfleet": {
+    "LND": 73.64,
+    "CLN": 9.41,
+    "Eclair": 0.1,
+    "LDK": 1.05,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 87.01,
+    "CLN": 4.15,
+    "Eclair": 5.15,
+    "LDK": 3.65,
+    "Unknown": 0.04
+   }
+  },
+  {
+   "date": "2026-04-01",
+   "nodes": 11677,
+   "fleet_nodes": 1931,
+   "fleet_node_share": 16.54,
+   "fleet_clients": {
+    "LND": 1927,
+    "CLN": 2,
+    "Unknown": 2
+   },
+   "fleet_cap_btc": 1.715,
+   "fleet_cap_share": 0.018,
+   "node_share": {
+    "LND": 83.71,
+    "CLN": 9.23,
+    "Eclair": 0.39,
+    "LDK": 1.55,
+    "Unknown": 5.11
+   },
+   "node_share_exfleet": {
+    "LND": 80.53,
+    "CLN": 11.04,
+    "Eclair": 0.47,
+    "LDK": 1.86,
+    "Unknown": 6.11
+   },
+   "node_share_high_exfleet": {
+    "LND": 73.48,
+    "CLN": 9.6,
+    "Eclair": 0.1,
+    "LDK": 1.12,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 87.22,
+    "CLN": 4.17,
+    "Eclair": 4.86,
+    "LDK": 3.7,
+    "Unknown": 0.04
+   }
+  },
+  {
+   "date": "2026-05-01",
+   "nodes": 11665,
+   "fleet_nodes": 1959,
+   "fleet_node_share": 16.79,
+   "fleet_clients": {
+    "LND": 1955,
+    "CLN": 2,
+    "Unknown": 2
+   },
+   "fleet_cap_btc": 2.176,
+   "fleet_cap_share": 0.022,
+   "node_share": {
+    "LND": 83.74,
+    "CLN": 9.16,
+    "Eclair": 0.39,
+    "LDK": 1.54,
+    "Unknown": 5.17
+   },
+   "node_share_exfleet": {
+    "LND": 80.5,
+    "CLN": 10.98,
+    "Eclair": 0.47,
+    "LDK": 1.85,
+    "Unknown": 6.19
+   },
+   "node_share_high_exfleet": {
+    "LND": 73.43,
+    "CLN": 9.58,
+    "Eclair": 0.09,
+    "LDK": 1.21,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 87.29,
+    "CLN": 4.03,
+    "Eclair": 4.97,
+    "LDK": 3.68,
+    "Unknown": 0.04
+   }
+  },
+  {
+   "date": "2026-06-01",
+   "nodes": 11645,
+   "fleet_nodes": 1975,
+   "fleet_node_share": 16.96,
+   "fleet_clients": {
+    "LND": 1973,
+    "CLN": 1,
+    "Unknown": 1
+   },
+   "fleet_cap_btc": 2.108,
+   "fleet_cap_share": 0.022,
+   "node_share": {
+    "LND": 83.71,
+    "CLN": 9.29,
+    "Eclair": 0.39,
+    "LDK": 1.49,
+    "Unknown": 5.12
+   },
+   "node_share_exfleet": {
+    "LND": 80.4,
+    "CLN": 11.18,
+    "Eclair": 0.47,
+    "LDK": 1.8,
+    "Unknown": 6.15
+   },
+   "node_share_high_exfleet": {
+    "LND": 73.27,
+    "CLN": 9.76,
+    "Eclair": 0.09,
+    "LDK": 1.21,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 87.64,
+    "CLN": 3.94,
+    "Eclair": 4.71,
+    "LDK": 3.68,
+    "Unknown": 0.03
+   }
+  },
+  {
+   "date": "2026-07-01",
+   "nodes": 11562,
+   "fleet_nodes": 1976,
+   "fleet_node_share": 17.09,
+   "fleet_clients": {
+    "LND": 1974,
+    "CLN": 1,
+    "Unknown": 1
+   },
+   "fleet_cap_btc": 1.916,
+   "fleet_cap_share": 0.021,
+   "node_share": {
+    "LND": 83.64,
+    "CLN": 9.36,
+    "Eclair": 0.38,
+    "LDK": 1.51,
+    "Unknown": 5.1
+   },
+   "node_share_exfleet": {
+    "LND": 80.29,
+    "CLN": 11.28,
+    "Eclair": 0.46,
+    "LDK": 1.83,
+    "Unknown": 6.14
+   },
+   "node_share_high_exfleet": {
+    "LND": 73.09,
+    "CLN": 9.9,
+    "Eclair": 0.08,
+    "LDK": 1.28,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 87.37,
+    "CLN": 4.02,
+    "Eclair": 4.84,
+    "LDK": 3.74,
+    "Unknown": 0.04
+   }
+  },
+  {
+   "date": "2026-08-01",
+   "nodes": 11308,
+   "fleet_nodes": 1979,
+   "fleet_node_share": 17.5,
+   "fleet_clients": {
+    "LND": 1976,
+    "CLN": 2,
+    "Unknown": 1
+   },
+   "fleet_cap_btc": 1.88,
+   "fleet_cap_share": 0.022,
+   "node_share": {
+    "LND": 83.6,
+    "CLN": 9.32,
+    "Eclair": 0.39,
+    "LDK": 1.47,
+    "Unknown": 5.23
+   },
+   "node_share_exfleet": {
+    "LND": 80.15,
+    "CLN": 11.28,
+    "Eclair": 0.47,
+    "LDK": 1.78,
+    "Unknown": 6.32
+   },
+   "node_share_high_exfleet": {
+    "LND": 72.79,
+    "CLN": 9.83,
+    "Eclair": 0.1,
+    "LDK": 1.34,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 86.23,
+    "CLN": 4.09,
+    "Eclair": 5.32,
+    "LDK": 4.33,
+    "Unknown": 0.04
+   }
+  },
+  {
+   "date": "2026-09-01",
+   "nodes": 10165,
+   "fleet_nodes": 1978,
+   "fleet_node_share": 19.46,
+   "fleet_clients": {
+    "LND": 1975,
+    "CLN": 1,
+    "LDK": 1,
+    "Unknown": 1
+   },
+   "fleet_cap_btc": 1.748,
+   "fleet_cap_share": 0.023,
+   "node_share": {
+    "LND": 84.34,
+    "CLN": 8.42,
+    "Eclair": 0.39,
+    "LDK": 1.38,
+    "Unknown": 5.47
+   },
+   "node_share_exfleet": {
+    "LND": 80.59,
+    "CLN": 10.44,
+    "Eclair": 0.49,
+    "LDK": 1.7,
+    "Unknown": 6.78
+   },
+   "node_share_high_exfleet": {
+    "LND": 72.58,
+    "CLN": 9.0,
+    "Eclair": 0.11,
+    "LDK": 1.23,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 85.47,
+    "CLN": 3.9,
+    "Eclair": 5.95,
+    "LDK": 4.64,
+    "Unknown": 0.04
+   }
+  },
+  {
+   "date": "2026-10-01",
+   "nodes": 9977,
+   "fleet_nodes": 1972,
+   "fleet_node_share": 19.77,
+   "fleet_clients": {
+    "LND": 1969,
+    "CLN": 1,
+    "LDK": 1,
+    "Unknown": 1
+   },
+   "fleet_cap_btc": 1.358,
+   "fleet_cap_share": 0.018,
+   "node_share": {
+    "LND": 84.19,
+    "CLN": 8.38,
+    "Eclair": 0.43,
+    "LDK": 1.45,
+    "Unknown": 5.54
+   },
+   "node_share_exfleet": {
+    "LND": 80.34,
+    "CLN": 10.43,
+    "Eclair": 0.54,
+    "LDK": 1.8,
+    "Unknown": 6.9
+   },
+   "node_share_high_exfleet": {
+    "LND": 72.27,
+    "CLN": 8.86,
+    "Eclair": 0.15,
+    "LDK": 1.3,
+    "Unknown": 0.0
+   },
+   "cap_share_exfleet": {
+    "LND": 84.66,
+    "CLN": 3.69,
+    "Eclair": 6.21,
+    "LDK": 5.4,
+    "Unknown": 0.04
+   }
+  }
+ ],
+ "core": {
+  "date": "20260825",
+  "core_nodes": 4435,
+  "fleet_nodes": 189,
+  "fleet_share": 4.26,
+  "fleet_cap_share": 0.013,
+  "lnd_node_share": 83.52,
+  "lnd_node_share_exfleet": 82.83,
+  "fleet_median_degree": 1.0
+ },
+ "epoch_b_lnd_node_share": {
+  "with_fleet": [
+   81.92,
+   87.15
+  ],
+  "without_fleet": [
+   80.15,
+   87.15
+  ],
+  "first": "2024-07-01",
+  "last": "2026-10-01",
+  "first_month_with_fleet": "2025-07-01",
+  "max_fleet_month": "2026-03-01",
+  "max_fleet_nodes": 1980
+ }
+}

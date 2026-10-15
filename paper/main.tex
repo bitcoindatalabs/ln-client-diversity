@@ -28,7 +28,8 @@ sorukumar@bitcoindatalabs.org}
 % ==========================================================================================
 \begin{abstract}
 Client diversity is often cited as the Lightning Network's defence against a bug in any one implementation, yet
-LND runs 84\% of public nodes and holds 84\% of public channel capacity, a share that has barely moved since 2023.
+LND runs 80\% of public nodes (84\% counting one operator's fleet of about 2,000 tiny nodes) and holds 84\% of
+public channel capacity, a capacity share that has barely moved since 2023.
 We test what diversity buys with a natural experiment. On 26~August~2026, amid security fixes in every
 implementation, Core Lightning (CLN) maintainers told operators who could not upgrade to disconnect their nodes.
 Using 805 daily gossip snapshots, 132,360 on-chain channel closes and a client classifier validated against
@@ -57,8 +58,9 @@ channels. Its protocol is defined by the Basis of Lightning Technology (BOLT)
 specifications~\cite{bolt2,bolt3,bolt7,bolt9}, and four independent implementations---LND (Lightning Network
 Daemon), Core Lightning (CLN), Eclair and LDK (Lightning Development Kit)---interoperate on the same public
 network. Client diversity is commonly invoked as a safety property: a bug in one implementation should not take
-down the network. The public network does not look diverse. LND runs 84\% of public nodes and holds 84\% of public
-capacity, and its capacity share has stayed between 84\% and 90\% for three years. Does the remaining diversity
+down the network. The public network does not look diverse. LND runs 80\% of public nodes (84\% if one operator's
+fleet of about 2,000 tiny LND nodes is counted) and holds 84\% of public capacity, and its capacity share has
+stayed between 84\% and 90\% for three years. Does the remaining diversity
 protect anything, and is the concentration the risk it appears to be? We study the public (announced) graph, the
 part of the network that forwards payments for others; wallets on unannounced channels attach to it through their
 providers' nodes and are not visible in gossip.
@@ -85,8 +87,8 @@ twice as much reachability as the CLN shutdown. Counting nodes per client is the
 checked against 795 self-identifying aliases and against an independent on-chain signal, the wallet that builds a
 node's channel funding transactions (\S\ref{sec:inference}).
 \item \textbf{C2: Three years of concentration.} LND's share of public capacity stayed between 84\% and 90\% from
-May~2023 to October~2026; apparent changes in node shares coincide with a change in our gossip vantage point
-(\S\ref{sec:concentration}).
+May~2023 to October~2026. Its share of nodes fell by five to seven points from late 2024, a decline that one
+operator's fleet of small LND nodes hides in the raw counts (\S\ref{sec:concentration}).
 \item \textbf{C3: An observed client-correlated outage.} We measure the CLN shutdown against churn baselines and a
 control client: who complied, how long nodes stayed dark, how peers and the closing market reacted, and how the
 event differs from transport failures and single-operator closing waves that resemble incidents
@@ -239,13 +241,19 @@ $n\geq10$).}
 
 Figure~\ref{fig:share} shows monthly client shares of public nodes and of node capacity (each channel counted
 for both endpoints). LND's share of capacity stayed between 84\% and 90\% throughout. Its share of nodes fell
-from 91.8\% (May~2023) to 84.2\% (October~2026), but within each vantage epoch the net change is about one point
-(91.8\% to 90.9\% in the first; in the second it moved between 82\% and 87\% and ended at 84.2\%, against
-85.1\% at its start); the step between epochs coincides with the change of our gossip node and the
-appearance of many featureless (Unknown) nodes, not with a change in the network. The only clear within-epoch
-trend is LDK's capacity share, from 1.7\% (July~2024) to 5.4\%, mostly Block's routing nodes. On the latest
-snapshot (Table~\ref{tab:client-census}) LND runs 84.0\% of nodes (77.5\% counting only high-confidence labels)
-and holds 84.4\% of capacity; CLN runs 8.5\% of nodes but holds 3.7\% of capacity; Eclair's 43 nodes hold 6.1\%.
+from 91.8\% (May~2023) to 84.2\% (October~2026). The step between epochs coincides with the change of our gossip
+node and the appearance of many featureless (Unknown) nodes, not with a change in the network; within the first
+epoch the share moved by about one point (91.8\% to 90.9\%). Within the second, the raw share looks stable (84.2\%
+at the end against 85.1\% at the start), but one operator props it up. From July~2025 a managed fleet of small LND
+nodes with aliases \texttt{LNT.<name>}, each with one or two channels, mostly to the operator's own hubs, grew to
+1,980 nodes (March~2026), a fifth of all public nodes with channels; on the latest snapshot its 1,972 nodes hold
+1.4~BTC (0.02\% of capacity). We count a node as
+part of the fleet if its alias carries the prefix or at least half of its channels go to a fleet hub. Without
+it, LND's share of nodes fell steadily, from 85--87\% in the second half of 2024 to 80.3\% in October~2026. In
+capacity, the only clear within-epoch trend is LDK's share, from 1.7\% (July~2024) to 5.4\%, mostly Block's
+routing nodes. On the latest snapshot (Table~\ref{tab:client-census}) LND runs 84.0\% of nodes, 80.1\% without
+the fleet (77.5\% and 71.9\% counting only high-confidence labels), and holds 84.4\% of capacity; CLN runs 8.5\% of
+nodes (10.6\% without the fleet) but holds 3.7\% of capacity; Eclair's 43 nodes hold 6.1\%.
 Capacity is highly unequal within every cohort (Gini 0.92--0.97). The largest nodes are, if anything, more
 concentrated by client than nodes in general: LND runs 90 of the 100 largest nodes of the routable core
 (\S\ref{sec:resilience}) and 8 of the 10 largest; the other two are ACINQ's Eclair node and Block's LDK node.
@@ -255,7 +263,8 @@ concentrated by client than nodes in general: LND runs 90 of the 100 largest nod
 \includegraphics[width=\textwidth]{figures/fig1_client_share.pdf}
 \caption{Client shares of public nodes with at least one channel (a) and of node capacity (b), first gossip
 snapshot of each month. The dashed line marks the change of our gossip vantage point (mid-2024); months with
-unusable dumps are omitted.}
+unusable dumps are omitted. From mid-2025 the LND node share includes one operator's fleet of up to 1,980 small
+nodes (\S\ref{sec:concentration}).}
 \label{fig:share}
 \end{figure*}
 
@@ -393,7 +402,8 @@ negligible; its cost was liquidity locked behind time-locks and channels lost.
 
 \paragraph*{Model}
 We take the routable core of the public graph on 25~August~2026, the day before the call: channels whose two
-directions are announced and enabled (73\% of announced channels; 4,435 nodes). A payment of $a$ satoshis can
+directions are announced and enabled (73\% of announced channels; 4,435 nodes, of which 189 belong to the fleet
+of \S\ref{sec:concentration}, almost all with a single channel). A payment of $a$ satoshis can
 use a channel whose capacity is at least $a$ (optimistic) or $2a$ (balances split evenly). Failures are modelled as
 \emph{exposure}, a fraction $p$ of a client's nodes being unavailable, not deletion of the client. Our main
 measure is $R_{\mathrm{all}}(a)$, the share of the pre-failure node pairs still connected by a path of usable
@@ -490,8 +500,8 @@ complied were peripheral.
 \paragraph*{Where the risk is}
 The blast radius of a correlated failure is set by its overlap with the hubs. A few large nodes, regardless of
 client, carry the network's reachability; ACINQ alone outweighs the entire CLN cohort for the survivors. Node-count
-diversity statistics therefore mislead in both directions: CLN's 8.5\% of nodes protected little, and LND's 84\%
-matters mainly through the subset of LND nodes that are hubs. The structure that diversity statistics hide is not a
+diversity statistics therefore mislead in both directions: CLN's 8.5\% of nodes protected little, and LND's 84\%,
+four points of which are one operator's fleet, matters mainly through the subset of LND nodes that are hubs. The structure that diversity statistics hide is not a
 pathological dependence of minority clients on LND, which is what their size implies, but the concentration of
 connectivity in a few operators, whose software choice is a single point of failure for everyone.
 
@@ -518,7 +528,9 @@ Our gossip is one node's view of the announced graph, which changed in mid-2024 
 Unannounced channels (most LDK and Phoenix usage) are invisible; their users reach the network through their
 providers' nodes (Phoenix users through ACINQ's), so hub failures cost payments more than \S\ref{sec:resilience}
 measures. Feature-bit rules can be wrong for new releases and
-are weak where nodes announce no features; Eclair's node count is an upper bound. The on-chain signal identifies
+are weak where nodes announce no features; Eclair's node count is an upper bound. Node counts treat every node as
+an independent operator; we found one managed fleet by its alias and hubs, and smaller fleets without a shared
+alias would go undetected. The on-chain signal identifies
 wallets, not daemons, and cannot separate CLN from Eclair or identify LDK. Disabled flags record peers' views with
 some delay, and a single vantage point can miss or delay updates; such gaps are not specific to one client, and
 LND, Eclair and LDK, observed through the same node, did not move on 27~August. A channel between two CLN nodes

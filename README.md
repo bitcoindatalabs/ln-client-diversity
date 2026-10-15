@@ -6,7 +6,8 @@ Code, aggregate data and LaTeX source for the paper. arXiv categories: `cs.CR`, 
 Data cutoff: 2026-10-04. The version submitted to arXiv is tagged `v1.0-arxiv`.
 
 ## Summary
-LND runs about 84% of public Lightning nodes and capacity. On 2026-08-26 Core Lightning maintainers told operators
+LND runs about 84% of public Lightning capacity and 80% of public nodes (84% counting one operator's fleet of
+about 2,000 tiny LND nodes). On 2026-08-26 Core Lightning maintainers told operators
 who could not upgrade to take their nodes off the network: a client-correlated outage, observed in production.
 The paper measures it from daily gossip and on-chain closes (against churn baselines, a control client and 94
 ordinary two-day windows), calibrates a failure model on it, and tests how clients connect against a null model.
@@ -16,7 +17,7 @@ blast radius of a correlated failure is whether it reaches the hubs, not how man
 ## Repository structure
 * `paper/`: LaTeX source (`main.tex`, `references.bib`, `figures/`, `tables/`), the compiled `main.pdf` and a
   build script.
-* `src/01_*.py` … `src/05_*.py`: the five pipeline stages.
+* `src/01_*.py` … `src/06_*.py`: the six pipeline stages.
 * `src/lnmetrics/`: client inference from gossip (`client_fingerprint.py`), outage and close metrics
   (`incident_metrics.py`) and on-chain wallet evidence (`onchain_fingerprint.py`).
 * `data/`: aggregate JSON outputs behind every figure, table and in-text number.
@@ -46,6 +47,7 @@ python src/02_classifier_eval.py      # client-inference validation (aliases, on
 python src/03_observed_outage.py      # CLN shutdown of 2026-08-26                      -> fig3-5, tables 3-5
 python src/04_resilience.py           # resilience scenarios, calibrated on stage 3      -> fig6-7, table6
 python src/05_supporting_analyses.py  # other in-text numbers + robustness checks       -> fig8, supporting_numbers.json
+python src/06_fleet_check.py          # node shares with and without one managed fleet  -> fleet_check.json
 ```
 
 ### 4. Paper
