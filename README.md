@@ -3,7 +3,9 @@
 Saurabh Kumar, Bitcoin Data Labs
 
 Code, aggregate data and LaTeX source for the paper. arXiv categories: `cs.CR`, cross-list `cs.NI`.
-Data cutoff: 2026-10-04. The version submitted to arXiv is tagged `v1.0-arxiv`.
+Data cutoff: 2026-10-04. The arXiv versions are tagged `v1.0-arxiv` (arXiv:2610.20952v1) and `v2.0-arxiv`
+(v2: client rules v4, which separate CLN from Eclair by bit 5 instead of keysend, and node shares reported with and
+without one operator's managed fleet).
 
 ## Summary
 LND runs about 84% of public Lightning capacity and 80% of public nodes (84% counting one operator's fleet of
@@ -47,7 +49,7 @@ python src/02_classifier_eval.py      # client-inference validation (aliases, on
 python src/03_observed_outage.py      # CLN shutdown of 2026-08-26                      -> fig3-5, tables 3-5
 python src/04_resilience.py           # resilience scenarios, calibrated on stage 3      -> fig6-7, table6
 python src/05_supporting_analyses.py  # other in-text numbers + robustness checks       -> fig8, supporting_numbers.json
-python src/06_fleet_check.py          # node shares with and without one managed fleet  -> fleet_check.json
+python src/06_fleet_check.py          # node shares and reachability without one fleet  -> fleet_check.json
 ```
 
 ### 4. Paper

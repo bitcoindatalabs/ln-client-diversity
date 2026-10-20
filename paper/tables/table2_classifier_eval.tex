@@ -1,6 +1,6 @@
 \begin{table}[t]
 \centering
-\caption{Validation of client inference (rules v3-2026-10-06). (a) 795 nodes whose
+\caption{Validation of client inference (rules v4-2026-10-14). (a) 795 nodes whose
 alias names their implementation (pooled over monthly snapshots, evaluated on the latest snapshot where they have a
 channel); ``Unknown'' counts nodes the rules leave unlabeled (mostly no announced features). A learned baseline
 ($k$-NN, Jaccard, on the feature-bit vector) vs.\ rules on the same held-out folds: macro-F1 0.92 vs.\ 0.93 ($n=761$). (b) Share of nodes in each rule tier whose channel-funding wallet agrees with the
@@ -26,12 +26,10 @@ LDK & 6 & 100.0 & 100.0 & 0 \\
 \multicolumn{4}{l}{(b) On-chain wallet family} \\
 Label & Rule tier & $n$ & Agree (\%) \\
 \midrule
-CLN & CLN set + keysend & 471 & 98.1 \\
+CLN & CLN set (11 + 39/43 + 5) & 476 & 98.3 \\
 CLN & CLTV default only & 38 & 94.7 \\
-CLN & CLTV default only (no features) & 18 & 83.3 \\
-Eclair & Eclair bits (37, 29+61) & 10 & 90.0 \\
-LDK & CLTV default only (no features) & 13 & 100.0 \\
-LND & LND-only bits (2023/31) & 3,199 & 99.2 \\
+CLN & CLTV default only (no features) & 19 & 84.2 \\
+LND & LND-only bits (2023/31) & 3,207 & 99.2 \\
 \bottomrule
 \end{tabular}
 \end{table}

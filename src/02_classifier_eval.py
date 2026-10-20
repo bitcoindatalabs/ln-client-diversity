@@ -67,9 +67,9 @@ def tier(reason: str) -> str:
     if "eclair feature bits" in r:
         return "Eclair bits (37, 29+61)"
     if "cln feature set" in r:
-        return "CLN set + keysend"
-    if "without keysend" in r:
-        return "CLN-like set, no keysend → Eclair"
+        return "CLN set (11 + 39/43 + 5)"
+    if "without 5: eclair" in r:
+        return "CLN-like set without 5 → Eclair"
     if "ldk-like" in r:
         return "LDK-like set"
     if "lnd default color/alias" in r:
@@ -214,7 +214,14 @@ def onchain_by_tier(date: str) -> pd.DataFrame:
     g = g.reset_index()
     g["agree"] = np.where(g["client"] == "LND", g["lnd_wallet"], 1 - g["lnd_wallet"])
     g.loc[g["client"] == "Unknown", "agree"] = np.nan
-    return g.sort_values(["client", "n"], ascending=[True, False])
+    # pooled over all high-confidence labels (held-out): agreement where the chain decides, and how often it does
+    c = cv[cv["pub_key"].isin(lab.loc[high, "pub_key"])]
+    decided, decisive, five = c[c["onchain_family"] != "unclear"], c[c["onchain_strength"] == "decisive"], c[c["n_txs"] >= 5]
+    overall = {"nodes": len(c), "decided": len(decided),
+               "agree_decided": float((decided["onchain_family"] == decided["true_family"]).mean()),
+               "decisive": len(decisive), "agree_decisive": float((decisive["onchain_family"] == decisive["true_family"]).mean()),
+               "nodes_5tx": len(five), "decided_share_5tx": float((five["onchain_family"] != "unclear").mean())}
+    return g.sort_values(["client", "n"], ascending=[True, False]), overall
 
 
 def share_bounds(date: str) -> pd.DataFrame:
@@ -335,8 +342,9 @@ def main():
     log.info("GT1 precision/recall:\n%s", p.round(3).to_string(index=False))
     tb = tree_baseline(anchors)
     log.info("Decision tree vs rules (held-out): %s", {k: round(v, 3) if isinstance(v, float) else v for k, v in tb.items()})
-    tiers = onchain_by_tier(latest)
+    tiers, overall = onchain_by_tier(latest)
     log.info("GT2 by tier (%s):\n%s", latest, tiers.round(3).to_string(index=False))
+    log.info("GT2 pooled over high-confidence labels (held-out): %s", overall)
     bounds = share_bounds(latest)
     log.info("Share bounds (%s):\n%s", latest, bounds.round(1).to_string(index=False))
     fig_validation(anchors, tiers)
@@ -344,6 +352,7 @@ def main():
     mism = anchors[(anchors["pred"] != anchors["truth"]) & (anchors["pred"] != "Unknown")]
     out = {"rules": RULES_VERSION, "latest": latest, "anchors": anchors["truth"].value_counts().to_dict(),
            "gt1": p.to_dict(orient="records"), "tree_baseline": tb, "gt2_tiers": tiers.to_dict(orient="records"),
+           "gt2_overall": overall,
            "share_bounds": bounds.to_dict(orient="records"),
            "gt1_misclassified": mism[["alias", "truth", "pred", "confidence", "tier", "date"]].to_dict(orient="records")}
     (DATA_DIR / "classifier_eval.json").write_text(json.dumps(out, indent=1, default=str), encoding="utf-8")

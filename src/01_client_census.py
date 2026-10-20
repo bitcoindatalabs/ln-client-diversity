@@ -4,7 +4,8 @@ Stage 1 (C1 / RQ1): Client concentration of the public Lightning Network, May 20
 For the first gossip snapshot of every month, each public node with at least one channel is labeled with
 src/lnmetrics/client_fingerprint.py (feature bits + modal CLTV; rules version recorded) and we report
 client shares by node count, by channel endpoints and by node capacity (each channel counts for both
-endpoints).
+endpoints). Node shares are also given without one operator's managed fleet of small LND nodes
+(incident_metrics.fleet_flags_from), which counts each of its nodes as an independent operator.
 
 Only gossip days with quality status "ok" are used (incident_metrics.gossip_quality: wallet-locked error
 dumps, partial May–Jun 2024 dumps and stale days excluded). Our gossip view changed in mid-2024 (vantage epoch
@@ -60,7 +61,8 @@ def monthly_dates() -> list:
 
 
 def snapshot(date: str) -> pd.DataFrame:
-    """One row per node with ≥ 1 channel: client label, confidence, channels, node capacity (sats)."""
+    """One row per node with ≥ 1 channel: client label, confidence, channels, node capacity (sats), managed-fleet
+    membership."""
     pol = im.read_policies(date, ["channel_id", "capacity", "node_pub", "peer_pub", "time_lock_delta"])
     ch = pol.drop_duplicates("channel_id")
     ends = pd.concat([ch[["node_pub", "capacity"]].rename(columns={"node_pub": "pub_key"}),
@@ -80,7 +82,9 @@ def snapshot(date: str) -> pd.DataFrame:
         client, conf, _ = classify_node(bits, color, alias, pk, float(mode) if mode is not None else None)
         rows.append((pk, client, conf))
     lab = pd.DataFrame(rows, columns=["pub_key", "client", "confidence"]).set_index("pub_key")
-    return per.join(lab)
+    out = per.join(lab)
+    out["fleet"] = im.fleet_flags_from(nodes["alias"], out["channels"], ch)
+    return out
 
 
 def shares(snap: pd.DataFrame) -> dict:
@@ -115,6 +119,16 @@ def fig_share(series: pd.DataFrame):
             if len(part):
                 ax.stackplot(part.index, *[part[c].to_numpy() for c in CLIENTS],
                              colors=[CLIENT_PALETTE[c] for c in CLIENTS], edgecolor="white", linewidth=0.6)
+        if key == "node_share":
+            # LND's node share without the managed fleet, from the last month before the fleet appeared
+            lnd = series[series["client"] == "LND"].set_index("date")
+            first = lnd.index[lnd["fleet_nodes"] > 0].min()
+            if pd.notna(first):
+                xf = lnd[lnd.index >= lnd.index[lnd.index < first].max()]
+                ax.plot(xf.index, xf["node_share_exfleet"], color="white", lw=1.0, ls=(0, (3, 1.5)))
+                ax.annotate(f"LND w/o fleet {xf['node_share_exfleet'].iloc[-1]:.0f}%",
+                            (xf.index[-1], xf["node_share_exfleet"].iloc[-1]), xytext=(-2, -7),
+                            textcoords="offset points", fontsize=6, color="white", ha="right", va="top")
         ax.set_ylim(0, 100)
         ax.set_xlim(w.index.min(), w.index.max())
         ax.axvline(pd.Timestamp("2024-06-01"), color="#888888", lw=0.8, ls=(0, (2, 2)))
@@ -142,13 +156,14 @@ def fig_share(series: pd.DataFrame):
     log.info("Wrote %s", out)
 
 
-def table_census(date: str, snap: pd.DataFrame, sh: dict):
+def table_census(date: str, snap: pd.DataFrame, sh: dict, ex: dict):
     rows = []
     for c in CLIENTS:
         s = snap[snap["client"] == c]
-        v = sh[c]
+        v, x = sh[c], ex[c]
         rows.append(
-            f"{c} & {v['nodes']:,} & {v['node_share']:.1f} ({v['node_share_high']:.1f}) & {v['endpoint_share']:.1f} & "
+            f"{c} & {v['nodes']:,} & {v['node_share']:.1f} ({v['node_share_high']:.1f}) & "
+            f"{x['node_share']:.1f} ({x['node_share_high']:.1f}) & {v['endpoint_share']:.1f} & "
             f"{v['cap_btc']:,.0f} & {v['cap_share']:.1f} ({v['cap_share_high']:.1f}) & "
             f"{(s['capacity'].mean() / 1e8 if len(s) else 0):.2f} & {gini(s['capacity'].to_numpy()):.2f} \\\\")
     tot = snap["capacity"].sum() / 1e8
@@ -156,13 +171,15 @@ def table_census(date: str, snap: pd.DataFrame, sh: dict):
 \centering
 \caption{Client implementations of public Lightning nodes with at least one channel, gossip snapshot """ + \
         f"{date[:4]}-{date[4:6]}-{date[6:]}" + r""" (rules """ + RULES_VERSION.replace("_", r"\_") + r"""). Shares in \%; in parentheses, the share
-counting only high-confidence labels (lower bound). Node capacity counts each channel for both endpoints
-(total """ + f"{tot:,.0f}" + r""" BTC). Gini: inequality of node capacity within the cohort.}
+counting only high-confidence labels (lower bound). W/o fleet: node share without the managed fleet of
+Section~\ref{sec:concentration} (""" + f"{int(snap['fleet'].sum()):,}" + r""" nodes, """ + \
+        f"{snap.loc[snap['fleet'], 'capacity'].sum() / 1e8:.1f}" + r""" BTC). Node capacity counts each channel for both
+endpoints (total """ + f"{tot:,.0f}" + r""" BTC). Gini: inequality of node capacity within the cohort.}
 \label{tab:client-census}
 \small
-\begin{tabular}{lrrrrrrr}
+\begin{tabular}{lrrrrrrrr}
 \toprule
-Client & Nodes & Node share & Endpoints & Capacity (BTC) & Cap.\ share & Mean (BTC) & Gini \\
+Client & Nodes & Node share & W/o fleet & Endpoints & Capacity (BTC) & Cap.\ share & Mean (BTC) & Gini \\
 \midrule
 """ + "\n".join(rows) + r"""
 \bottomrule
@@ -182,16 +199,18 @@ def main():
     recs, snap, sh = [], None, None
     for d in dates:
         snap = snapshot(d)
-        sh = shares(snap)
+        sh, ex = shares(snap), shares(snap[~snap["fleet"]])
         for c, v in sh.items():
-            recs.append({"date": pd.Timestamp(d), "client": c, **v})
-        log.info("%s: %d nodes; LND %.1f%% of nodes / %.1f%% of capacity; Unknown %.1f%% of nodes",
-                 d, len(snap), sh["LND"]["node_share"], sh["LND"]["cap_share"], sh["Unknown"]["node_share"])
+            recs.append({"date": pd.Timestamp(d), "client": c, **v, "fleet_nodes": int(snap["fleet"].sum()),
+                         "node_share_exfleet": ex[c]["node_share"]})
+        log.info("%s: %d nodes; LND %.1f%% of nodes (%.1f%% without fleet) / %.1f%% of capacity; Unknown %.1f%% of nodes",
+                 d, len(snap), sh["LND"]["node_share"], ex["LND"]["node_share"], sh["LND"]["cap_share"],
+                 sh["Unknown"]["node_share"])
     series = pd.DataFrame(recs)
     fig_share(series)
     latest = max(d for d in im.gossip_dates() if d <= DATA_CUTOFF)
     snap_l = snapshot(latest)
-    table_census(latest, snap_l, shares(snap_l))
+    table_census(latest, snap_l, shares(snap_l), shares(snap_l[~snap_l["fleet"]]))
     out = DATA_DIR / "client_census_monthly.json"
     series.assign(date=series["date"].dt.strftime("%Y-%m-%d")).round(3).to_json(out, orient="records")
     log.info("Wrote %s", out)

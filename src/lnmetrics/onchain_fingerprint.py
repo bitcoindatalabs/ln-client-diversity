@@ -13,8 +13,9 @@ same with high confidence; whoever funded, the wallet is known) two wallet famil
 What it measures is the *wallet*, not the daemon: LND operators who fund opens from an external wallet
 (PSBT) show CORE (confirmed for several batch funders), and nodes that migrated LND → CLN can show LND-wallet
 opens from before the switch. Feature bits therefore stay authoritative where they are decisive.
-Held-out agreement with high-confidence feature-bit labels (5-fold, 2026-10-06, all 226k funding txs):
-99.2–99.3% when decided on 25,234 nodes; 98% of nodes with ≥ 5 funding txs get a decision.
+Held-out agreement with high-confidence feature-bit labels (5-fold, all 226k funding txs) is computed by
+src/02_classifier_eval.py (data/classifier_eval.json, gt2_overall): 99.0% on the nodes of the 2026-10-04 snapshot
+where the chain decides; 98% of nodes with ≥ 5 funding txs get a decision.
 
 LDK and Eclair cannot be fingerprinted on-chain in general: LDK is a library whose funding txs are built by
 each integrator's wallet (our same-client "LDK" sample is ~99% one operator, Block), and the Eclair sample is

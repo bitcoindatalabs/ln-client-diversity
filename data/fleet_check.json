@@ -17,22 +17,22 @@
   "fleet_cap_share": 0.018,
   "node_share": {
    "LND": 84.01,
-   "CLN": 8.45,
-   "Eclair": 0.44,
-   "LDK": 1.5,
-   "Unknown": 5.6
+   "CLN": 8.46,
+   "Eclair": 0.41,
+   "LDK": 1.17,
+   "Unknown": 5.96
   },
   "node_share_exfleet": {
    "LND": 80.05,
-   "CLN": 10.55,
-   "Eclair": 0.54,
-   "LDK": 1.86,
-   "Unknown": 6.99
+   "CLN": 10.56,
+   "Eclair": 0.51,
+   "LDK": 1.44,
+   "Unknown": 7.43
   },
   "node_share_high_exfleet": {
    "LND": 71.9,
-   "CLN": 8.97,
-   "Eclair": 0.15,
+   "CLN": 8.98,
+   "Eclair": 0.13,
    "LDK": 1.32,
    "Unknown": 0.0
   },
@@ -40,8 +40,8 @@
    "LND": 84.39,
    "CLN": 3.73,
    "Eclair": 6.12,
-   "LDK": 5.72,
-   "Unknown": 0.04
+   "LDK": 5.7,
+   "Unknown": 0.05
   }
  },
  "monthly": [
@@ -55,29 +55,29 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 91.82,
-    "CLN": 7.29,
-    "Eclair": 0.3,
-    "LDK": 0.11,
-    "Unknown": 0.48
+    "CLN": 7.28,
+    "Eclair": 0.31,
+    "LDK": 0.07,
+    "Unknown": 0.52
    },
    "node_share_exfleet": {
     "LND": 91.82,
-    "CLN": 7.29,
-    "Eclair": 0.3,
-    "LDK": 0.11,
-    "Unknown": 0.48
+    "CLN": 7.28,
+    "Eclair": 0.31,
+    "LDK": 0.07,
+    "Unknown": 0.52
    },
    "node_share_high_exfleet": {
     "LND": 90.74,
-    "CLN": 3.7,
+    "CLN": 3.68,
     "Eclair": 0.01,
     "LDK": 0.02,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 88.91,
-    "CLN": 4.74,
-    "Eclair": 5.72,
+    "CLN": 4.72,
+    "Eclair": 5.75,
     "LDK": 0.49,
     "Unknown": 0.14
    }
@@ -94,15 +94,15 @@
     "LND": 91.89,
     "CLN": 7.52,
     "Eclair": 0.26,
-    "LDK": 0.09,
-    "Unknown": 0.24
+    "LDK": 0.08,
+    "Unknown": 0.25
    },
    "node_share_exfleet": {
     "LND": 91.89,
     "CLN": 7.52,
     "Eclair": 0.26,
-    "LDK": 0.09,
-    "Unknown": 0.24
+    "LDK": 0.08,
+    "Unknown": 0.25
    },
    "node_share_high_exfleet": {
     "LND": 91.38,
@@ -115,8 +115,8 @@
     "LND": 88.52,
     "CLN": 4.72,
     "Eclair": 5.96,
-    "LDK": 0.63,
-    "Unknown": 0.17
+    "LDK": 0.62,
+    "Unknown": 0.18
    }
   },
   {
@@ -131,15 +131,15 @@
     "LND": 91.67,
     "CLN": 7.7,
     "Eclair": 0.28,
-    "LDK": 0.09,
-    "Unknown": 0.26
+    "LDK": 0.08,
+    "Unknown": 0.27
    },
    "node_share_exfleet": {
     "LND": 91.67,
     "CLN": 7.7,
     "Eclair": 0.28,
-    "LDK": 0.09,
-    "Unknown": 0.26
+    "LDK": 0.08,
+    "Unknown": 0.27
    },
    "node_share_high_exfleet": {
     "LND": 91.27,
@@ -152,7 +152,7 @@
     "LND": 89.04,
     "CLN": 3.64,
     "Eclair": 6.42,
-    "LDK": 0.86,
+    "LDK": 0.85,
     "Unknown": 0.04
    }
   },
@@ -168,15 +168,15 @@
     "LND": 91.56,
     "CLN": 7.78,
     "Eclair": 0.33,
-    "LDK": 0.08,
-    "Unknown": 0.24
+    "LDK": 0.07,
+    "Unknown": 0.25
    },
    "node_share_exfleet": {
     "LND": 91.56,
     "CLN": 7.78,
     "Eclair": 0.33,
-    "LDK": 0.08,
-    "Unknown": 0.24
+    "LDK": 0.07,
+    "Unknown": 0.25
    },
    "node_share_high_exfleet": {
     "LND": 91.21,
@@ -189,7 +189,7 @@
     "LND": 89.04,
     "CLN": 3.38,
     "Eclair": 6.77,
-    "LDK": 0.7,
+    "LDK": 0.69,
     "Unknown": 0.12
    }
   },
@@ -205,15 +205,15 @@
     "LND": 91.71,
     "CLN": 7.66,
     "Eclair": 0.33,
-    "LDK": 0.09,
-    "Unknown": 0.2
+    "LDK": 0.08,
+    "Unknown": 0.21
    },
    "node_share_exfleet": {
     "LND": 91.71,
     "CLN": 7.66,
     "Eclair": 0.33,
-    "LDK": 0.09,
-    "Unknown": 0.2
+    "LDK": 0.08,
+    "Unknown": 0.21
    },
    "node_share_high_exfleet": {
     "LND": 91.33,
@@ -226,8 +226,8 @@
     "LND": 90.0,
     "CLN": 3.36,
     "Eclair": 5.67,
-    "LDK": 0.85,
-    "Unknown": 0.12
+    "LDK": 0.84,
+    "Unknown": 0.13
    }
   },
   {
@@ -240,31 +240,31 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 91.59,
-    "CLN": 7.73,
-    "Eclair": 0.34,
-    "LDK": 0.09,
-    "Unknown": 0.25
+    "CLN": 7.71,
+    "Eclair": 0.35,
+    "LDK": 0.08,
+    "Unknown": 0.26
    },
    "node_share_exfleet": {
     "LND": 91.59,
-    "CLN": 7.73,
-    "Eclair": 0.34,
-    "LDK": 0.09,
-    "Unknown": 0.25
+    "CLN": 7.71,
+    "Eclair": 0.35,
+    "LDK": 0.08,
+    "Unknown": 0.26
    },
    "node_share_high_exfleet": {
     "LND": 91.2,
-    "CLN": 3.81,
+    "CLN": 3.8,
     "Eclair": 0.01,
     "LDK": 0.02,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 90.26,
-    "CLN": 3.38,
-    "Eclair": 5.48,
-    "LDK": 0.76,
-    "Unknown": 0.11
+    "CLN": 3.36,
+    "Eclair": 5.5,
+    "LDK": 0.75,
+    "Unknown": 0.12
    }
   },
   {
@@ -277,31 +277,31 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 91.45,
-    "CLN": 7.83,
-    "Eclair": 0.38,
-    "LDK": 0.1,
-    "Unknown": 0.23
+    "CLN": 7.81,
+    "Eclair": 0.4,
+    "LDK": 0.09,
+    "Unknown": 0.24
    },
    "node_share_exfleet": {
     "LND": 91.45,
-    "CLN": 7.83,
-    "Eclair": 0.38,
-    "LDK": 0.1,
-    "Unknown": 0.23
+    "CLN": 7.81,
+    "Eclair": 0.4,
+    "LDK": 0.09,
+    "Unknown": 0.24
    },
    "node_share_high_exfleet": {
     "LND": 91.08,
-    "CLN": 3.89,
+    "CLN": 3.86,
     "Eclair": 0.01,
     "LDK": 0.03,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 90.1,
-    "CLN": 3.45,
-    "Eclair": 5.61,
-    "LDK": 0.73,
-    "Unknown": 0.11
+    "CLN": 3.41,
+    "Eclair": 5.65,
+    "LDK": 0.72,
+    "Unknown": 0.12
    }
   },
   {
@@ -314,30 +314,30 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 91.02,
-    "CLN": 8.2,
-    "Eclair": 0.33,
-    "LDK": 0.15,
-    "Unknown": 0.3
+    "CLN": 8.18,
+    "Eclair": 0.35,
+    "LDK": 0.08,
+    "Unknown": 0.36
    },
    "node_share_exfleet": {
     "LND": 91.02,
-    "CLN": 8.2,
-    "Eclair": 0.33,
-    "LDK": 0.15,
-    "Unknown": 0.3
+    "CLN": 8.18,
+    "Eclair": 0.35,
+    "LDK": 0.08,
+    "Unknown": 0.36
    },
    "node_share_high_exfleet": {
     "LND": 90.66,
-    "CLN": 4.05,
+    "CLN": 4.03,
     "Eclair": 0.01,
     "LDK": 0.02,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 89.44,
-    "CLN": 3.67,
-    "Eclair": 5.97,
-    "LDK": 0.81,
+    "CLN": 3.61,
+    "Eclair": 6.02,
+    "LDK": 0.8,
     "Unknown": 0.12
    }
   },
@@ -351,29 +351,29 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 90.91,
-    "CLN": 8.29,
-    "Eclair": 0.32,
-    "LDK": 0.11,
-    "Unknown": 0.36
+    "CLN": 8.27,
+    "Eclair": 0.35,
+    "LDK": 0.09,
+    "Unknown": 0.39
    },
    "node_share_exfleet": {
     "LND": 90.91,
-    "CLN": 8.29,
-    "Eclair": 0.32,
-    "LDK": 0.11,
-    "Unknown": 0.36
+    "CLN": 8.27,
+    "Eclair": 0.35,
+    "LDK": 0.09,
+    "Unknown": 0.39
    },
    "node_share_high_exfleet": {
     "LND": 90.58,
-    "CLN": 4.05,
+    "CLN": 4.02,
     "Eclair": 0.01,
     "LDK": 0.07,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 89.54,
-    "CLN": 3.54,
-    "Eclair": 6.14,
+    "CLN": 3.48,
+    "Eclair": 6.21,
     "LDK": 0.66,
     "Unknown": 0.12
    }
@@ -388,29 +388,29 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 85.11,
-    "CLN": 6.09,
-    "Eclair": 0.24,
-    "LDK": 0.18,
-    "Unknown": 8.38
+    "CLN": 6.07,
+    "Eclair": 0.25,
+    "LDK": 0.13,
+    "Unknown": 8.43
    },
    "node_share_exfleet": {
     "LND": 85.11,
-    "CLN": 6.09,
-    "Eclair": 0.24,
-    "LDK": 0.18,
-    "Unknown": 8.38
+    "CLN": 6.07,
+    "Eclair": 0.25,
+    "LDK": 0.13,
+    "Unknown": 8.43
    },
    "node_share_high_exfleet": {
     "LND": 79.89,
-    "CLN": 3.24,
+    "CLN": 3.23,
     "Eclair": 0.01,
     "LDK": 0.1,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 88.0,
-    "CLN": 3.8,
-    "Eclair": 6.25,
+    "CLN": 3.74,
+    "Eclair": 6.31,
     "LDK": 1.71,
     "Unknown": 0.24
    }
@@ -425,29 +425,29 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 87.15,
-    "CLN": 5.0,
-    "Eclair": 1.22,
-    "LDK": 0.21,
-    "Unknown": 6.43
+    "CLN": 4.98,
+    "Eclair": 1.24,
+    "LDK": 0.15,
+    "Unknown": 6.49
    },
    "node_share_exfleet": {
     "LND": 87.15,
-    "CLN": 5.0,
-    "Eclair": 1.22,
-    "LDK": 0.21,
-    "Unknown": 6.43
+    "CLN": 4.98,
+    "Eclair": 1.24,
+    "LDK": 0.15,
+    "Unknown": 6.49
    },
    "node_share_high_exfleet": {
     "LND": 76.13,
-    "CLN": 2.44,
+    "CLN": 2.42,
     "Eclair": 0.01,
     "LDK": 0.14,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 88.25,
-    "CLN": 2.79,
-    "Eclair": 5.83,
+    "CLN": 2.75,
+    "Eclair": 5.88,
     "LDK": 2.88,
     "Unknown": 0.24
    }
@@ -462,29 +462,29 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 87.1,
-    "CLN": 6.39,
-    "Eclair": 0.97,
-    "LDK": 0.42,
-    "Unknown": 5.13
+    "CLN": 6.37,
+    "Eclair": 0.98,
+    "LDK": 0.24,
+    "Unknown": 5.3
    },
    "node_share_exfleet": {
     "LND": 87.1,
-    "CLN": 6.39,
-    "Eclair": 0.97,
-    "LDK": 0.42,
-    "Unknown": 5.13
+    "CLN": 6.37,
+    "Eclair": 0.98,
+    "LDK": 0.24,
+    "Unknown": 5.3
    },
    "node_share_high_exfleet": {
     "LND": 78.6,
-    "CLN": 3.39,
+    "CLN": 3.37,
     "Eclair": 0.01,
     "LDK": 0.23,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 86.45,
-    "CLN": 3.9,
-    "Eclair": 6.7,
+    "CLN": 3.85,
+    "Eclair": 6.75,
     "LDK": 2.82,
     "Unknown": 0.13
    }
@@ -499,31 +499,31 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 86.68,
-    "CLN": 6.63,
-    "Eclair": 0.9,
-    "LDK": 0.46,
-    "Unknown": 5.34
+    "CLN": 6.61,
+    "Eclair": 0.91,
+    "LDK": 0.28,
+    "Unknown": 5.52
    },
    "node_share_exfleet": {
     "LND": 86.68,
-    "CLN": 6.63,
-    "Eclair": 0.9,
-    "LDK": 0.46,
-    "Unknown": 5.34
+    "CLN": 6.61,
+    "Eclair": 0.91,
+    "LDK": 0.28,
+    "Unknown": 5.52
    },
    "node_share_high_exfleet": {
     "LND": 78.42,
-    "CLN": 3.86,
+    "CLN": 3.84,
     "Eclair": 0.01,
     "LDK": 0.26,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 86.15,
-    "CLN": 3.87,
-    "Eclair": 6.89,
+    "CLN": 3.82,
+    "Eclair": 6.94,
     "LDK": 2.97,
-    "Unknown": 0.11
+    "Unknown": 0.12
    }
   },
   {
@@ -536,31 +536,31 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 85.89,
-    "CLN": 6.94,
-    "Eclair": 0.9,
-    "LDK": 0.7,
-    "Unknown": 5.56
+    "CLN": 6.93,
+    "Eclair": 0.92,
+    "LDK": 0.28,
+    "Unknown": 5.97
    },
    "node_share_exfleet": {
     "LND": 85.89,
-    "CLN": 6.94,
-    "Eclair": 0.9,
-    "LDK": 0.7,
-    "Unknown": 5.56
+    "CLN": 6.93,
+    "Eclair": 0.92,
+    "LDK": 0.28,
+    "Unknown": 5.97
    },
    "node_share_high_exfleet": {
     "LND": 77.44,
-    "CLN": 4.21,
+    "CLN": 4.2,
     "Eclair": 0.01,
     "LDK": 0.27,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 86.2,
-    "CLN": 3.93,
-    "Eclair": 6.96,
-    "LDK": 2.78,
-    "Unknown": 0.12
+    "CLN": 3.89,
+    "Eclair": 7.01,
+    "LDK": 2.77,
+    "Unknown": 0.13
    }
   },
   {
@@ -573,17 +573,17 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 85.24,
-    "CLN": 7.2,
-    "Eclair": 0.93,
-    "LDK": 0.83,
-    "Unknown": 5.81
+    "CLN": 7.19,
+    "Eclair": 0.94,
+    "LDK": 0.3,
+    "Unknown": 6.34
    },
    "node_share_exfleet": {
     "LND": 85.24,
-    "CLN": 7.2,
-    "Eclair": 0.93,
-    "LDK": 0.83,
-    "Unknown": 5.81
+    "CLN": 7.19,
+    "Eclair": 0.94,
+    "LDK": 0.3,
+    "Unknown": 6.34
    },
    "node_share_high_exfleet": {
     "LND": 76.64,
@@ -594,10 +594,10 @@
    },
    "cap_share_exfleet": {
     "LND": 85.75,
-    "CLN": 3.98,
-    "Eclair": 7.24,
-    "LDK": 2.97,
-    "Unknown": 0.06
+    "CLN": 3.94,
+    "Eclair": 7.28,
+    "LDK": 2.96,
+    "Unknown": 0.07
    }
   },
   {
@@ -610,31 +610,31 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 85.04,
-    "CLN": 7.47,
-    "Eclair": 0.93,
-    "LDK": 0.98,
-    "Unknown": 5.59
+    "CLN": 7.46,
+    "Eclair": 0.94,
+    "LDK": 0.3,
+    "Unknown": 6.27
    },
    "node_share_exfleet": {
     "LND": 85.04,
-    "CLN": 7.47,
-    "Eclair": 0.93,
-    "LDK": 0.98,
-    "Unknown": 5.59
+    "CLN": 7.46,
+    "Eclair": 0.94,
+    "LDK": 0.3,
+    "Unknown": 6.27
    },
    "node_share_high_exfleet": {
     "LND": 76.53,
-    "CLN": 5.01,
+    "CLN": 5.0,
     "Eclair": 0.01,
     "LDK": 0.28,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 84.96,
-    "CLN": 4.54,
-    "Eclair": 6.97,
-    "LDK": 3.48,
-    "Unknown": 0.05
+    "CLN": 4.5,
+    "Eclair": 7.01,
+    "LDK": 3.46,
+    "Unknown": 0.07
    }
   },
   {
@@ -647,31 +647,31 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 84.84,
-    "CLN": 7.77,
-    "Eclair": 0.95,
-    "LDK": 1.03,
-    "Unknown": 5.41
+    "CLN": 7.76,
+    "Eclair": 0.96,
+    "LDK": 0.37,
+    "Unknown": 6.07
    },
    "node_share_exfleet": {
     "LND": 84.84,
-    "CLN": 7.77,
-    "Eclair": 0.95,
-    "LDK": 1.03,
-    "Unknown": 5.41
+    "CLN": 7.76,
+    "Eclair": 0.96,
+    "LDK": 0.37,
+    "Unknown": 6.07
    },
    "node_share_high_exfleet": {
     "LND": 76.44,
-    "CLN": 5.47,
+    "CLN": 5.46,
     "Eclair": 0.01,
     "LDK": 0.36,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 84.76,
-    "CLN": 4.34,
-    "Eclair": 6.56,
-    "LDK": 4.3,
-    "Unknown": 0.05
+    "CLN": 4.29,
+    "Eclair": 6.61,
+    "LDK": 4.28,
+    "Unknown": 0.07
    }
   },
   {
@@ -684,31 +684,31 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 84.42,
-    "CLN": 7.88,
-    "Eclair": 0.91,
-    "LDK": 1.21,
-    "Unknown": 5.58
+    "CLN": 7.87,
+    "Eclair": 0.92,
+    "LDK": 0.43,
+    "Unknown": 6.37
    },
    "node_share_exfleet": {
     "LND": 84.42,
-    "CLN": 7.88,
-    "Eclair": 0.91,
-    "LDK": 1.21,
-    "Unknown": 5.58
+    "CLN": 7.87,
+    "Eclair": 0.92,
+    "LDK": 0.43,
+    "Unknown": 6.37
    },
    "node_share_high_exfleet": {
     "LND": 75.99,
-    "CLN": 5.71,
+    "CLN": 5.7,
     "Eclair": 0.02,
     "LDK": 0.42,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 84.65,
-    "CLN": 4.67,
-    "Eclair": 6.27,
-    "LDK": 4.36,
-    "Unknown": 0.05
+    "CLN": 4.62,
+    "Eclair": 6.32,
+    "LDK": 4.34,
+    "Unknown": 0.07
    }
   },
   {
@@ -721,21 +721,21 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 84.04,
-    "CLN": 7.99,
-    "Eclair": 1.08,
-    "LDK": 1.26,
-    "Unknown": 5.63
+    "CLN": 8.0,
+    "Eclair": 1.07,
+    "LDK": 0.5,
+    "Unknown": 6.39
    },
    "node_share_exfleet": {
     "LND": 84.04,
-    "CLN": 7.99,
-    "Eclair": 1.08,
-    "LDK": 1.26,
-    "Unknown": 5.63
+    "CLN": 8.0,
+    "Eclair": 1.07,
+    "LDK": 0.5,
+    "Unknown": 6.39
    },
    "node_share_high_exfleet": {
     "LND": 75.84,
-    "CLN": 6.04,
+    "CLN": 6.05,
     "Eclair": 0.06,
     "LDK": 0.49,
     "Unknown": 0.0
@@ -744,8 +744,8 @@
     "LND": 84.89,
     "CLN": 4.94,
     "Eclair": 7.16,
-    "LDK": 2.97,
-    "Unknown": 0.05
+    "LDK": 2.94,
+    "Unknown": 0.07
    }
   },
   {
@@ -758,30 +758,30 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 83.37,
-    "CLN": 8.95,
-    "Eclair": 0.32,
-    "LDK": 1.38,
-    "Unknown": 5.99
+    "CLN": 8.96,
+    "Eclair": 0.31,
+    "LDK": 0.88,
+    "Unknown": 6.49
    },
    "node_share_exfleet": {
     "LND": 83.37,
-    "CLN": 8.95,
-    "Eclair": 0.32,
-    "LDK": 1.38,
-    "Unknown": 5.99
+    "CLN": 8.96,
+    "Eclair": 0.31,
+    "LDK": 0.88,
+    "Unknown": 6.49
    },
    "node_share_high_exfleet": {
     "LND": 76.28,
-    "CLN": 7.1,
+    "CLN": 7.11,
     "Eclair": 0.08,
     "LDK": 0.88,
     "Unknown": 0.0
    },
    "cap_share_exfleet": {
     "LND": 85.0,
-    "CLN": 4.9,
+    "CLN": 4.91,
     "Eclair": 7.33,
-    "LDK": 2.71,
+    "LDK": 2.7,
     "Unknown": 0.06
    }
   },
@@ -795,21 +795,21 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 82.11,
-    "CLN": 8.99,
-    "Eclair": 0.31,
-    "LDK": 1.28,
-    "Unknown": 7.31
+    "CLN": 9.0,
+    "Eclair": 0.3,
+    "LDK": 0.84,
+    "Unknown": 7.75
    },
    "node_share_exfleet": {
     "LND": 82.11,
-    "CLN": 8.99,
-    "Eclair": 0.31,
-    "LDK": 1.28,
-    "Unknown": 7.31
+    "CLN": 9.0,
+    "Eclair": 0.3,
+    "LDK": 0.84,
+    "Unknown": 7.75
    },
    "node_share_high_exfleet": {
     "LND": 75.22,
-    "CLN": 7.16,
+    "CLN": 7.17,
     "Eclair": 0.08,
     "LDK": 0.84,
     "Unknown": 0.0
@@ -819,7 +819,7 @@
     "CLN": 4.84,
     "Eclair": 7.25,
     "LDK": 2.87,
-    "Unknown": 0.07
+    "Unknown": 0.08
    }
   },
   {
@@ -834,21 +834,21 @@
    "fleet_cap_share": 0.0,
    "node_share": {
     "LND": 81.92,
-    "CLN": 8.86,
-    "Eclair": 0.32,
-    "LDK": 1.4,
-    "Unknown": 7.5
+    "CLN": 8.87,
+    "Eclair": 0.31,
+    "LDK": 0.81,
+    "Unknown": 8.1
    },
    "node_share_exfleet": {
     "LND": 81.85,
-    "CLN": 8.89,
-    "Eclair": 0.32,
-    "LDK": 1.41,
-    "Unknown": 7.53
+    "CLN": 8.9,
+    "Eclair": 0.31,
+    "LDK": 0.81,
+    "Unknown": 8.13
    },
    "node_share_high_exfleet": {
     "LND": 75.14,
-    "CLN": 7.24,
+    "CLN": 7.25,
     "Eclair": 0.11,
     "LDK": 0.81,
     "Unknown": 0.0
@@ -857,8 +857,8 @@
     "LND": 86.09,
     "CLN": 4.86,
     "Eclair": 6.11,
-    "LDK": 2.88,
-    "Unknown": 0.06
+    "LDK": 2.87,
+    "Unknown": 0.07
    }
   },
   {
@@ -874,21 +874,21 @@
    "fleet_cap_share": 0.006,
    "node_share": {
     "LND": 82.32,
-    "CLN": 8.65,
-    "Eclair": 0.35,
-    "LDK": 1.4,
-    "Unknown": 7.28
+    "CLN": 8.66,
+    "Eclair": 0.34,
+    "LDK": 0.82,
+    "Unknown": 7.86
    },
    "node_share_exfleet": {
     "LND": 81.13,
-    "CLN": 9.22,
-    "Eclair": 0.38,
-    "LDK": 1.49,
-    "Unknown": 7.78
+    "CLN": 9.23,
+    "Eclair": 0.37,
+    "LDK": 0.87,
+    "Unknown": 8.4
    },
    "node_share_high_exfleet": {
     "LND": 74.24,
-    "CLN": 7.62,
+    "CLN": 7.63,
     "Eclair": 0.1,
     "LDK": 0.87,
     "Unknown": 0.0
@@ -897,8 +897,8 @@
     "LND": 84.65,
     "CLN": 5.63,
     "Eclair": 6.84,
-    "LDK": 2.8,
-    "Unknown": 0.07
+    "LDK": 2.79,
+    "Unknown": 0.09
    }
   },
   {
@@ -913,21 +913,21 @@
    "fleet_cap_share": 0.01,
    "node_share": {
     "LND": 84.14,
-    "CLN": 8.49,
-    "Eclair": 0.37,
-    "LDK": 1.47,
-    "Unknown": 5.52
+    "CLN": 8.5,
+    "Eclair": 0.36,
+    "LDK": 0.84,
+    "Unknown": 6.16
    },
    "node_share_exfleet": {
     "LND": 82.31,
-    "CLN": 9.47,
-    "Eclair": 0.42,
-    "LDK": 1.64,
-    "Unknown": 6.16
+    "CLN": 9.48,
+    "Eclair": 0.41,
+    "LDK": 0.94,
+    "Unknown": 6.87
    },
    "node_share_high_exfleet": {
     "LND": 75.08,
-    "CLN": 7.84,
+    "CLN": 7.85,
     "Eclair": 0.11,
     "LDK": 0.94,
     "Unknown": 0.0
@@ -936,8 +936,8 @@
     "LND": 84.34,
     "CLN": 5.51,
     "Eclair": 6.43,
-    "LDK": 3.66,
-    "Unknown": 0.06
+    "LDK": 3.64,
+    "Unknown": 0.07
    }
   },
   {
@@ -952,21 +952,21 @@
    "fleet_cap_share": 0.014,
    "node_share": {
     "LND": 84.32,
-    "CLN": 8.48,
-    "Eclair": 0.34,
-    "LDK": 1.4,
-    "Unknown": 5.45
+    "CLN": 8.49,
+    "Eclair": 0.33,
+    "LDK": 0.85,
+    "Unknown": 6.01
    },
    "node_share_exfleet": {
     "LND": 81.77,
-    "CLN": 9.86,
-    "Eclair": 0.39,
-    "LDK": 1.63,
-    "Unknown": 6.34
+    "CLN": 9.87,
+    "Eclair": 0.38,
+    "LDK": 0.98,
+    "Unknown": 6.99
    },
    "node_share_high_exfleet": {
     "LND": 74.62,
-    "CLN": 8.23,
+    "CLN": 8.24,
     "Eclair": 0.11,
     "LDK": 0.97,
     "Unknown": 0.0
@@ -974,9 +974,9 @@
    "cap_share_exfleet": {
     "LND": 85.76,
     "CLN": 5.74,
-    "Eclair": 5.34,
-    "LDK": 3.11,
-    "Unknown": 0.05
+    "Eclair": 5.33,
+    "LDK": 3.1,
+    "Unknown": 0.07
    }
   },
   {
@@ -993,15 +993,15 @@
     "LND": 84.47,
     "CLN": 8.59,
     "Eclair": 0.41,
-    "LDK": 1.39,
-    "Unknown": 5.12
+    "LDK": 0.86,
+    "Unknown": 5.66
    },
    "node_share_exfleet": {
     "LND": 81.78,
     "CLN": 10.08,
     "Eclair": 0.49,
-    "LDK": 1.63,
-    "Unknown": 6.01
+    "LDK": 1.01,
+    "Unknown": 6.64
    },
    "node_share_high_exfleet": {
     "LND": 74.65,
@@ -1014,8 +1014,8 @@
     "LND": 86.27,
     "CLN": 5.37,
     "Eclair": 5.0,
-    "LDK": 3.32,
-    "Unknown": 0.04
+    "LDK": 3.31,
+    "Unknown": 0.06
    }
   },
   {
@@ -1032,15 +1032,15 @@
     "LND": 84.35,
     "CLN": 8.77,
     "Eclair": 0.41,
-    "LDK": 1.49,
-    "Unknown": 4.99
+    "LDK": 0.91,
+    "Unknown": 5.57
    },
    "node_share_exfleet": {
     "LND": 81.45,
     "CLN": 10.39,
     "Eclair": 0.48,
-    "LDK": 1.77,
-    "Unknown": 5.91
+    "LDK": 1.07,
+    "Unknown": 6.61
    },
    "node_share_high_exfleet": {
     "LND": 74.41,
@@ -1053,8 +1053,8 @@
     "LND": 89.06,
     "CLN": 4.11,
     "Eclair": 4.06,
-    "LDK": 2.72,
-    "Unknown": 0.03
+    "LDK": 2.71,
+    "Unknown": 0.04
    }
   },
   {
@@ -1071,15 +1071,15 @@
     "LND": 84.15,
     "CLN": 8.94,
     "Eclair": 0.4,
-    "LDK": 1.45,
-    "Unknown": 5.05
+    "LDK": 0.88,
+    "Unknown": 5.63
    },
    "node_share_exfleet": {
     "LND": 80.95,
     "CLN": 10.74,
     "Eclair": 0.49,
-    "LDK": 1.75,
-    "Unknown": 6.07
+    "LDK": 1.06,
+    "Unknown": 6.77
    },
    "node_share_high_exfleet": {
     "LND": 73.79,
@@ -1093,7 +1093,7 @@
     "CLN": 3.67,
     "Eclair": 4.22,
     "LDK": 2.47,
-    "Unknown": 0.03
+    "Unknown": 0.04
    }
   },
   {
@@ -1110,15 +1110,15 @@
     "LND": 83.86,
     "CLN": 9.04,
     "Eclair": 0.41,
-    "LDK": 1.48,
-    "Unknown": 5.21
+    "LDK": 0.88,
+    "Unknown": 5.8
    },
    "node_share_exfleet": {
     "LND": 80.56,
     "CLN": 10.89,
     "Eclair": 0.5,
-    "LDK": 1.78,
-    "Unknown": 6.27
+    "LDK": 1.07,
+    "Unknown": 6.98
    },
    "node_share_high_exfleet": {
     "LND": 73.45,
@@ -1132,7 +1132,7 @@
     "CLN": 3.98,
     "Eclair": 5.07,
     "LDK": 3.22,
-    "Unknown": 0.03
+    "Unknown": 0.04
    }
   },
   {
@@ -1150,15 +1150,15 @@
     "LND": 84.03,
     "CLN": 9.07,
     "Eclair": 0.39,
-    "LDK": 1.53,
-    "Unknown": 4.98
+    "LDK": 0.95,
+    "Unknown": 5.57
    },
    "node_share_exfleet": {
     "LND": 80.79,
     "CLN": 10.9,
     "Eclair": 0.46,
-    "LDK": 1.85,
-    "Unknown": 6.0
+    "LDK": 1.14,
+    "Unknown": 6.7
    },
    "node_share_high_exfleet": {
     "LND": 73.64,
@@ -1171,7 +1171,7 @@
     "LND": 87.01,
     "CLN": 4.15,
     "Eclair": 5.15,
-    "LDK": 3.65,
+    "LDK": 3.64,
     "Unknown": 0.04
    }
   },
@@ -1191,15 +1191,15 @@
     "LND": 83.71,
     "CLN": 9.23,
     "Eclair": 0.39,
-    "LDK": 1.55,
-    "Unknown": 5.11
+    "LDK": 1.0,
+    "Unknown": 5.66
    },
    "node_share_exfleet": {
     "LND": 80.53,
     "CLN": 11.04,
     "Eclair": 0.47,
-    "LDK": 1.86,
-    "Unknown": 6.11
+    "LDK": 1.2,
+    "Unknown": 6.76
    },
    "node_share_high_exfleet": {
     "LND": 73.48,
@@ -1212,7 +1212,7 @@
     "LND": 87.22,
     "CLN": 4.17,
     "Eclair": 4.86,
-    "LDK": 3.7,
+    "LDK": 3.69,
     "Unknown": 0.04
    }
   },
@@ -1232,15 +1232,15 @@
     "LND": 83.74,
     "CLN": 9.16,
     "Eclair": 0.39,
-    "LDK": 1.54,
-    "Unknown": 5.17
+    "LDK": 1.07,
+    "Unknown": 5.64
    },
    "node_share_exfleet": {
     "LND": 80.5,
     "CLN": 10.98,
     "Eclair": 0.47,
-    "LDK": 1.85,
-    "Unknown": 6.19
+    "LDK": 1.29,
+    "Unknown": 6.76
    },
    "node_share_high_exfleet": {
     "LND": 73.43,
@@ -1253,7 +1253,7 @@
     "LND": 87.29,
     "CLN": 4.03,
     "Eclair": 4.97,
-    "LDK": 3.68,
+    "LDK": 3.67,
     "Unknown": 0.04
    }
   },
@@ -1273,15 +1273,15 @@
     "LND": 83.71,
     "CLN": 9.29,
     "Eclair": 0.39,
-    "LDK": 1.49,
-    "Unknown": 5.12
+    "LDK": 1.06,
+    "Unknown": 5.55
    },
    "node_share_exfleet": {
     "LND": 80.4,
     "CLN": 11.18,
     "Eclair": 0.47,
-    "LDK": 1.8,
-    "Unknown": 6.15
+    "LDK": 1.28,
+    "Unknown": 6.67
    },
    "node_share_high_exfleet": {
     "LND": 73.27,
@@ -1294,8 +1294,8 @@
     "LND": 87.64,
     "CLN": 3.94,
     "Eclair": 4.71,
-    "LDK": 3.68,
-    "Unknown": 0.03
+    "LDK": 3.67,
+    "Unknown": 0.04
    }
   },
   {
@@ -1314,15 +1314,15 @@
     "LND": 83.64,
     "CLN": 9.36,
     "Eclair": 0.38,
-    "LDK": 1.51,
-    "Unknown": 5.1
+    "LDK": 1.16,
+    "Unknown": 5.46
    },
    "node_share_exfleet": {
     "LND": 80.29,
     "CLN": 11.28,
     "Eclair": 0.46,
-    "LDK": 1.83,
-    "Unknown": 6.14
+    "LDK": 1.4,
+    "Unknown": 6.57
    },
    "node_share_high_exfleet": {
     "LND": 73.09,
@@ -1335,7 +1335,7 @@
     "LND": 87.37,
     "CLN": 4.02,
     "Eclair": 4.84,
-    "LDK": 3.74,
+    "LDK": 3.73,
     "Unknown": 0.04
    }
   },
@@ -1354,21 +1354,21 @@
    "node_share": {
     "LND": 83.6,
     "CLN": 9.32,
-    "Eclair": 0.39,
-    "LDK": 1.47,
-    "Unknown": 5.23
+    "Eclair": 0.38,
+    "LDK": 1.19,
+    "Unknown": 5.51
    },
    "node_share_exfleet": {
     "LND": 80.15,
     "CLN": 11.28,
-    "Eclair": 0.47,
-    "LDK": 1.78,
-    "Unknown": 6.32
+    "Eclair": 0.46,
+    "LDK": 1.45,
+    "Unknown": 6.67
    },
    "node_share_high_exfleet": {
     "LND": 72.79,
     "CLN": 9.83,
-    "Eclair": 0.1,
+    "Eclair": 0.09,
     "LDK": 1.34,
     "Unknown": 0.0
    },
@@ -1376,8 +1376,8 @@
     "LND": 86.23,
     "CLN": 4.09,
     "Eclair": 5.32,
-    "LDK": 4.33,
-    "Unknown": 0.04
+    "LDK": 4.32,
+    "Unknown": 0.05
    }
   },
   {
@@ -1396,21 +1396,21 @@
    "node_share": {
     "LND": 84.34,
     "CLN": 8.42,
-    "Eclair": 0.39,
-    "LDK": 1.38,
-    "Unknown": 5.47
+    "Eclair": 0.38,
+    "LDK": 1.1,
+    "Unknown": 5.76
    },
    "node_share_exfleet": {
     "LND": 80.59,
     "CLN": 10.44,
-    "Eclair": 0.49,
-    "LDK": 1.7,
-    "Unknown": 6.78
+    "Eclair": 0.48,
+    "LDK": 1.36,
+    "Unknown": 7.13
    },
    "node_share_high_exfleet": {
     "LND": 72.58,
     "CLN": 9.0,
-    "Eclair": 0.11,
+    "Eclair": 0.1,
     "LDK": 1.23,
     "Unknown": 0.0
    },
@@ -1418,8 +1418,8 @@
     "LND": 85.47,
     "CLN": 3.9,
     "Eclair": 5.95,
-    "LDK": 4.64,
-    "Unknown": 0.04
+    "LDK": 4.63,
+    "Unknown": 0.05
    }
   },
   {
@@ -1437,22 +1437,22 @@
    "fleet_cap_share": 0.018,
    "node_share": {
     "LND": 84.19,
-    "CLN": 8.38,
-    "Eclair": 0.43,
-    "LDK": 1.45,
-    "Unknown": 5.54
+    "CLN": 8.39,
+    "Eclair": 0.4,
+    "LDK": 1.15,
+    "Unknown": 5.86
    },
    "node_share_exfleet": {
     "LND": 80.34,
-    "CLN": 10.43,
-    "Eclair": 0.54,
-    "LDK": 1.8,
-    "Unknown": 6.9
+    "CLN": 10.44,
+    "Eclair": 0.5,
+    "LDK": 1.42,
+    "Unknown": 7.3
    },
    "node_share_high_exfleet": {
     "LND": 72.27,
-    "CLN": 8.86,
-    "Eclair": 0.15,
+    "CLN": 8.87,
+    "Eclair": 0.12,
     "LDK": 1.3,
     "Unknown": 0.0
    },
@@ -1460,8 +1460,8 @@
     "LND": 84.66,
     "CLN": 3.69,
     "Eclair": 6.21,
-    "LDK": 5.4,
-    "Unknown": 0.04
+    "LDK": 5.39,
+    "Unknown": 0.05
    }
   }
  ],
@@ -1473,7 +1473,1066 @@
   "fleet_cap_share": 0.013,
   "lnd_node_share": 83.52,
   "lnd_node_share_exfleet": 82.83,
-  "fleet_median_degree": 1.0
+  "fleet_median_degree": 1.0,
+  "reachability_100k": {
+   "observed": {
+    "n_failed": 383,
+    "n_failed_fleet": 157,
+    "dR_all": -0.0782,
+    "dR_all_exfleet": -0.0852,
+    "R_all_base": 0.7985,
+    "R_all_base_exfleet": 0.8685
+   },
+   "ordinary_windows": 94,
+   "ordinary_dR_all_median": -0.0357,
+   "ordinary_dR_all_exfleet_median": -0.04,
+   "ordinary_worse_than_outage": 4,
+   "ordinary_worse_than_outage_exfleet": 4,
+   "tor_windows": [
+    {
+     "from": "20260708",
+     "kind": "tor",
+     "n_failed": 540,
+     "n_failed_fleet": 9,
+     "dR_all": -0.1555,
+     "dR_all_exfleet": -0.1731,
+     "R_all_base": 0.7807,
+     "R_all_base_exfleet": 0.8715
+    },
+    {
+     "from": "20260709",
+     "kind": "tor",
+     "n_failed": 545,
+     "n_failed_fleet": 25,
+     "dR_all": -0.1598,
+     "dR_all_exfleet": -0.1775,
+     "R_all_base": 0.7863,
+     "R_all_base_exfleet": 0.8755
+    },
+    {
+     "from": "20260710",
+     "kind": "tor",
+     "n_failed": 193,
+     "n_failed_fleet": 20,
+     "dR_all": -0.0575,
+     "dR_all_exfleet": -0.0649,
+     "R_all_base": 0.7695,
+     "R_all_base_exfleet": 0.8676
+    }
+   ],
+   "series": [
+    {
+     "from": "20260501",
+     "kind": "ordinary",
+     "n_failed": 126,
+     "n_failed_fleet": 18,
+     "dR_all": -0.028,
+     "dR_all_exfleet": -0.032,
+     "R_all_base": 0.7555,
+     "R_all_base_exfleet": 0.8615
+    },
+    {
+     "from": "20260502",
+     "kind": "ordinary",
+     "n_failed": 332,
+     "n_failed_fleet": 214,
+     "dR_all": -0.0297,
+     "dR_all_exfleet": -0.0359,
+     "R_all_base": 0.7094,
+     "R_all_base_exfleet": 0.8657
+    },
+    {
+     "from": "20260503",
+     "kind": "ordinary",
+     "n_failed": 262,
+     "n_failed_fleet": 153,
+     "dR_all": -0.0289,
+     "dR_all_exfleet": -0.0351,
+     "R_all_base": 0.7044,
+     "R_all_base_exfleet": 0.8609
+    },
+    {
+     "from": "20260504",
+     "kind": "ordinary",
+     "n_failed": 139,
+     "n_failed_fleet": 12,
+     "dR_all": -0.0334,
+     "dR_all_exfleet": -0.038,
+     "R_all_base": 0.7606,
+     "R_all_base_exfleet": 0.8628
+    },
+    {
+     "from": "20260505",
+     "kind": "ordinary",
+     "n_failed": 315,
+     "n_failed_fleet": 176,
+     "dR_all": -0.0335,
+     "dR_all_exfleet": -0.0404,
+     "R_all_base": 0.7136,
+     "R_all_base_exfleet": 0.8598
+    },
+    {
+     "from": "20260506",
+     "kind": "ordinary",
+     "n_failed": 158,
+     "n_failed_fleet": 19,
+     "dR_all": -0.0379,
+     "dR_all_exfleet": -0.0435,
+     "R_all_base": 0.7542,
+     "R_all_base_exfleet": 0.8628
+    },
+    {
+     "from": "20260507",
+     "kind": "ordinary",
+     "n_failed": 140,
+     "n_failed_fleet": 19,
+     "dR_all": -0.0336,
+     "dR_all_exfleet": -0.0385,
+     "R_all_base": 0.7579,
+     "R_all_base_exfleet": 0.8646
+    },
+    {
+     "from": "20260508",
+     "kind": "ordinary",
+     "n_failed": 393,
+     "n_failed_fleet": 295,
+     "dR_all": -0.0241,
+     "dR_all_exfleet": -0.0307,
+     "R_all_base": 0.6805,
+     "R_all_base_exfleet": 0.8635
+    },
+    {
+     "from": "20260509",
+     "kind": "ordinary",
+     "n_failed": 367,
+     "n_failed_fleet": 242,
+     "dR_all": -0.0314,
+     "dR_all_exfleet": -0.0388,
+     "R_all_base": 0.6989,
+     "R_all_base_exfleet": 0.861
+    },
+    {
+     "from": "20260510",
+     "kind": "ordinary",
+     "n_failed": 165,
+     "n_failed_fleet": 69,
+     "dR_all": -0.0251,
+     "dR_all_exfleet": -0.0291,
+     "R_all_base": 0.7429,
+     "R_all_base_exfleet": 0.8609
+    },
+    {
+     "from": "20260511",
+     "kind": "ordinary",
+     "n_failed": 114,
+     "n_failed_fleet": 11,
+     "dR_all": -0.0255,
+     "dR_all_exfleet": -0.0287,
+     "R_all_base": 0.7604,
+     "R_all_base_exfleet": 0.8639
+    },
+    {
+     "from": "20260512",
+     "kind": "ordinary",
+     "n_failed": 119,
+     "n_failed_fleet": 10,
+     "dR_all": -0.0294,
+     "dR_all_exfleet": -0.0331,
+     "R_all_base": 0.7608,
+     "R_all_base_exfleet": 0.8642
+    },
+    {
+     "from": "20260513",
+     "kind": "ordinary",
+     "n_failed": 262,
+     "n_failed_fleet": 153,
+     "dR_all": -0.0278,
+     "dR_all_exfleet": -0.034,
+     "R_all_base": 0.7125,
+     "R_all_base_exfleet": 0.8691
+    },
+    {
+     "from": "20260514",
+     "kind": "ordinary",
+     "n_failed": 133,
+     "n_failed_fleet": 21,
+     "dR_all": -0.028,
+     "dR_all_exfleet": -0.0321,
+     "R_all_base": 0.7583,
+     "R_all_base_exfleet": 0.8678
+    },
+    {
+     "from": "20260515",
+     "kind": "ordinary",
+     "n_failed": 307,
+     "n_failed_fleet": 187,
+     "dR_all": -0.03,
+     "dR_all_exfleet": -0.0359,
+     "R_all_base": 0.7148,
+     "R_all_base_exfleet": 0.8647
+    },
+    {
+     "from": "20260516",
+     "kind": "ordinary",
+     "n_failed": 274,
+     "n_failed_fleet": 152,
+     "dR_all": -0.0325,
+     "dR_all_exfleet": -0.0385,
+     "R_all_base": 0.7281,
+     "R_all_base_exfleet": 0.8692
+    },
+    {
+     "from": "20260517",
+     "kind": "ordinary",
+     "n_failed": 145,
+     "n_failed_fleet": 30,
+     "dR_all": -0.0305,
+     "dR_all_exfleet": -0.0349,
+     "R_all_base": 0.7569,
+     "R_all_base_exfleet": 0.8651
+    },
+    {
+     "from": "20260525",
+     "kind": "ordinary",
+     "n_failed": 271,
+     "n_failed_fleet": 147,
+     "dR_all": -0.0278,
+     "dR_all_exfleet": -0.0344,
+     "R_all_base": 0.7033,
+     "R_all_base_exfleet": 0.8696
+    },
+    {
+     "from": "20260526",
+     "kind": "ordinary",
+     "n_failed": 266,
+     "n_failed_fleet": 150,
+     "dR_all": -0.0292,
+     "dR_all_exfleet": -0.0352,
+     "R_all_base": 0.7243,
+     "R_all_base_exfleet": 0.8706
+    },
+    {
+     "from": "20260527",
+     "kind": "ordinary",
+     "n_failed": 327,
+     "n_failed_fleet": 208,
+     "dR_all": -0.0294,
+     "dR_all_exfleet": -0.0365,
+     "R_all_base": 0.7,
+     "R_all_base_exfleet": 0.8685
+    },
+    {
+     "from": "20260528",
+     "kind": "ordinary",
+     "n_failed": 172,
+     "n_failed_fleet": 53,
+     "dR_all": -0.0331,
+     "dR_all_exfleet": -0.0377,
+     "R_all_base": 0.7585,
+     "R_all_base_exfleet": 0.8703
+    },
+    {
+     "from": "20260529",
+     "kind": "ordinary",
+     "n_failed": 269,
+     "n_failed_fleet": 173,
+     "dR_all": -0.0271,
+     "dR_all_exfleet": -0.0324,
+     "R_all_base": 0.7321,
+     "R_all_base_exfleet": 0.874
+    },
+    {
+     "from": "20260530",
+     "kind": "ordinary",
+     "n_failed": 126,
+     "n_failed_fleet": 10,
+     "dR_all": -0.0312,
+     "dR_all_exfleet": -0.0352,
+     "R_all_base": 0.7731,
+     "R_all_base_exfleet": 0.8717
+    },
+    {
+     "from": "20260531",
+     "kind": "ordinary",
+     "n_failed": 150,
+     "n_failed_fleet": 10,
+     "dR_all": -0.0384,
+     "dR_all_exfleet": -0.0433,
+     "R_all_base": 0.7718,
+     "R_all_base_exfleet": 0.8685
+    },
+    {
+     "from": "20260601",
+     "kind": "ordinary",
+     "n_failed": 404,
+     "n_failed_fleet": 288,
+     "dR_all": -0.0289,
+     "dR_all_exfleet": -0.0359,
+     "R_all_base": 0.7046,
+     "R_all_base_exfleet": 0.874
+    },
+    {
+     "from": "20260602",
+     "kind": "ordinary",
+     "n_failed": 141,
+     "n_failed_fleet": 21,
+     "dR_all": -0.0332,
+     "dR_all_exfleet": -0.0375,
+     "R_all_base": 0.7749,
+     "R_all_base_exfleet": 0.8746
+    },
+    {
+     "from": "20260603",
+     "kind": "ordinary",
+     "n_failed": 146,
+     "n_failed_fleet": 7,
+     "dR_all": -0.0379,
+     "dR_all_exfleet": -0.0423,
+     "R_all_base": 0.7768,
+     "R_all_base_exfleet": 0.8726
+    },
+    {
+     "from": "20260604",
+     "kind": "ordinary",
+     "n_failed": 162,
+     "n_failed_fleet": 27,
+     "dR_all": -0.0382,
+     "dR_all_exfleet": -0.0428,
+     "R_all_base": 0.7751,
+     "R_all_base_exfleet": 0.8734
+    },
+    {
+     "from": "20260605",
+     "kind": "ordinary",
+     "n_failed": 132,
+     "n_failed_fleet": 10,
+     "dR_all": -0.0323,
+     "dR_all_exfleet": -0.0364,
+     "R_all_base": 0.7749,
+     "R_all_base_exfleet": 0.8734
+    },
+    {
+     "from": "20260606",
+     "kind": "ordinary",
+     "n_failed": 133,
+     "n_failed_fleet": 11,
+     "dR_all": -0.0346,
+     "dR_all_exfleet": -0.039,
+     "R_all_base": 0.7746,
+     "R_all_base_exfleet": 0.8726
+    },
+    {
+     "from": "20260607",
+     "kind": "ordinary",
+     "n_failed": 128,
+     "n_failed_fleet": 12,
+     "dR_all": -0.0332,
+     "dR_all_exfleet": -0.0372,
+     "R_all_base": 0.7731,
+     "R_all_base_exfleet": 0.8733
+    },
+    {
+     "from": "20260608",
+     "kind": "ordinary",
+     "n_failed": 114,
+     "n_failed_fleet": 16,
+     "dR_all": -0.0271,
+     "dR_all_exfleet": -0.0306,
+     "R_all_base": 0.7735,
+     "R_all_base_exfleet": 0.8739
+    },
+    {
+     "from": "20260609",
+     "kind": "ordinary",
+     "n_failed": 142,
+     "n_failed_fleet": 15,
+     "dR_all": -0.035,
+     "dR_all_exfleet": -0.0396,
+     "R_all_base": 0.7721,
+     "R_all_base_exfleet": 0.8711
+    },
+    {
+     "from": "20260610",
+     "kind": "ordinary",
+     "n_failed": 138,
+     "n_failed_fleet": 16,
+     "dR_all": -0.0335,
+     "dR_all_exfleet": -0.0378,
+     "R_all_base": 0.7765,
+     "R_all_base_exfleet": 0.8745
+    },
+    {
+     "from": "20260612",
+     "kind": "ordinary",
+     "n_failed": 376,
+     "n_failed_fleet": 295,
+     "dR_all": -0.0224,
+     "dR_all_exfleet": -0.0249,
+     "R_all_base": 0.7785,
+     "R_all_base_exfleet": 0.8759
+    },
+    {
+     "from": "20260617",
+     "kind": "ordinary",
+     "n_failed": 340,
+     "n_failed_fleet": 216,
+     "dR_all": -0.0307,
+     "dR_all_exfleet": -0.0372,
+     "R_all_base": 0.7204,
+     "R_all_base_exfleet": 0.8715
+    },
+    {
+     "from": "20260618",
+     "kind": "ordinary",
+     "n_failed": 121,
+     "n_failed_fleet": 6,
+     "dR_all": -0.0324,
+     "dR_all_exfleet": -0.0359,
+     "R_all_base": 0.784,
+     "R_all_base_exfleet": 0.8759
+    },
+    {
+     "from": "20260619",
+     "kind": "ordinary",
+     "n_failed": 139,
+     "n_failed_fleet": 11,
+     "dR_all": -0.0352,
+     "dR_all_exfleet": -0.0395,
+     "R_all_base": 0.778,
+     "R_all_base_exfleet": 0.8722
+    },
+    {
+     "from": "20260620",
+     "kind": "ordinary",
+     "n_failed": 168,
+     "n_failed_fleet": 44,
+     "dR_all": -0.0358,
+     "dR_all_exfleet": -0.0397,
+     "R_all_base": 0.7782,
+     "R_all_base_exfleet": 0.8716
+    },
+    {
+     "from": "20260621",
+     "kind": "ordinary",
+     "n_failed": 173,
+     "n_failed_fleet": 50,
+     "dR_all": -0.0366,
+     "dR_all_exfleet": -0.0407,
+     "R_all_base": 0.7801,
+     "R_all_base_exfleet": 0.8739
+    },
+    {
+     "from": "20260622",
+     "kind": "ordinary",
+     "n_failed": 152,
+     "n_failed_fleet": 15,
+     "dR_all": -0.0404,
+     "dR_all_exfleet": -0.0447,
+     "R_all_base": 0.7906,
+     "R_all_base_exfleet": 0.8737
+    },
+    {
+     "from": "20260623",
+     "kind": "ordinary",
+     "n_failed": 117,
+     "n_failed_fleet": 5,
+     "dR_all": -0.0341,
+     "dR_all_exfleet": -0.0377,
+     "R_all_base": 0.7915,
+     "R_all_base_exfleet": 0.8732
+    },
+    {
+     "from": "20260624",
+     "kind": "ordinary",
+     "n_failed": 125,
+     "n_failed_fleet": 12,
+     "dR_all": -0.0345,
+     "dR_all_exfleet": -0.0379,
+     "R_all_base": 0.7872,
+     "R_all_base_exfleet": 0.8722
+    },
+    {
+     "from": "20260625",
+     "kind": "ordinary",
+     "n_failed": 166,
+     "n_failed_fleet": 19,
+     "dR_all": -0.0431,
+     "dR_all_exfleet": -0.0479,
+     "R_all_base": 0.7829,
+     "R_all_base_exfleet": 0.8746
+    },
+    {
+     "from": "20260626",
+     "kind": "ordinary",
+     "n_failed": 147,
+     "n_failed_fleet": 13,
+     "dR_all": -0.0418,
+     "dR_all_exfleet": -0.0465,
+     "R_all_base": 0.7853,
+     "R_all_base_exfleet": 0.8718
+    },
+    {
+     "from": "20260627",
+     "kind": "ordinary",
+     "n_failed": 172,
+     "n_failed_fleet": 15,
+     "dR_all": -0.0438,
+     "dR_all_exfleet": -0.0489,
+     "R_all_base": 0.7783,
+     "R_all_base_exfleet": 0.8674
+    },
+    {
+     "from": "20260628",
+     "kind": "ordinary",
+     "n_failed": 160,
+     "n_failed_fleet": 8,
+     "dR_all": -0.0423,
+     "dR_all_exfleet": -0.0471,
+     "R_all_base": 0.7834,
+     "R_all_base_exfleet": 0.8713
+    },
+    {
+     "from": "20260629",
+     "kind": "ordinary",
+     "n_failed": 154,
+     "n_failed_fleet": 8,
+     "dR_all": -0.0428,
+     "dR_all_exfleet": -0.0477,
+     "R_all_base": 0.7862,
+     "R_all_base_exfleet": 0.8736
+    },
+    {
+     "from": "20260630",
+     "kind": "ordinary",
+     "n_failed": 135,
+     "n_failed_fleet": 3,
+     "dR_all": -0.038,
+     "dR_all_exfleet": -0.0422,
+     "R_all_base": 0.7846,
+     "R_all_base_exfleet": 0.871
+    },
+    {
+     "from": "20260701",
+     "kind": "ordinary",
+     "n_failed": 150,
+     "n_failed_fleet": 6,
+     "dR_all": -0.0408,
+     "dR_all_exfleet": -0.0455,
+     "R_all_base": 0.7811,
+     "R_all_base_exfleet": 0.871
+    },
+    {
+     "from": "20260702",
+     "kind": "ordinary",
+     "n_failed": 135,
+     "n_failed_fleet": 5,
+     "dR_all": -0.0366,
+     "dR_all_exfleet": -0.0409,
+     "R_all_base": 0.7836,
+     "R_all_base_exfleet": 0.8743
+    },
+    {
+     "from": "20260703",
+     "kind": "ordinary",
+     "n_failed": 103,
+     "n_failed_fleet": 8,
+     "dR_all": -0.0287,
+     "dR_all_exfleet": -0.0321,
+     "R_all_base": 0.7827,
+     "R_all_base_exfleet": 0.874
+    },
+    {
+     "from": "20260704",
+     "kind": "ordinary",
+     "n_failed": 136,
+     "n_failed_fleet": 13,
+     "dR_all": -0.0373,
+     "dR_all_exfleet": -0.0418,
+     "R_all_base": 0.7865,
+     "R_all_base_exfleet": 0.8799
+    },
+    {
+     "from": "20260705",
+     "kind": "ordinary",
+     "n_failed": 134,
+     "n_failed_fleet": 9,
+     "dR_all": -0.0329,
+     "dR_all_exfleet": -0.0367,
+     "R_all_base": 0.7863,
+     "R_all_base_exfleet": 0.8759
+    },
+    {
+     "from": "20260706",
+     "kind": "ordinary",
+     "n_failed": 119,
+     "n_failed_fleet": 9,
+     "dR_all": -0.0338,
+     "dR_all_exfleet": -0.0378,
+     "R_all_base": 0.7859,
+     "R_all_base_exfleet": 0.8771
+    },
+    {
+     "from": "20260707",
+     "kind": "ordinary",
+     "n_failed": 153,
+     "n_failed_fleet": 13,
+     "dR_all": -0.0393,
+     "dR_all_exfleet": -0.0438,
+     "R_all_base": 0.7858,
+     "R_all_base_exfleet": 0.8748
+    },
+    {
+     "from": "20260708",
+     "kind": "tor",
+     "n_failed": 540,
+     "n_failed_fleet": 9,
+     "dR_all": -0.1555,
+     "dR_all_exfleet": -0.1731,
+     "R_all_base": 0.7807,
+     "R_all_base_exfleet": 0.8715
+    },
+    {
+     "from": "20260709",
+     "kind": "tor",
+     "n_failed": 545,
+     "n_failed_fleet": 25,
+     "dR_all": -0.1598,
+     "dR_all_exfleet": -0.1775,
+     "R_all_base": 0.7863,
+     "R_all_base_exfleet": 0.8755
+    },
+    {
+     "from": "20260710",
+     "kind": "tor",
+     "n_failed": 193,
+     "n_failed_fleet": 20,
+     "dR_all": -0.0575,
+     "dR_all_exfleet": -0.0649,
+     "R_all_base": 0.7695,
+     "R_all_base_exfleet": 0.8676
+    },
+    {
+     "from": "20260711",
+     "kind": "ordinary",
+     "n_failed": 142,
+     "n_failed_fleet": 12,
+     "dR_all": -0.0414,
+     "dR_all_exfleet": -0.0464,
+     "R_all_base": 0.7741,
+     "R_all_base_exfleet": 0.8656
+    },
+    {
+     "from": "20260712",
+     "kind": "ordinary",
+     "n_failed": 164,
+     "n_failed_fleet": 17,
+     "dR_all": -0.0453,
+     "dR_all_exfleet": -0.0509,
+     "R_all_base": 0.7715,
+     "R_all_base_exfleet": 0.8664
+    },
+    {
+     "from": "20260713",
+     "kind": "ordinary",
+     "n_failed": 158,
+     "n_failed_fleet": 20,
+     "dR_all": -0.0433,
+     "dR_all_exfleet": -0.0488,
+     "R_all_base": 0.775,
+     "R_all_base_exfleet": 0.872
+    },
+    {
+     "from": "20260714",
+     "kind": "ordinary",
+     "n_failed": 124,
+     "n_failed_fleet": 9,
+     "dR_all": -0.0357,
+     "dR_all_exfleet": -0.0402,
+     "R_all_base": 0.7771,
+     "R_all_base_exfleet": 0.8721
+    },
+    {
+     "from": "20260715",
+     "kind": "ordinary",
+     "n_failed": 143,
+     "n_failed_fleet": 18,
+     "dR_all": -0.0401,
+     "dR_all_exfleet": -0.0452,
+     "R_all_base": 0.7759,
+     "R_all_base_exfleet": 0.8726
+    },
+    {
+     "from": "20260716",
+     "kind": "ordinary",
+     "n_failed": 156,
+     "n_failed_fleet": 12,
+     "dR_all": -0.0454,
+     "dR_all_exfleet": -0.0509,
+     "R_all_base": 0.7738,
+     "R_all_base_exfleet": 0.8664
+    },
+    {
+     "from": "20260717",
+     "kind": "ordinary",
+     "n_failed": 149,
+     "n_failed_fleet": 19,
+     "dR_all": -0.0355,
+     "dR_all_exfleet": -0.0399,
+     "R_all_base": 0.7697,
+     "R_all_base_exfleet": 0.8644
+    },
+    {
+     "from": "20260718",
+     "kind": "ordinary",
+     "n_failed": 141,
+     "n_failed_fleet": 12,
+     "dR_all": -0.0372,
+     "dR_all_exfleet": -0.0416,
+     "R_all_base": 0.7744,
+     "R_all_base_exfleet": 0.8656
+    },
+    {
+     "from": "20260719",
+     "kind": "ordinary",
+     "n_failed": 141,
+     "n_failed_fleet": 19,
+     "dR_all": -0.0372,
+     "dR_all_exfleet": -0.0419,
+     "R_all_base": 0.7781,
+     "R_all_base_exfleet": 0.874
+    },
+    {
+     "from": "20260721",
+     "kind": "ordinary",
+     "n_failed": 138,
+     "n_failed_fleet": 7,
+     "dR_all": -0.0391,
+     "dR_all_exfleet": -0.0435,
+     "R_all_base": 0.7833,
+     "R_all_base_exfleet": 0.8718
+    },
+    {
+     "from": "20260723",
+     "kind": "ordinary",
+     "n_failed": 133,
+     "n_failed_fleet": 16,
+     "dR_all": -0.0342,
+     "dR_all_exfleet": -0.0381,
+     "R_all_base": 0.7815,
+     "R_all_base_exfleet": 0.8692
+    },
+    {
+     "from": "20260724",
+     "kind": "ordinary",
+     "n_failed": 138,
+     "n_failed_fleet": 15,
+     "dR_all": -0.0365,
+     "dR_all_exfleet": -0.0407,
+     "R_all_base": 0.7796,
+     "R_all_base_exfleet": 0.868
+    },
+    {
+     "from": "20260725",
+     "kind": "ordinary",
+     "n_failed": 135,
+     "n_failed_fleet": 15,
+     "dR_all": -0.0378,
+     "dR_all_exfleet": -0.0421,
+     "R_all_base": 0.782,
+     "R_all_base_exfleet": 0.87
+    },
+    {
+     "from": "20260726",
+     "kind": "ordinary",
+     "n_failed": 182,
+     "n_failed_fleet": 15,
+     "dR_all": -0.0549,
+     "dR_all_exfleet": -0.0612,
+     "R_all_base": 0.7834,
+     "R_all_base_exfleet": 0.8721
+    },
+    {
+     "from": "20260727",
+     "kind": "ordinary",
+     "n_failed": 188,
+     "n_failed_fleet": 25,
+     "dR_all": -0.0501,
+     "dR_all_exfleet": -0.0557,
+     "R_all_base": 0.7893,
+     "R_all_base_exfleet": 0.8758
+    },
+    {
+     "from": "20260728",
+     "kind": "ordinary",
+     "n_failed": 169,
+     "n_failed_fleet": 30,
+     "dR_all": -0.042,
+     "dR_all_exfleet": -0.0466,
+     "R_all_base": 0.7847,
+     "R_all_base_exfleet": 0.8712
+    },
+    {
+     "from": "20260729",
+     "kind": "ordinary",
+     "n_failed": 216,
+     "n_failed_fleet": 19,
+     "dR_all": -0.0621,
+     "dR_all_exfleet": -0.0687,
+     "R_all_base": 0.7891,
+     "R_all_base_exfleet": 0.8728
+    },
+    {
+     "from": "20260730",
+     "kind": "ordinary",
+     "n_failed": 215,
+     "n_failed_fleet": 16,
+     "dR_all": -0.0633,
+     "dR_all_exfleet": -0.0698,
+     "R_all_base": 0.7916,
+     "R_all_base_exfleet": 0.8724
+    },
+    {
+     "from": "20260731",
+     "kind": "ordinary",
+     "n_failed": 178,
+     "n_failed_fleet": 12,
+     "dR_all": -0.0513,
+     "dR_all_exfleet": -0.0567,
+     "R_all_base": 0.7892,
+     "R_all_base_exfleet": 0.8712
+    },
+    {
+     "from": "20260801",
+     "kind": "close-wave",
+     "n_failed": 174,
+     "n_failed_fleet": 10,
+     "dR_all": -0.0525,
+     "dR_all_exfleet": -0.0578,
+     "R_all_base": 0.7901,
+     "R_all_base_exfleet": 0.8695
+    },
+    {
+     "from": "20260802",
+     "kind": "close-wave",
+     "n_failed": 179,
+     "n_failed_fleet": 16,
+     "dR_all": -0.0525,
+     "dR_all_exfleet": -0.058,
+     "R_all_base": 0.7882,
+     "R_all_base_exfleet": 0.8705
+    },
+    {
+     "from": "20260803",
+     "kind": "close-wave",
+     "n_failed": 151,
+     "n_failed_fleet": 18,
+     "dR_all": -0.0388,
+     "dR_all_exfleet": -0.043,
+     "R_all_base": 0.783,
+     "R_all_base_exfleet": 0.8657
+    },
+    {
+     "from": "20260804",
+     "kind": "close-wave",
+     "n_failed": 267,
+     "n_failed_fleet": 22,
+     "dR_all": -0.0761,
+     "dR_all_exfleet": -0.0843,
+     "R_all_base": 0.7864,
+     "R_all_base_exfleet": 0.8701
+    },
+    {
+     "from": "20260805",
+     "kind": "ordinary",
+     "n_failed": 472,
+     "n_failed_fleet": 11,
+     "dR_all": -0.1452,
+     "dR_all_exfleet": -0.1606,
+     "R_all_base": 0.7907,
+     "R_all_base_exfleet": 0.873
+    },
+    {
+     "from": "20260806",
+     "kind": "ordinary",
+     "n_failed": 465,
+     "n_failed_fleet": 15,
+     "dR_all": -0.1454,
+     "dR_all_exfleet": -0.1609,
+     "R_all_base": 0.788,
+     "R_all_base_exfleet": 0.8708
+    },
+    {
+     "from": "20260807",
+     "kind": "ordinary",
+     "n_failed": 323,
+     "n_failed_fleet": 15,
+     "dR_all": -0.1,
+     "dR_all_exfleet": -0.1115,
+     "R_all_base": 0.7716,
+     "R_all_base_exfleet": 0.859
+    },
+    {
+     "from": "20260808",
+     "kind": "ordinary",
+     "n_failed": 191,
+     "n_failed_fleet": 25,
+     "dR_all": -0.0544,
+     "dR_all_exfleet": -0.0598,
+     "R_all_base": 0.782,
+     "R_all_base_exfleet": 0.8712
+    },
+    {
+     "from": "20260809",
+     "kind": "ordinary",
+     "n_failed": 174,
+     "n_failed_fleet": 6,
+     "dR_all": -0.0548,
+     "dR_all_exfleet": -0.0605,
+     "R_all_base": 0.7741,
+     "R_all_base_exfleet": 0.8658
+    },
+    {
+     "from": "20260810",
+     "kind": "ordinary",
+     "n_failed": 271,
+     "n_failed_fleet": 23,
+     "dR_all": -0.0882,
+     "dR_all_exfleet": -0.099,
+     "R_all_base": 0.7759,
+     "R_all_base_exfleet": 0.8705
+    },
+    {
+     "from": "20260811",
+     "kind": "ordinary",
+     "n_failed": 201,
+     "n_failed_fleet": 17,
+     "dR_all": -0.0693,
+     "dR_all_exfleet": -0.078,
+     "R_all_base": 0.7726,
+     "R_all_base_exfleet": 0.8689
+    },
+    {
+     "from": "20260812",
+     "kind": "ordinary",
+     "n_failed": 121,
+     "n_failed_fleet": 13,
+     "dR_all": -0.0339,
+     "dR_all_exfleet": -0.0382,
+     "R_all_base": 0.7674,
+     "R_all_base_exfleet": 0.8627
+    },
+    {
+     "from": "20260813",
+     "kind": "ordinary",
+     "n_failed": 131,
+     "n_failed_fleet": 15,
+     "dR_all": -0.0375,
+     "dR_all_exfleet": -0.0413,
+     "R_all_base": 0.7656,
+     "R_all_base_exfleet": 0.8596
+    },
+    {
+     "from": "20260814",
+     "kind": "ordinary",
+     "n_failed": 154,
+     "n_failed_fleet": 23,
+     "dR_all": -0.0434,
+     "dR_all_exfleet": -0.0489,
+     "R_all_base": 0.7674,
+     "R_all_base_exfleet": 0.8627
+    },
+    {
+     "from": "20260815",
+     "kind": "ordinary",
+     "n_failed": 171,
+     "n_failed_fleet": 15,
+     "dR_all": -0.0515,
+     "dR_all_exfleet": -0.0578,
+     "R_all_base": 0.7753,
+     "R_all_base_exfleet": 0.8677
+    },
+    {
+     "from": "20260816",
+     "kind": "ordinary",
+     "n_failed": 151,
+     "n_failed_fleet": 22,
+     "dR_all": -0.042,
+     "dR_all_exfleet": -0.0471,
+     "R_all_base": 0.771,
+     "R_all_base_exfleet": 0.8645
+    },
+    {
+     "from": "20260817",
+     "kind": "ordinary",
+     "n_failed": 134,
+     "n_failed_fleet": 16,
+     "dR_all": -0.0395,
+     "dR_all_exfleet": -0.0444,
+     "R_all_base": 0.7723,
+     "R_all_base_exfleet": 0.8657
+    },
+    {
+     "from": "20260818",
+     "kind": "ordinary",
+     "n_failed": 111,
+     "n_failed_fleet": 10,
+     "dR_all": -0.0332,
+     "dR_all_exfleet": -0.0371,
+     "R_all_base": 0.7732,
+     "R_all_base_exfleet": 0.863
+    },
+    {
+     "from": "20260819",
+     "kind": "ordinary",
+     "n_failed": 116,
+     "n_failed_fleet": 11,
+     "dR_all": -0.0331,
+     "dR_all_exfleet": -0.037,
+     "R_all_base": 0.7707,
+     "R_all_base_exfleet": 0.8614
+    },
+    {
+     "from": "20260820",
+     "kind": "ordinary",
+     "n_failed": 337,
+     "n_failed_fleet": 217,
+     "dR_all": -0.0403,
+     "dR_all_exfleet": -0.045,
+     "R_all_base": 0.7725,
+     "R_all_base_exfleet": 0.8615
+    },
+    {
+     "from": "20260821",
+     "kind": "ordinary",
+     "n_failed": 322,
+     "n_failed_fleet": 227,
+     "dR_all": -0.0315,
+     "dR_all_exfleet": -0.0352,
+     "R_all_base": 0.7762,
+     "R_all_base_exfleet": 0.8643
+    },
+    {
+     "from": "20260822",
+     "kind": "ordinary",
+     "n_failed": 102,
+     "n_failed_fleet": 15,
+     "dR_all": -0.0327,
+     "dR_all_exfleet": -0.0326,
+     "R_all_base": 0.853,
+     "R_all_base_exfleet": 0.8618
+    },
+    {
+     "from": "20260823",
+     "kind": "ordinary",
+     "n_failed": 117,
+     "n_failed_fleet": 3,
+     "dR_all": -0.0386,
+     "dR_all_exfleet": -0.0388,
+     "R_all_base": 0.8621,
+     "R_all_base_exfleet": 0.8665
+    }
+   ]
+  }
  },
  "epoch_b_lnd_node_share": {
   "with_fleet": [

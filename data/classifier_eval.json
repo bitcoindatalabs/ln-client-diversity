@@ -1,5 +1,5 @@
 {
- "rules": "v3-2026-10-06",
+ "rules": "v4-2026-10-14",
  "latest": "20261004",
  "anchors": {
   "LND": 664,
@@ -49,11 +49,11 @@
  },
  "gt2_tiers": [
   {
-   "tier": "CLN set + keysend",
+   "tier": "CLN set (11 + 39/43 + 5)",
    "client": "CLN",
-   "n": 471,
-   "lnd_wallet": 0.01910828025477707,
-   "agree": 0.9808917197452229
+   "n": 476,
+   "lnd_wallet": 0.01680672268907563,
+   "agree": 0.9831932773109243
   },
   {
    "tier": "CLTV default only",
@@ -65,19 +65,19 @@
   {
    "tier": "CLTV default only (no features)",
    "client": "CLN",
-   "n": 18,
-   "lnd_wallet": 0.16666666666666666,
-   "agree": 0.8333333333333334
+   "n": 19,
+   "lnd_wallet": 0.15789473684210525,
+   "agree": 0.8421052631578947
   },
   {
    "tier": "Eclair bits (37, 29+61)",
    "client": "Eclair",
-   "n": 10,
-   "lnd_wallet": 0.1,
-   "agree": 0.9
+   "n": 9,
+   "lnd_wallet": 0.0,
+   "agree": 1.0
   },
   {
-   "tier": "CLN-like set, no keysend \u2192 Eclair",
+   "tier": "CLN-like set without 5 \u2192 Eclair",
    "client": "Eclair",
    "n": 2,
    "lnd_wallet": 0.0,
@@ -98,13 +98,6 @@
    "agree": 1.0
   },
   {
-   "tier": "CLTV default only (no features)",
-   "client": "LDK",
-   "n": 13,
-   "lnd_wallet": 0.0,
-   "agree": 1.0
-  },
-  {
    "tier": "LDK-like set",
    "client": "LDK",
    "n": 1,
@@ -114,9 +107,9 @@
   {
    "tier": "LND-only bits (2023/31)",
    "client": "LND",
-   "n": 3199,
-   "lnd_wallet": 0.9924976555173491,
-   "agree": 0.9924976555173491
+   "n": 3207,
+   "lnd_wallet": 0.9922045525413159,
+   "agree": 0.9922045525413159
   },
   {
    "tier": "CLTV default only",
@@ -128,9 +121,9 @@
   {
    "tier": "LND default colour/alias",
    "client": "LND",
-   "n": 4,
-   "lnd_wallet": 0.75,
-   "agree": 0.75
+   "n": 5,
+   "lnd_wallet": 0.8,
+   "agree": 0.8
   },
   {
    "tier": "CLTV default only (no features)",
@@ -149,11 +142,20 @@
   {
    "tier": "none",
    "client": "Unknown",
-   "n": 266,
-   "lnd_wallet": 0.8458646616541353,
+   "n": 279,
+   "lnd_wallet": 0.8064516129032258,
    "agree": NaN
   }
  ],
+ "gt2_overall": {
+  "nodes": 8657,
+  "decided": 4571,
+  "agree_decided": 0.990155327061912,
+  "decisive": 3693,
+  "agree_decisive": 0.9910641754670999,
+  "nodes_5tx": 3579,
+  "decided_share_5tx": 0.9815590947191953
+ },
  "share_bounds": [
   {
    "client": "LND",
@@ -164,30 +166,30 @@
   },
   {
    "client": "CLN",
-   "node_share": 8.45156059991893,
-   "node_share_high": 7.184839886501824,
-   "cap_share": 3.733099271596611,
-   "cap_share_high": 3.653182310793993
+   "node_share": 8.461694365626267,
+   "node_share_high": 7.1949736522091605,
+   "cap_share": 3.7333979314659462,
+   "cap_share_high": 3.653480970663328
   },
   {
    "client": "Eclair",
-   "node_share": 0.4357519254154844,
-   "node_share_high": 0.12160518848804215,
-   "cap_share": 6.120295117499839,
-   "cap_share_high": 5.559623203627795
+   "node_share": 0.40535062829347385,
+   "node_share_high": 0.10133765707336846,
+   "cap_share": 6.119510437048872,
+   "cap_share_high": 5.559137183046163
   },
   {
    "client": "LDK",
-   "node_share": 1.4997973246858534,
+   "node_share": 1.1653830563437373,
    "node_share_high": 1.064045399270369,
-   "cap_share": 5.714168567906197,
+   "cap_share": 5.703581524666987,
    "cap_share_high": 5.701413832656265
   },
   {
    "client": "Unknown",
-   "node_share": 5.603972436157276,
+   "node_share": 5.958654235914065,
    "node_share_high": 0.0,
-   "cap_share": 0.04000329523426611,
+   "cap_share": 0.051076359055107746,
    "cap_share_high": 0.0
   }
  ],
@@ -221,7 +223,7 @@
    "truth": "Eclair",
    "pred": "CLN",
    "confidence": "high",
-   "tier": "CLN set + keysend",
+   "tier": "CLN set (11 + 39/43 + 5)",
    "date": "20240901"
   },
   {
@@ -253,7 +255,7 @@
    "truth": "LND",
    "pred": "CLN",
    "confidence": "high",
-   "tier": "CLN set + keysend",
+   "tier": "CLN set (11 + 39/43 + 5)",
    "date": "20241001"
   },
   {
@@ -261,7 +263,7 @@
    "truth": "LND",
    "pred": "CLN",
    "confidence": "high",
-   "tier": "CLN set + keysend",
+   "tier": "CLN set (11 + 39/43 + 5)",
    "date": "20261001"
   }
  ]

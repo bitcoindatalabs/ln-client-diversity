@@ -1,3 +1,4 @@
+\pdfoutput=1
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
 
@@ -9,6 +10,8 @@
 \usepackage{booktabs}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
+\hypersetup{pdftitle={Does Client Diversity Protect the Lightning Network? Evidence from the 2026 Core Lightning
+Shutdown}, pdfauthor={Saurabh Kumar}}
 
 \begin{document}
 
@@ -166,7 +169,7 @@ node's view of the public (announced) graph; unannounced channels, where much LD
 usage lives, are not visible.
 
 \paragraph*{On-chain closes and spends}
-Our own Bitcoin Core node scans every block since January~2025 for spends of the 257,363 funding outputs of every
+Our own Bitcoin Core node scans every block since January~2025 for spends of the 257,364 funding outputs of every
 channel ever seen in our gossip. For each close we record the transaction, block time and type (cooperative, force,
 splice); for each output of a force close, the transaction that spends it and its type from the witness script. The
 data contain 132,360 closes (99,016 cooperative, 33,321 force, 23 splices) and 112,837 spends of force-close
@@ -182,18 +185,45 @@ output ordering, signature grinding, fee rate.
 \label{sec:inference}
 
 \paragraph*{Rules}
-Implementation-specific feature bits decide most nodes. Bits 2023 (script-enforced lease) and 31 (AMP, atomic
-multi-path payments), which LND
-assigns outside BOLT~\#9, appear only on LND. Bit 37 (\texttt{option\_attribution\_data}), or 29
-(\texttt{option\_dual\_fund}) together with 61 (\texttt{option\_simple\_close}), marks Eclair. Bit 11
-(\texttt{gossip\_queries\_ex}) together with 39 (\texttt{option\_onion\_messages}) or 43
-(\texttt{option\_provide\_storage}) marks CLN or Eclair, which we separate by bit 55 (keysend): CLN advertises it
-by default (about 96\% of CLN-set nodes), Eclair does not. Bits 39, 43 or 63 (\texttt{option\_splice}) without 11
-mark LDK. Fallbacks (LND's default colour and alias, and the modal default CLTV delta, the number of blocks of
-CheckLockTimeVerify time-lock a node requires to forward a payment) yield low or medium confidence.
-Operators with a publicly known implementation (ACINQ, Block) are attributed directly. An earlier version without
-the keysend rule labeled ACINQ as CLN before 2025, when Eclair added bits 37 and 61: rules must be validated against
-historical snapshots, not only the latest one.
+Table~\ref{tab:rules} lists the rules, applied in order. Implementation-specific feature bits of the node
+announcement decide most nodes. Bits 2023 (script-enforced lease) and 31 (AMP, atomic multi-path payments), which LND
+assigns outside BOLT~\#9, appear only on LND. Bit 37, or 29 together with 61, marks Eclair. CLN and Eclair share bit
+11 together with 39 or 43; we separate them by bit 5, which every CLN release sets and no Eclair release sets by
+default. Bits 39, 43 or 63 without 11 mark LDK. Fallbacks (LND's default colour and alias, and the modal default CLTV
+delta, the number of blocks of CheckLockTimeVerify time-lock a node requires to forward a payment) yield low or
+medium confidence; a node without announced features is never labeled LDK, because every LDK release announces
+features. Operators with a publicly known implementation (ACINQ, Block) are attributed directly. Rules must be checked
+against each implementation's defaults and against historical snapshots, not only the latest one: one earlier version
+of our rules labeled ACINQ as CLN before 2025, when Eclair added bits 37 and 61, and another separated CLN from Eclair
+by bit 55 (keysend), which CLN operators can switch off.
+
+\begin{table}[t]
+\centering
+\caption{Client inference rules (v4), applied in order: the first that matches labels the node. Bits are
+\texttt{node\_announcement} feature bits; CLTV is the modal \texttt{cltv\_expiry\_delta} of the node's own channel
+updates.}
+\label{tab:rules}
+\footnotesize
+\begin{tabular}{@{}rp{4.55cm}ll@{}}
+\toprule
+& Signal & Label & Confidence \\
+\midrule
+1 & Operator with a publicly known implementation: ACINQ (Eclair), Block's two routing nodes (LDK) & as listed &
+operator \\
+2 & Bit 2023 (script-enforced lease) or 31 (AMP) & LND & high \\
+3 & Bit 37 (attribution data), or 29 (dual funding) with 61 (simple close); none of 51, 65, 561 & Eclair & high \\
+4 & Bit 11 (extended gossip queries) with 39 (onion messages) or 43 (provide storage), and 5 (upfront shutdown
+script) & CLN & high \\
+5 & As rule 4, without bit 5 & Eclair & medium \\
+6 & Bit 39, 43 or 63 (splicing), without 11 & LDK & medium$^{a}$ \\
+7 & LND's default colour (\#3399ff) or alias (pubkey prefix) & LND & medium$^{b}$ \\
+8 & CLTV default: 40 or 80 LND, 34 CLN, 144 Eclair, 72 LDK$^{c}$ & as listed & low \\
+9 & None of the above & Unknown & low \\
+\bottomrule
+\end{tabular}
+\par\vspace{2pt}\parbox{\columnwidth}{\footnotesize $^{a}$high with bit 7 and CLTV 72. $^{b}$low when the node
+announces no features. $^{c}$CLTV 72 only for nodes that announce features.}
+\end{table}
 
 \paragraph*{On-chain signal}
 A funding transaction is built by the funder's wallet. On channels whose two endpoints share a
@@ -213,16 +243,16 @@ Table~\ref{tab:classifier-eval} and Fig.~\ref{fig:validation} report two indepen
 whose alias names their implementation (pooled over monthly snapshots; LND's default alias excluded because the
 rules use it), precision and recall are 99.5\%/94\% for LND and 97\%/96\% for CLN. Most LND misses are nodes
 without announced features, which the rules leave Unknown. Eclair (9 nodes, precision 62\%) and LDK (6) are too
-few to grade; Eclair-labeled nodes that lack bit 37 may be CLN nodes with keysend disabled, so Eclair's node count is
-an upper bound, although its capacity is dominated by ACINQ, which is attributed directly. Against the on-chain
+few to grade; the three nodes wrongly labeled Eclair are LND nodes that only the CLTV fallback labels, so Eclair's
+node count is an upper bound, although its capacity is dominated by ACINQ, which is attributed directly. Against the on-chain
 wallet family (5-fold held out for high-confidence labels), nodes labeled by LND-only bits agree 99\% of the time
-($n=3{,}199$) and the CLN set with keysend 98\% ($n=471$); the CLTV-only fallbacks are weakest (83--95\%) and account
+($n=3{,}207$) and the CLN set 98\% ($n=476$); the CLTV-only fallbacks are weakest (84--95\%) and account
 for five of the nine alias disagreements (e.g.\ LND nodes of one node-in-a-box platform use CLTV~144, Eclair's
 default). A learned baseline ($k$-nearest neighbours on the feature-bit vector) does not beat the rules on the same
-held-out folds (macro-F1 0.92 vs.\ 0.93). Over all nodes with at least five funding transactions, held-out agreement
-between the on-chain family and high-confidence labels is 99.2--99.3\%, and 98\% of nodes get a decision; because
-the signal grades LND against everything else and most nodes are LND, the per-tier figures above are the more
-informative ones.
+held-out folds (macro-F1 0.92 vs.\ 0.93). Pooled over all high-confidence labels, held-out agreement between the
+on-chain family and the label is 99.0\% on the 4,571 nodes where the chain decides, and 98\% of nodes with at least
+five funding transactions get a decision; because the signal grades LND against everything else and most nodes are
+LND, the per-tier figures above are the more informative ones.
 
 \input{tables/table2_classifier_eval.tex}
 
@@ -249,11 +279,12 @@ nodes with aliases \texttt{LNT.<name>}, each with one or two channels, mostly to
 1,980 nodes (March~2026), a fifth of all public nodes with channels; on the latest snapshot its 1,972 nodes hold
 1.4~BTC (0.02\% of capacity). We count a node as
 part of the fleet if its alias carries the prefix or at least half of its channels go to a fleet hub. Without
-it, LND's share of nodes fell steadily, from 85--87\% in the second half of 2024 to 80.3\% in October~2026. In
+it, LND's share of nodes fell steadily (dashed line in Fig.~\ref{fig:share}(a)), from 85--87\% in the second half
+of 2024 to 80.3\% in October~2026. In
 capacity, the only clear within-epoch trend is LDK's share, from 1.7\% (July~2024) to 5.4\%, mostly Block's
 routing nodes. On the latest snapshot (Table~\ref{tab:client-census}) LND runs 84.0\% of nodes, 80.1\% without
 the fleet (77.5\% and 71.9\% counting only high-confidence labels), and holds 84.4\% of capacity; CLN runs 8.5\% of
-nodes (10.6\% without the fleet) but holds 3.7\% of capacity; Eclair's 43 nodes hold 6.1\%.
+nodes (10.6\% without the fleet) but holds 3.7\% of capacity; Eclair's 40 nodes hold 6.1\%.
 Capacity is highly unequal within every cohort (Gini 0.92--0.97). The largest nodes are, if anything, more
 concentrated by client than nodes in general: LND runs 90 of the 100 largest nodes of the routable core
 (\S\ref{sec:resilience}) and 8 of the 10 largest; the other two are ACINQ's Eclair node and Block's LDK node.
@@ -264,7 +295,7 @@ concentrated by client than nodes in general: LND runs 90 of the 100 largest nod
 \caption{Client shares of public nodes with at least one channel (a) and of node capacity (b), first gossip
 snapshot of each month. The dashed line marks the change of our gossip vantage point (mid-2024); months with
 unusable dumps are omitted. From mid-2025 the LND node share includes one operator's fleet of up to 1,980 small
-nodes (\S\ref{sec:concentration}).}
+nodes (\S\ref{sec:concentration}); the dashed line in (a) is LND's share of nodes without it.}
 \label{fig:share}
 \end{figure*}
 
@@ -410,7 +441,7 @@ measure is $R_{\mathrm{all}}(a)$, the share of the pre-failure node pairs still 
 channels, so pairs involving a failed node count as lost; we also report $R(a)$ among surviving nodes and
 $R_c(a)$ among surviving pairs of client $c$. Connectivity is an upper bound on what routing achieves (no fees, no
 in-flight HTLCs, no liquidity uncertainty beyond the threshold). Random scenarios average 50 draws. Eclair has
-only 12 nodes in the core, so $R_{\mathrm{Eclair}}$ moves in large steps.
+only 11 nodes in the core, so $R_{\mathrm{Eclair}}$ moves in large steps.
 
 \paragraph*{The observed footprint against ordinary churn}
 The observed footprint is the set of nodes of the 25~August core with no usable channel left on 27~August (383
@@ -419,7 +450,11 @@ two-day footprint for every pair of snapshots two days apart from May to August 
 94 windows without a known incident the loss had a median of 3.6 points; 4 of them lost more
 than the CLN shutdown. For pairs of CLN nodes, counting pairs with a failed member as lost, the outage cost 24.5
 points; no ordinary window cost more than 17.7 (median 3.2). The two windows spanning the Tor
-event of 10~July cost the whole network 15.6--16.0 points, twice the CLN shutdown.
+event of 10~July cost the whole network 15.6--16.0 points, twice the CLN shutdown. The managed fleet does not drive
+these comparisons. Its 189 nodes in the core, 157 of which are in the footprint, almost all have channels too small for
+100k-sat payments, so they only enlarge the number of pairs; counting only pairs of nodes outside the fleet, the
+outage cost 8.5 points against an ordinary median of 4.0, the same 4 windows lost more, and the Tor windows cost
+17.3--17.8 points.
 
 \begin{figure*}[t]
 \centering
@@ -433,15 +468,16 @@ without a known incident; solid line: 25$\rightarrow$27~August (CLN shutdown); d
 
 \paragraph*{Scenarios}
 Table~\ref{tab:scenarios} and Fig.~\ref{fig:curves} compare failures. The calibrated scenario ($\hat p=0.22$ of
-CLN nodes failing at random, 136 nodes) leaves $R$ among survivors at 78.8\%, against 77.9\% when the same number
+CLN nodes failing at random, 136 nodes) leaves $R$ among survivors at 78.8\%, against 78.2\% when the same number
 of nodes fails at random across all clients: for the rest of the network, a CLN-wide outage behaves like random
 failure, because CLN nodes are mostly peripheral. Drawing the failures with the observed compliance of each size
 quintile and transport class instead gives the same result ($R=78.7\%$, $R_{\mathrm{all}}=73.9\%$). The damage stays inside the cohort: counting
 pairs with a failed member as lost, CLN pairs fall from 79\% to 46\% connected, while among surviving CLN nodes
 $R_{\mathrm{CLN}}$ is 76\%. Removing the same number of nodes chosen by degree leaves 27.6\%, by capacity 33.7\%.
-Losing all 619 CLN nodes of the core leaves survivors at 76.2\%; losing its 12 Eclair nodes, which hold 5.8\% of
-capacity and are dominated by ACINQ, leaves 63.9\%. Per unit of failed capacity, failures confined to Eclair are the
-most damaging and failures confined to LDK the least (Fig.~\ref{fig:curves}).
+Losing all 619 CLN nodes of the core leaves survivors at 76.2\%; losing its 11 Eclair nodes, which hold 5.8\% of
+capacity and are dominated by ACINQ, leaves 63.9\%. Per unit of failed capacity, failures confined to Eclair do the
+most damage to the surviving network and failures confined to LDK the least; counting pairs with a failed member as
+lost (Fig.~\ref{fig:curves}), CLN's curve falls fastest, because its failed nodes are many and small.
 
 \input{tables/table6_scenarios.tex}
 
@@ -467,8 +503,8 @@ decides how far a client-correlated failure reaches.
 
 \paragraph*{Dependence on LND, against a null model}
 Minority clients' channel capacity faces LND: 76\% for CLN, 92\% for Eclair and 81\% for LDK (Fig.~\ref{fig:matrix}),
-and without LND nodes only 32\% of CLN pairs, 42\% of Eclair pairs and 11\% of LDK pairs remain connected for
-100k-sat payments (14\%, 42\% and 9\% for 1M sats). Read alone, this suggests that minority clients reach each other
+and without LND nodes only 32\% of CLN pairs, 51\% of Eclair pairs and 12\% of LDK pairs remain connected for
+100k-sat payments (14\%, 51\% and 10\% for 1M sats). Read alone, this suggests that minority clients reach each other
 only through LND. A null model says otherwise. Permuting client labels among nodes of similar capacity (within
 capacity deciles, 200 draws) keeps the graph and the cohort sizes and removes any preference of a client for its own
 kind. Under it, CLN would put 88\% of its capacity on LND peers and LDK 87\%; both put less. CLN nodes

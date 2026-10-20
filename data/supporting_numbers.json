@@ -45,7 +45,7 @@
   "gossip_usable_days_since_2026_05_01": 148,
   "calendar_days_since_2026_05_01": 157,
   "cutoff_height": 969918,
-  "watched_funding_outputs": 257363,
+  "watched_funding_outputs": 257364,
   "closes_first_date": "2025-01-01",
   "closes": 132360,
   "closes_by_type": {
@@ -99,7 +99,7 @@
   ],
   "D_CLN_late": {
    "2026-10-02": 14.59,
-   "2026-10-04": 15.28
+   "2026-10-04": 15.27
   },
   "disabled_CLN_tor-only": {
    "baseline_mean": 15.7,
@@ -943,7 +943,7 @@
     "null": 0.879
    },
    "LDK": {
-    "observed": 0.807,
+    "observed": 0.808,
     "null": 0.874
    }
   },
@@ -968,14 +968,14 @@
     "null_p95": 0.249
    },
    "Eclair": {
-    "observed": 0.424,
-    "null_mean": 0.333,
-    "null_p95": 0.545
+    "observed": 0.509,
+    "null_mean": 0.373,
+    "null_p95": 0.655
    },
    "LDK": {
-    "observed": 0.111,
-    "null_mean": 0.09,
-    "null_p95": 0.232
+    "observed": 0.122,
+    "null_mean": 0.099,
+    "null_p95": 0.235
    }
   }
  },
@@ -988,10 +988,10 @@
   "R_LND_all@100000": 0.7908,
   "R_CLN@100000": 0.7605,
   "R_CLN_all@100000": 0.4608,
-  "R_Eclair@100000": 0.8333,
-  "R_Eclair_all@100000": 0.8333,
-  "R_LDK@100000": 0.7864,
-  "R_LDK_all@100000": 0.7864,
+  "R_Eclair@100000": 0.8182,
+  "R_Eclair_all@100000": 0.8182,
+  "R_LDK@100000": 0.7762,
+  "R_LDK_all@100000": 0.7762,
   "lcc_cap@100000": 0.9794
  },
  "hubs": {

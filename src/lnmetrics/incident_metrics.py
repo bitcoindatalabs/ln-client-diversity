@@ -150,8 +150,8 @@ def _cltv_modes(pol: pd.DataFrame) -> pd.Series:
 # ---------------------------------------------------------------------------------------
 def node_labels(ref_date: str = REF_DATE, refresh: bool = False) -> pd.DataFrame:
     """One client label per node ever seen in gossip, taken from the snapshot closest to ref_date
-    (latest on/before it, else earliest after). Cached in analysis/node_client_labels_<ref>.parquet."""
-    cache = ANALYSIS_DIR / f"node_client_labels_{ref_date}.parquet"
+    (latest on/before it, else earliest after). Cached in analysis/node_client_labels_<ref>_<rules>.parquet."""
+    cache = ANALYSIS_DIR / f"node_client_labels_{ref_date}_{RULES_VERSION}.parquet"
     if cache.exists() and not refresh:
         df = pd.read_parquet(cache)
         if (df["rules_version"] == RULES_VERSION).all():
@@ -183,6 +183,33 @@ def node_labels(ref_date: str = REF_DATE, refresh: bool = False) -> pd.DataFrame
 
 def label_map(labels: pd.DataFrame) -> Dict[str, str]:
     return dict(zip(labels["pub_key"], labels["client"]))
+
+
+# Managed fleet: from mid-2025 one operator ran up to about two thousand small public LND nodes with aliases
+# "LNT.<name>", one or two channels each, most of them to the operator's hubs. A node belongs to the fleet if its
+# alias carries the prefix, or if at least half of its channels go to a fleet hub (an "LNT." node with at least
+# FLEET_HUB_MIN_CHANNELS channels). Node-count statistics are reported with and without it.
+FLEET_ALIAS_PREFIX = "LNT."
+FLEET_HUB_MIN_CHANNELS = 50
+
+
+def fleet_flags_from(alias: pd.Series, channels: pd.Series, ch: pd.DataFrame) -> pd.Series:
+    """Fleet membership of every node in `channels` (index: pub_key, value: channel count), given node aliases
+    (index: pub_key) and one row per channel with node_pub / peer_pub."""
+    alias = alias.reindex(channels.index).fillna("")
+    named = alias.str.startswith(FLEET_ALIAS_PREFIX)
+    hubs = set(named.index[named & (channels >= FLEET_HUB_MIN_CHANNELS)])
+    ends = pd.concat([pd.DataFrame({"pk": ch["node_pub"].to_numpy(), "hub": ch["peer_pub"].isin(hubs).to_numpy()}),
+                      pd.DataFrame({"pk": ch["peer_pub"].to_numpy(), "hub": ch["node_pub"].isin(hubs).to_numpy()})])
+    to_hub = ends.groupby("pk")["hub"].mean().reindex(channels.index).fillna(0)
+    return named | (to_hub >= 0.5)
+
+
+def fleet_flags(date: str, channels: pd.Series) -> pd.Series:
+    """fleet_flags_from() on the gossip snapshot of `date`."""
+    alias = read_nodes(date, ["pub_key", "alias"]).set_index("pub_key")["alias"]
+    ch = read_policies(date, ["channel_id", "node_pub", "peer_pub"]).drop_duplicates("channel_id")
+    return fleet_flags_from(alias, channels, ch)
 
 
 # ---------------------------------------------------------------------------------------
