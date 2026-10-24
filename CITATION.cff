@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the paper."
+title: "Code and data for: Does Client Diversity Protect the Lightning Network? Evidence from the 2026 Core Lightning Shutdown"
+type: software
+authors:
+  - family-names: Kumar
+    given-names: Saurabh
+    affiliation: Bitcoin Data Labs
+repository-code: "https://github.com/bitcoindatalabs/ln-client-diversity"
+url: "https://bitcoindatalabs.org/research.html#ln-client-diversity"
+license: MIT
+version: v2.0-arxiv
+date-released: 2026-10-20
+keywords:
+  - Lightning Network
+  - Bitcoin
+  - client diversity
+  - common-mode failure
+  - measurement
+  - gossip
+  - resilience
+preferred-citation:
+  type: article
+  title: "Does Client Diversity Protect the Lightning Network? Evidence from the 2026 Core Lightning Shutdown"
+  authors:
+    - family-names: Kumar
+      given-names: Saurabh
+      affiliation: Bitcoin Data Labs
+  journal: "arXiv preprint arXiv:2610.20952"
+  year: 2026
+  month: 10
+  doi: 10.48550/arXiv.2610.20952
+  url: "https://arxiv.org/abs/2610.20952"
